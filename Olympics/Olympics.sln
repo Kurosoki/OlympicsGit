@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.0.0
+MinimumVisualStudioVersion = 17.0.0.0
+
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olympics", "Olympics.csproj", "{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4A12397-8091-4D41-9D42-4A0BF14513B0}
+	EndGlobalSection
+EndGlobal
