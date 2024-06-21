@@ -1,0 +1,402 @@
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+:root {
+    font-size: var(--rz-root-font-size);
+}
+
+.rz-body {
+    --rz-body-padding: 0;
+}
+
+.blazor-error-boundary {
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTYiIGhlaWdodD0iNDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIG92ZXJmbG93PSJoaWRkZW4iPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IHg9IjIzNSIgeT0iNTEiIHdpZHRoPSI1NiIgaGVpZ2h0PSI0OSIvPjwvY2xpcFBhdGg+PC9kZWZzPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMCkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMzUgLTUxKSI+PHBhdGggZD0iTTI2My41MDYgNTFDMjY0LjcxNyA1MSAyNjUuODEzIDUxLjQ4MzcgMjY2LjYwNiA1Mi4yNjU4TDI2Ny4wNTIgNTIuNzk4NyAyNjcuNTM5IDUzLjYyODMgMjkwLjE4NSA5Mi4xODMxIDI5MC41NDUgOTIuNzk1IDI5MC42NTYgOTIuOTk2QzI5MC44NzcgOTMuNTEzIDI5MSA5NC4wODE1IDI5MSA5NC42NzgyIDI5MSA5Ny4wNjUxIDI4OS4wMzggOTkgMjg2LjYxNyA5OUwyNDAuMzgzIDk5QzIzNy45NjMgOTkgMjM2IDk3LjA2NTEgMjM2IDk0LjY3ODIgMjM2IDk0LjM3OTkgMjM2LjAzMSA5NC4wODg2IDIzNi4wODkgOTMuODA3MkwyMzYuMzM4IDkzLjAxNjIgMjM2Ljg1OCA5Mi4xMzE0IDI1OS40NzMgNTMuNjI5NCAyNTkuOTYxIDUyLjc5ODUgMjYwLjQwNyA1Mi4yNjU4QzI2MS4yIDUxLjQ4MzcgMjYyLjI5NiA1MSAyNjMuNTA2IDUxWk0yNjMuNTg2IDY2LjAxODNDMjYwLjczNyA2Ni4wMTgzIDI1OS4zMTMgNjcuMTI0NSAyNTkuMzEzIDY5LjMzNyAyNTkuMzEzIDY5LjYxMDIgMjU5LjMzMiA2OS44NjA4IDI1OS4zNzEgNzAuMDg4N0wyNjEuNzk1IDg0LjAxNjEgMjY1LjM4IDg0LjAxNjEgMjY3LjgyMSA2OS43NDc1QzI2Ny44NiA2OS43MzA5IDI2Ny44NzkgNjkuNTg3NyAyNjcuODc5IDY5LjMxNzkgMjY3Ljg3OSA2Ny4xMTgyIDI2Ni40NDggNjYuMDE4MyAyNjMuNTg2IDY2LjAxODNaTTI2My41NzYgODYuMDU0N0MyNjEuMDQ5IDg2LjA1NDcgMjU5Ljc4NiA4Ny4zMDA1IDI1OS43ODYgODkuNzkyMSAyNTkuNzg2IDkyLjI4MzcgMjYxLjA0OSA5My41Mjk1IDI2My41NzYgOTMuNTI5NSAyNjYuMTE2IDkzLjUyOTUgMjY3LjM4NyA5Mi4yODM3IDI2Ny4zODcgODkuNzkyMSAyNjcuMzg3IDg3LjMwMDUgMjY2LjExNiA4Ni4wNTQ3IDI2My41NzYgODYuMDU0N1oiIGZpbGw9IiNGRkU1MDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvZz48L3N2Zz4=) no-repeat 1rem/1.8rem, #b32121;
+    padding: 1rem 1rem 1rem 3.7rem;
+    color: white;
+}
+
+.blazor-error-boundary::after {
+    content: "An error has occurred."
+}
+
+.loading-progress {
+    position: relative;
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    margin: 20vh auto 1rem auto;
+}
+
+.loading-progress circle {
+    fill: none;
+    stroke: #e0e0e0;
+    stroke-width: 0.6rem;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+}
+
+.loading-progress circle:last-child {
+    stroke: #1b6ec2;
+    stroke-dasharray: calc(3.141 * var(--blazor-load-percentage, 0%) * 0.8), 500%;
+    transition: stroke-dasharray 0.05s ease-in-out;
+}
+
+.loading-progress-text {
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+    inset: calc(20vh + 3.25rem) 0 auto 0.2rem;
+}
+
+.loading-progress-text:after {
+    content: var(--blazor-load-percentage-text, "Loading");
+}
+
+/* Code CSS */
+
+/*----Debut des polices -----*/
+
+/* Prompt Bold */
+@font-face {
+    font-family: 'Prompt-bold';
+    src: url('/fonts/Prompt/Prompt-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+
+/* Prompt Medium */
+@font-face {
+    font-family: 'Prompt-medium';
+    src: url('/fonts/Prompt/Prompt-Medium.ttf') format('truetype');
+    font-weight: 500; 
+}
+
+/* Prompt Light */
+@font-face {
+    font-family: 'Prompt-light';
+    src: url('/fonts/Prompt/Prompt-Light.ttf') format('truetype');
+}
+
+
+/* Paris 2024 */
+@font-face {
+    font-family: 'Paris2024';
+    src: url('/fonts/Paris/Paris2024-Variable.ttf') format('truetype');
+    font-weight: 500; 
+}
+
+
+
+
+/*----Fin des polices ----*/
+
+
+/*---- Retirer la barre latéral droite de défilement ( Le overflow est déjà activé dans la material.css)
+Il s'agissait de le masquer tout en permettant le défilement de la page) OwO ----*/
+
+.rz-layout .rz-body {
+    scrollbar-width: none; /* Pour Firefox */
+    -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+}
+
+/* Masquer la barre de défilement pour Chrome, Safari et Opera */
+.rz-layout .rz-body::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- Fin --- */
+
+/* Code MainLayout */
+
+/* Boutons de navigation */
+
+.btn-menu {
+    background-color: white; 
+    border: none; 
+    color: black;
+    padding: 2% 2%; 
+    margin: 0.7%;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;  
+    border-radius: 2%; 
+    font-size: 0.8rem;
+    font-family: Prompt-medium;
+    text-transform: uppercase;
+}
+
+.btn-menu:hover {
+    background-color: black; 
+    color: white;
+}
+
+.btn-accueil {
+    margin-left: 3%; /* Marge à gauche pour le bouton Accueil */
+}
+
+.btn-login {
+    margin-right: 3%; /* Marge à droite pour le bouton Connexion / Inscription */
+}
+
+/* Logo JO 2024 */
+.logo-Paris2024{
+    width: 15%;
+    height: 12%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/* Centrer les éléments du MainLayout */
+.center-column-header{
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;    
+}
+
+.center-link{
+    text-align: center; /* Centre horizontalement */
+}
+
+.rz-barreNavigation {
+    background-color: transparent;
+    position: fixed; /* Position fixe pour rester en haut de la page */
+    top: 0;
+    left: 0;
+    width: 100%; /* Prend toute la largeur */
+    z-index: 1; /* Met la barre de navigation derrière les boutons */
+}
+
+/* Regler le conteneur de l'image */
+.rz-header {
+    overflow: hidden;
+    width: 100%;
+    height: 95vh; /* Ajuster le bas de la taille du conteneur */
+    position: relative; /* Position relative pour permettre le positionnement absolu des enfants */
+    z-index: 999; /* Met le header au-dessus du reste du contenu et juste en dessous de la barre de navigation */}
+}
+
+/* Regler l'image */
+.header-image {
+    width: 100%; /* Adapter à la largeur du conteneur */
+    height: 95vh;  /* Ajuster le bas de la taille de l'image */
+    object-fit: cover; 
+    object-position: center; /* Centrer l'image */   
+}
+
+
+/* Styles pour le voile noir */
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Voile noir avec une opacité de 50% */
+    z-index: 1; /* Met le voile au-dessus de l'image mais en dessous de la barre de navigation */
+}
+
+.header-Titre {
+    white-space: pre-wrap;
+    text-transform: uppercase;
+    font-size: 3vw; 
+    font-family: Paris2024;
+    font-weight: 900;
+    line-height: 1; /* Utilisation d'une unité sans dimension pour ajuster la hauteur de ligne */
+    position: absolute;
+    top: 46%; 
+    left: 3%; 
+    z-index: 1000;
+    color: white;
+}
+
+
+.header-SousTitre {
+    font-size: 0.875rem; 
+    font-family: Prompt-light;
+    line-height: 1; /* Ajustement de la hauteur de ligne */
+    position: absolute;
+    top: 85%; 
+    left: 3%; 
+    z-index: 1000;
+    color: white;
+}
+
+
+
+
+/* Code Index */
+.titres {
+    padding-top: 3%; 
+}
+
+.titre {
+   font-family: Paris2024;
+   font-weight: 900;
+   font-size: 3vw; 
+   color: black;
+}
+
+.sous-titre {
+    font-family: Prompt-medium;
+    font-size: 1.3vw;
+    color: #39333E;
+}
+
+.long-hr {
+    border: none;
+    height: 1px; 
+    background-color: black;
+    width: 100%;
+    margin: 2% auto; 
+}
+
+
+
+/* Card */
+
+.card-column {
+    padding: 0 1%; /* Espacement entre les colonnes des cartes */
+    padding-bottom: 5%;
+}
+
+.card-sport {
+    background-color: #fff;
+    border-radius: 0.3rem; 
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+    overflow: hidden;  /* Assure que l'image ne dépasse pas le conteneur */
+}
+
+.card-image {
+    width: 100%;
+    height: 13.375rem; 
+    object-fit: cover;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem; 
+    transition: transform 0.3s ease; /* Transition pour l'effet de zoom */
+    margin-bottom: 0.3125rem; 
+}
+
+.card-sport:hover .card-image {
+    transform: scale(1.1); /* Zoom de l'image au survol */
+}
+
+.card-title {
+    font-family: 'Paris2024', sans-serif;
+    font-size: 1.4375rem; 
+    font-weight: 600;
+    color: black;
+    margin-top: 0.625rem; 
+    padding-left: 0.8125rem; 
+}
+
+.card-description {
+    font-size: 0.875rem; 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #39333E;
+    line-height: 1.5;
+    margin-top: 0.625rem; 
+    padding: 0 0.8125rem 0.8125rem 0.8125rem; 
+    max-height: calc(1.5rem * 5); /* Affiche jusqu'à 5 lignes (1.5rem = hauteur de ligne approximative) */
+    overflow-y: hidden; /* Masque le défilement vertical */
+    -webkit-line-clamp: 5; /* Limite le texte à 5 lignes dans les navigateurs WebKit */
+    -webkit-box-orient: vertical; /* Orient vertical pour les navigateurs WebKit */
+    display: -webkit-box; /* Affichage en boîte pour les navigateurs WebKit */
+    text-overflow: ellipsis; /* Ajouter des points de suspension à la fin du texte */
+}
+
+.card-description:hover {
+    overflow-y: auto; /* Activer le défilement vertical au survol pour voir le contenu complet */
+}
+
+
+
+
+/* Footer styles */
+.footer {
+    background-color: black;
+    color: #fff; 
+    padding-top: 3%; 
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+}
+
+.footer-logo-image {
+    width: 40%;
+    height: 100%;
+}
+
+.footer-title {
+    font-size: 1rem; 
+    margin-bottom: 3%; /
+    font-family: Paris2024;
+    color: white;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items:flex-start;
+    justify-content: flex-start; /* Aligne les éléments en haut */
+    font-size: 0.85rem;
+    font-family: Prompt-light;
+}
+
+.footer-link {
+    color: #fff; 
+    text-decoration: none; /* Supprime la décoration par défaut des liens */
+    margin-bottom: 3%; 
+}
+
+.footer-link:hover {
+    text-decoration: underline; /* Décoration des liens au survol */
+}
+
+.long-footer{
+    border: none; /* Supprimer la bordure par défaut */
+    height: 1%; /* Hauteur du trait */
+    background-color: white; /* Couleur du trait */
+    width: 65%; /* Largeur du trait*/
+    margin: 20px auto; /* Marges pour espacer le trait et le centrer */
+}
+
+.footer-rgpd{
+    display: flex;
+    flex-wrap: wrap; /* Permet aux liens de se répartir sur plusieurs lignes si nécessaire */
+    padding: 1%;
+    margin-left: 14%;
+    font-size: 0.80rem;
+    font-family: Prompt-light;
+}
+
+.footer-rgpd-link{
+    color: #fff;
+    margin-left: 3%; 
+}
+
+.copyright{
+    color: #fff;
+    margin-left: 23%;
+    font-size: 0.70rem;
+    font-family: Prompt-light;
+}

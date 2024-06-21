@@ -1,0 +1,43 @@
+@inherits LayoutComponentBase
+<RadzenComponents />
+
+<RadzenLayout style="display: grid; grid-template-areas: 'rz-barreNavigation' 'rz-body' 'rz-footer'; grid-template-columns: 1fr; grid-template-rows: auto 1fr auto;">
+ 
+  <!-- Scripts JavaScript -->
+
+
+  <!-- Barre de Navigation -->
+  <div class="rz-barreNavigation" style="grid-area: rz-barreNavigation;">
+        <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Center" Gap="0">
+            <RadzenColumn Size="4">
+                <RadzenButton class="btn-menu btn-accueil" Click="@NavigateToAccueil" >Accueil</RadzenButton>
+            </RadzenColumn>
+            <!-- Logo -->
+            <RadzenColumn Size="4" class="center-column-header">
+                <RadzenLink Path="/" class="center-link">
+                    <RadzenImage class="logo-Paris2024" Path="images/LogoJO2024white.png" AlternateText="Application logo"></RadzenImage>
+                </RadzenLink>
+            </RadzenColumn>
+            <RadzenColumn Size="4">
+                <RadzenStack AlignItems="AlignItems.Center" Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
+                    <RadzenButton class="btn-menu" Click="@NavigateToBilletterie">Billetterie</RadzenButton>
+                    <RadzenButton class="btn-menu btn-login" Click="@NavigateToLogin">Connexion / Inscription</RadzenButton>
+                </RadzenStack>
+            </RadzenColumn>
+        </RadzenRow>
+    </div>
+
+<!-- Body-->
+    <RadzenBody style="grid-area: rz-body;">
+        <RadzenRow>
+            <RadzenColumn Size="12">
+                @Body
+            </RadzenColumn>
+        </RadzenRow>
+    </RadzenBody>
+
+<!-- Footer -->
+    
+
+</RadzenLayout>
+

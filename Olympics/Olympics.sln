@@ -2,8 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.0.0
 MinimumVisualStudioVersion = 17.0.0.0
-
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olympics", "Olympics.csproj", "{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olympics.Presentation", "Olympics\Olympics.Presentation.csproj", "{1B67D19D-867F-48BF-9192-82878F72230F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olympics.Database", "Olympics.Database\Olympics.Database.csproj", "{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Olympics.Metier", "Olympics.Metier\Olympics.Metier.csproj", "{088B87B2-B29E-4826-8213-495124834E42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +14,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4979D2A-E608-415B-B2CD-C67D28C5B8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B67D19D-867F-48BF-9192-82878F72230F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B67D19D-867F-48BF-9192-82878F72230F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B67D19D-867F-48BF-9192-82878F72230F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B67D19D-867F-48BF-9192-82878F72230F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{088B87B2-B29E-4826-8213-495124834E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088B87B2-B29E-4826-8213-495124834E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088B87B2-B29E-4826-8213-495124834E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088B87B2-B29E-4826-8213-495124834E42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
