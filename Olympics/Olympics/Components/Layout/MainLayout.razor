@@ -3,14 +3,14 @@
 
 <RadzenLayout style="display: grid; grid-template-areas: 'rz-barreNavigation' 'rz-body' 'rz-footer'; grid-template-columns: 1fr; grid-template-rows: auto 1fr auto;">
  
-  <!-- Scripts JavaScript -->
-
-
+ 
   <!-- Barre de Navigation -->
   <div class="rz-barreNavigation" style="grid-area: rz-barreNavigation;">
         <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Center" Gap="0">
             <RadzenColumn Size="4">
                 <RadzenButton class="btn-menu btn-accueil" Click="@NavigateToAccueil" >Accueil</RadzenButton>
+                <RadzenButton class="btn-menu" Click="@NavigateToBilletterie">Billetterie</RadzenButton>
+
             </RadzenColumn>
             <!-- Logo -->
             <RadzenColumn Size="4" class="center-column-header">
@@ -20,7 +20,7 @@
             </RadzenColumn>
             <RadzenColumn Size="4">
                 <RadzenStack AlignItems="AlignItems.Center" Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
-                    <RadzenButton class="btn-menu" Click="@NavigateToBilletterie">Billetterie</RadzenButton>
+                    <RadzenButton class="btn-menu" Click="@NavigateToPanier">Panier</RadzenButton>
                     <RadzenButton class="btn-menu btn-login" Click="@NavigateToLogin">Connexion / Inscription</RadzenButton>
                 </RadzenStack>
             </RadzenColumn>

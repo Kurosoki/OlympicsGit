@@ -53,5 +53,10 @@ namespace Olympics.Presentation.Components.Layout
             NavigationManager.NavigateTo("/billetterie");
         }
 
+        private void NavigateToPanier()
+        {
+            NavigationManager.NavigateTo("/panier");
+        }
+
     }
 }

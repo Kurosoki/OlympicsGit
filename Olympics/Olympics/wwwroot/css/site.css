@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 #blazor-error-ui {
     background: lightyellow;
     bottom: 0;
@@ -326,7 +332,6 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
 
 
 
-
 /* Footer styles */
 .footer {
     background-color: black;
@@ -399,4 +404,207 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
     margin-left: 23%;
     font-size: 0.70rem;
     font-family: Prompt-light;
+}
+
+
+
+/* Login */
+
+.form-title{
+   position: absolute;
+   margin-top: 5%;
+   margin-left: 30%;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100vh; /* Hauteur de la vue */
+    background-color: #f5f5f5; /* Couleur de fond optionnelle */
+    padding: 20px; /* Ajoutez du padding si nécessaire */
+}
+
+.login-container .radzen-login {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour améliorer l'apparence */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #fff; /* Fond blanc pour le formulaire */
+    padding: 20px; /* Ajoute du padding interne */
+}
+
+/* Register */
+
+
+
+ /* Billeterie */
+.billetterie-container {
+    padding: 2rem;
+    
+}
+.billeterie-visuel-card {
+    background-color: #fff;
+    border-radius: 0.3rem; 
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
+}
+
+.billetterie-titres {
+  margin-left: 3rem;
+}
+
+.billetterie-titres .billetterie-titre {
+    margin-top: 6rem;
+    font-family: 'Paris2024', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: black;
+}
+
+.billetterie-titres .billetterie-sous-titre {
+    font-family: 'Paris2024', sans-serif;
+    font-size: 1.5rem;
+    color: #39333E;
+}
+
+.billetterie-long-hr {
+    border: none;
+    height: 2px;
+    background-color: black;
+    width: 70%; 
+}
+
+.billetterie-container {
+    padding: 2rem;
+}
+
+.billetterie-titres .billetterie-titre {
+    font-family: 'Paris2024', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: black;
+}
+
+.billetterie-titres .billetterie-sous-titre {
+    font-family: 'Paris2024', sans-serif;
+    font-size: 1.5rem;
+    color: #39333E;
+}
+
+/* Card Styles */
+.billetterie-card-column {
+    margin-bottom: 1rem;
+}
+
+.billetterie-card-sport {
+    display: flex;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 80%; /* Limite la largeur maximale */
+    margin: 0 auto; /* Centre la carte dans son conteneur parent */
+    cursor: pointer;
+}
+
+.billetterie-card-sport:hover {
+   background-color: #D6D5E3;
+}
+
+.billetterie-card-image {
+    width: 150%;
+    height: auto;
+    object-fit: cover;   
+}
+
+.billetterie-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 3rem;
+}
+
+.billetterie-card-title {
+    font-family: 'Paris2024', sans-serif;
+    font-size: 1.4375rem;
+    font-weight: 600;
+    color: black;
+    margin-top: 0.5rem;
+}
+
+.billetterie-card-description {
+    font-size: 0.875rem;
+    color: #39333E;
+    line-height: 1.5;
+    font-family: Prompt;
+}
+
+.billetterie-card-details {
+    font-family: Prompt-medium;
+    color: black;
+    font-size: 0.875rem;
+}
+
+/* Styles pour les prix et contrôles de quantité */
+
+.billeterie-card-container{
+    display: flex;
+    align-items: center; /* Alignement vertical des éléments */
+    justify-content: space-between; /* Espace entre les éléments */
+    margin-bottom: 1rem;
+}
+
+.billetterie-card-price {
+    font-family: Prompt-medium;
+    font-size: 0.900rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 3rem;
+    margin-top: 0.2rem;
+}
+
+.billetterie-card-price-label {
+    margin-bottom: 0.4rem;
+}
+
+.billetterie-card-controls button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.billetterie-card-controls button:hover {
+    background-color: #012366;
+}
+
+.billetterie-card-quantity {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    font-family: Prompt-medium;
+}
+
+.billetterie-card-panier-button{
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Aligne le bouton à droite */
+    margin-top: 2rem;
+}
+
+.billetterie-card-add-button {
+    background-color: black;
+    font-family: Prompt-medium;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.billetterie-card-add-button:hover {
+    background-color: #012366;
 }

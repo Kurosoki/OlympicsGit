@@ -273,7 +273,7 @@
           }
         }
       },
-      "Radzen.Blazor/4.32.8": {
+      "Radzen.Blazor/4.33.3": {
         "type": "package",
         "dependencies": {
           "DartSassBuilder": "1.0.0",
@@ -870,10 +870,10 @@
         "packageIcon.png"
       ]
     },
-    "Radzen.Blazor/4.32.8": {
-      "sha512": "wgYqoOOApHY3rls/mTBhAVQiY55e6NSO8Q/A5Myrs8/giYqSU/ctOG5/gOI2QFkbreXR3za/Iy4A0BhI8RExTg==",
+    "Radzen.Blazor/4.33.3": {
+      "sha512": "VYdcmQdX8ygsGy4LdUi1Z56RcH34KfR1L2jb/uNOp+RqPkzm+g5mQNIoIpU/x1h2HLcuGi8ZLN34u2iyraVCCQ==",
       "type": "package",
-      "path": "radzen.blazor/4.32.8",
+      "path": "radzen.blazor/4.33.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -894,7 +894,7 @@
         "lib/net8.0/Radzen.Blazor.xml",
         "lib/netstandard2.1/Radzen.Blazor.dll",
         "lib/netstandard2.1/Radzen.Blazor.xml",
-        "radzen.blazor.4.32.8.nupkg.sha512",
+        "radzen.blazor.4.33.3.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",
@@ -903,22 +903,12 @@
         "staticwebassets/css/default-base.css",
         "staticwebassets/css/default-wcag.css",
         "staticwebassets/css/default.css",
-        "staticwebassets/css/fluent-base.css",
-        "staticwebassets/css/fluent-dark-base.css",
-        "staticwebassets/css/fluent-dark.css",
-        "staticwebassets/css/fluent.css",
         "staticwebassets/css/humanistic-base.css",
         "staticwebassets/css/humanistic-wcag.css",
         "staticwebassets/css/humanistic.css",
         "staticwebassets/css/material-base.css",
-        "staticwebassets/css/material-dark-base.css",
-        "staticwebassets/css/material-dark.css",
         "staticwebassets/css/material-wcag.css",
         "staticwebassets/css/material.css",
-        "staticwebassets/css/material3-base.css",
-        "staticwebassets/css/material3-dark-base.css",
-        "staticwebassets/css/material3-dark.css",
-        "staticwebassets/css/material3.css",
         "staticwebassets/css/software-base.css",
         "staticwebassets/css/software-wcag.css",
         "staticwebassets/css/software.css",

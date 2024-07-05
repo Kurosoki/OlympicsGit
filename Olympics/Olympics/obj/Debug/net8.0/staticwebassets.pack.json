@@ -125,12 +125,48 @@
       "PackagePath": "staticwebassets\\images\\sports\\cheval.jpg"
     },
     {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\cloche-gold.png",
+      "PackagePath": "staticwebassets\\images\\sports\\cloche-gold.png"
+    },
+    {
       "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\j.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\j.jpg"
     },
     {
       "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\o.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\o.jpg"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoarchery.png",
+      "PackagePath": "staticwebassets\\images\\sports\\pictoarchery.png"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoathletics.png",
+      "PackagePath": "staticwebassets\\images\\sports\\pictoathletics.png"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictobeachvolley.png",
+      "PackagePath": "staticwebassets\\images\\sports\\pictobeachvolley.png"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoequestriandressage.png",
+      "PackagePath": "staticwebassets\\images\\sports\\pictoequestriandressage.png"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictofencing.png",
+      "PackagePath": "staticwebassets\\images\\sports\\pictofencing.png"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictojudo.png",
+      "PackagePath": "staticwebassets\\images\\sports\\pictojudo.png"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictorythmicgymnastic.png",
+      "PackagePath": "staticwebassets\\images\\sports\\pictorythmicgymnastic.png"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoswimming.png",
+      "PackagePath": "staticwebassets\\images\\sports\\pictoswimming.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Olympics.Presentation.Microsoft.AspNetCore.StaticWebAssets.props",
