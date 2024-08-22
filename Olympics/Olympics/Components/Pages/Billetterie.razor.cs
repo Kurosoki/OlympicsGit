@@ -57,7 +57,7 @@ namespace Olympics.Presentation.Components.Pages
     {
         SportName = "Athlétisme",
         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 80.0m
+         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
     new SportTicket
     {
@@ -70,7 +70,7 @@ namespace Olympics.Presentation.Components.Pages
     {
         SportName = "Judo",
         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 80.0m
+         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
     new SportTicket
     {
@@ -83,7 +83,7 @@ namespace Olympics.Presentation.Components.Pages
     {
         SportName = "Natation",
         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 80.0m
+         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
     new SportTicket
     {
@@ -95,7 +95,7 @@ namespace Olympics.Presentation.Components.Pages
     {
         SportName = "Escrime",
         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 80.0m
+         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
     new SportTicket
     {

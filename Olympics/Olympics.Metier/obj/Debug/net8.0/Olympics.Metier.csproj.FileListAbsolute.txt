@@ -9,3 +9,14 @@ G:\Examens\Olympics.Metier\obj\Debug\net8.0\Olympics.Metier.dll
 G:\Examens\Olympics.Metier\obj\Debug\net8.0\refint\Olympics.Metier.dll
 G:\Examens\Olympics.Metier\obj\Debug\net8.0\Olympics.Metier.pdb
 G:\Examens\Olympics.Metier\obj\Debug\net8.0\ref\Olympics.Metier.dll
+G:\Examens\Olympics\Olympics.Metier\bin\Debug\net8.0\Olympics.Metier.deps.json
+G:\Examens\Olympics\Olympics.Metier\bin\Debug\net8.0\Olympics.Metier.dll
+G:\Examens\Olympics\Olympics.Metier\bin\Debug\net8.0\Olympics.Metier.pdb
+G:\Examens\Olympics\Olympics.Metier\obj\Debug\net8.0\Olympics.Metier.GeneratedMSBuildEditorConfig.editorconfig
+G:\Examens\Olympics\Olympics.Metier\obj\Debug\net8.0\Olympics.Metier.AssemblyInfoInputs.cache
+G:\Examens\Olympics\Olympics.Metier\obj\Debug\net8.0\Olympics.Metier.AssemblyInfo.cs
+G:\Examens\Olympics\Olympics.Metier\obj\Debug\net8.0\Olympics.Metier.csproj.CoreCompileInputs.cache
+G:\Examens\Olympics\Olympics.Metier\obj\Debug\net8.0\Olympics.Metier.dll
+G:\Examens\Olympics\Olympics.Metier\obj\Debug\net8.0\refint\Olympics.Metier.dll
+G:\Examens\Olympics\Olympics.Metier\obj\Debug\net8.0\Olympics.Metier.pdb
+G:\Examens\Olympics\Olympics.Metier\obj\Debug\net8.0\ref\Olympics.Metier.dll

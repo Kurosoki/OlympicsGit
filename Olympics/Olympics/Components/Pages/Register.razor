@@ -1,8 +1,62 @@
 @page "/register"
+@using Olympics.Metier.Business
+<PageTitle>S'inscrire</PageTitle>
 
-<PageTitle>Register</PageTitle>
-<RadzenRow>
+
+<RadzenRow Class="style-form-register-row">
     <RadzenColumn Size="12">
-        <RadzenText Text="Register" TextStyle="TextStyle.H3" TagName="TagName.H1" />
+   
+        <div class="style-form-register">
+            <RadzenTemplateForm TItem="cUtilisateurBase" Data="@user" Submit="@HandleSubmit">
+                <RadzenRow>
+                    <RadzenColumn Size="12">
+                        <RadzenText Text="S'inscrire" TextStyle="TextStyle.H3" TagName="TagName.H1" />
+                    </RadzenColumn>
+                </RadzenRow>
+
+                <RadzenRow Class="style-form-register-row">
+                    <RadzenColumn Size="6">
+                        <RadzenLabel Text="Prénom" />
+                        <RadzenTextBox @bind-Value="user.PrenomClient" Name="FirstName" Style="width:100%" />
+                        <RadzenRequiredValidator Component="FirstName" Text="Le prénom est obligatoire" />
+                    </RadzenColumn>
+                    <RadzenColumn Size="6">
+                        <RadzenLabel Text="Nom" />
+                        <RadzenTextBox @bind-Value="user.NomClient" Name="LastName" Style="width:100%" />
+                        <RadzenRequiredValidator Component="LastName" Text="Le nom de famille est obligatoire" />
+                    </RadzenColumn>
+                </RadzenRow>
+
+                <RadzenRow Class="style-form-register-row">
+                    <RadzenColumn Size="6">
+                        <RadzenLabel Text="Email" />
+                        <RadzenTextBox @bind-Value="user.EmailClient" Name="Email" Style="width:100%" />
+                        <RadzenRequiredValidator Component="Email" Text="L'email est obligatoire" />
+                        <RadzenEmailValidator Component="Email" Text="Entrez une adresse e-mail valide" />
+                    </RadzenColumn>
+                    <RadzenColumn Size="6">
+                        <RadzenLabel Text="Mot de passe" />
+                        <RadzenPassword @bind-Value="user.ShaMotDePasse" Name="Password" Style="width:100%" />
+                        <RadzenRequiredValidator Component="Password" Text="Le mot de passe est requis" />
+                        <RadzenCompareValidator Component="PasswordConfirm" Value="@(user.ShaMotDePasse)" Text="Les mots de passe ne correspondent pas" />
+                    </RadzenColumn>
+                </RadzenRow>
+
+                <RadzenRow Class="style-form-register-row">
+                    <RadzenColumn Size="6">
+                        <RadzenLabel Text="Confirmer le mot de passe" />
+                        <RadzenPassword @bind-Value="user.ShaMotDePasseVerif" Name="PasswordConfirm" Style="width:100%" />
+                        <RadzenRequiredValidator Component="PasswordConfirm" Text="Un mot de passe de confirmation est requis" />
+                        <RadzenCompareValidator Component="PasswordConfirm" Value="@(user.ShaMotDePasse)" Text="Les mots de passe ne correspondent pas" />
+                    </RadzenColumn>
+                </RadzenRow>
+
+                <RadzenRow>
+                    <RadzenColumn Size="12">
+                        <RadzenButton Text="S'inscrire" ButtonStyle="ButtonStyle.Primary" Type="Submit" Style="width:100%" />
+                    </RadzenColumn>
+                </RadzenRow>
+            </RadzenTemplateForm>
+        </div>
     </RadzenColumn>
 </RadzenRow>

@@ -407,35 +407,6 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
 }
 
 
-
-/* Login */
-
-.form-title{
-   position: absolute;
-   margin-top: 5%;
-   margin-left: 30%;
-}
-
-.login-container {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    height: 100vh; /* Hauteur de la vue */
-    background-color: #f5f5f5; /* Couleur de fond optionnelle */
-    padding: 20px; /* Ajoutez du padding si nécessaire */
-}
-
-.login-container .radzen-login {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour améliorer l'apparence */
-    border-radius: 8px; /* Coins arrondis */
-    background-color: #fff; /* Fond blanc pour le formulaire */
-    padding: 20px; /* Ajoute du padding interne */
-}
-
-/* Register */
-
-
-
  /* Billeterie */
 .billetterie-container {
     padding: 2rem;
@@ -607,4 +578,52 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
 
 .billetterie-card-add-button:hover {
     background-color: #012366;
+}
+
+
+/* Login */
+
+.form-title{
+   position: absolute;
+   margin-top: 5%;
+   margin-left: 30%;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100vh; /* Hauteur de la vue */
+    background-color: #f5f5f5; /* Couleur de fond optionnelle */
+    padding: 20px; /* Ajoutez du padding si nécessaire */
+}
+
+.login-container .radzen-login {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour améliorer l'apparence */
+    border-radius: 8px; /* Coins arrondis */
+    background-color: #fff; /* Fond blanc pour le formulaire */
+    padding: 20px; /* Ajoute du padding interne */
+}
+
+
+/* Register */
+
+/* Style for the entire form container */
+.style-form-register {
+    max-width: 600px; /* Maximum width of the form */
+    width: 100%; /* Ensure the form takes full width up to the maximum */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add padding around the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    background-color: #fff; 
+    border-radius: 5px; 
+    margin-top: 200px;
+}
+
+/* Style for centering the form rows */
+.style-form-register-row {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the content horizontally */
+    margin-bottom: 15px; /* Add spacing between rows */
+
 }

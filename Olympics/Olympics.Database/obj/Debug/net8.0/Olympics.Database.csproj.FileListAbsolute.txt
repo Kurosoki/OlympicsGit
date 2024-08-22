@@ -9,3 +9,14 @@ G:\Examens\Olympics.Database\obj\Debug\net8.0\Olympics.Database.dll
 G:\Examens\Olympics.Database\obj\Debug\net8.0\refint\Olympics.Database.dll
 G:\Examens\Olympics.Database\obj\Debug\net8.0\Olympics.Database.pdb
 G:\Examens\Olympics.Database\obj\Debug\net8.0\ref\Olympics.Database.dll
+G:\Examens\Olympics\Olympics.Database\bin\Debug\net8.0\Olympics.Database.deps.json
+G:\Examens\Olympics\Olympics.Database\bin\Debug\net8.0\Olympics.Database.dll
+G:\Examens\Olympics\Olympics.Database\bin\Debug\net8.0\Olympics.Database.pdb
+G:\Examens\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.GeneratedMSBuildEditorConfig.editorconfig
+G:\Examens\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.AssemblyInfoInputs.cache
+G:\Examens\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.AssemblyInfo.cs
+G:\Examens\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.csproj.CoreCompileInputs.cache
+G:\Examens\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.dll
+G:\Examens\Olympics\Olympics.Database\obj\Debug\net8.0\refint\Olympics.Database.dll
+G:\Examens\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.pdb
+G:\Examens\Olympics\Olympics.Database\obj\Debug\net8.0\ref\Olympics.Database.dll

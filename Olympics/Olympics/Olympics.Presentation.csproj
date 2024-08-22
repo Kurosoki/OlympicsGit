@@ -12,4 +12,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Radzen.Blazor" Version="*" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Olympics.Database\Olympics.Database.csproj" />
+    <ProjectReference Include="..\Olympics.Metier\Olympics.Metier.csproj" />
+  </ItemGroup>
 </Project>

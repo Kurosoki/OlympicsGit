@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
+using Olympics.Metier.Business;
 
 namespace Olympics.Presentation.Components.Pages
 {
@@ -29,5 +30,28 @@ namespace Olympics.Presentation.Components.Pages
 
         [Inject]
         protected NotificationService NotificationService { get; set; }
+
+
+
+        // Déclarez une instance de cUtilisateurBase
+        private cUtilisateurBase user = new cUtilisateurBase();
+
+
+        // Méthode pour gérer la soumission du formulaire
+        private void HandleSubmit()
+        {
+            // Logique de soumission, par exemple, enregistrer l'utilisateur
+        }
+
+
+
+
+
+
+
+
+
+
     }
+
 }

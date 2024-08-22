@@ -84,3 +84,7 @@ G:\Examens\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.dll
 G:\Examens\Olympics\Olympics\obj\Debug\net8.0\refint\Olympics.Presentation.dll
 G:\Examens\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.genruntimeconfig.cache
 G:\Examens\Olympics\Olympics\obj\Debug\net8.0\ref\Olympics.Presentation.dll
+G:\Examens\Olympics\Olympics\bin\Debug\net8.0\Olympics.Database.dll
+G:\Examens\Olympics\Olympics\bin\Debug\net8.0\Olympics.Metier.dll
+G:\Examens\Olympics\Olympics\bin\Debug\net8.0\Olympics.Database.pdb
+G:\Examens\Olympics\Olympics\bin\Debug\net8.0\Olympics.Metier.pdb
