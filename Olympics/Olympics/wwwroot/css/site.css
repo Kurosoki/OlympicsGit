@@ -580,50 +580,241 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
     background-color: #012366;
 }
 
-
 /* Login */
-
-.form-title{
-   position: absolute;
-   margin-top: 5%;
-   margin-left: 30%;
-}
-
+/* Styles pour centrer le formulaire de connexion */
 .login-container {
+    position: relative; /* Nécessaire pour le positionnement absolu de l'image de fond */
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    height: 100vh; /* Hauteur de la vue */
-    background-color: #f5f5f5; /* Couleur de fond optionnelle */
-    padding: 20px; /* Ajoutez du padding si nécessaire */
+    justify-content: center; /* Centre horizontalement le formulaire */
+    align-items: center; /* Centre verticalement le formulaire */
+    min-height: 100vh; /* Prend toute la hauteur de la vue */
+    background-color: black; /* Couleur de fond noire */
+    overflow: hidden; /* Assure que rien ne dépasse de la fenêtre */
+
 }
 
-.login-container .radzen-login {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour améliorer l'apparence */
-    border-radius: 8px; /* Coins arrondis */
-    background-color: #fff; /* Fond blanc pour le formulaire */
-    padding: 20px; /* Ajoute du padding interne */
+/* Formulaire de connexion */
+.style-form-login {
+    background: white; /* Couleur de fond du formulaire */
+    padding: 20px; /* Espacement interne */
+    border-radius: 4px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    width: 100%;
+    max-width: 700px; /* Largeur maximale du formulaire */
+    position: relative; /* Positionnement relatif pour s'assurer que l'image est derrière */
+    z-index: 2; /* Assure que le formulaire est au-dessus de l'image */
+    font-family: Prompt;
+    font-size: 16px;
 }
+
+/* Conteneur pour l'image de fond */
+.background-container {
+    position: absolute;
+    left: 0; /* Positionne l'image à gauche */
+    top: 0;
+    height: 100%;
+    width: 32%;
+    background-image: url('/images/sports/Jo-Login.jpg'); 
+    background-size: cover; /* Ajuste l'image pour couvrir le conteneur */
+    background-position: 60% center; /* Focalise davantage sur la partie droite de l'image */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    z-index: 0; /* Assure que l'image est derrière le formulaire */
+}
+.items-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+
+.items-password{
+    padding-top: 12px;
+}
+
+/* Style pour le bouton de connexion */
+.login-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    padding: 15px 30px; /* Augmente l'espace interne pour agrandir le bouton */
+    font-size: 16px; /* Taille de police plus grande pour le texte du bouton */
+    font-weight: bold; /* Texte en gras */
+    color: white; /* Couleur du texte du bouton */
+    background-color: black;
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+    width: 100%;
+    margin-top: 20px;
+    font-family: Prompt;
+    font-size: 20px;
+}
+
+.login-button:hover {
+    background-color: white; 
+    color: black;
+}
+
+.login-button:active {
+    background-color: #e91e63; 
+}
+
+
+.items-register {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    padding-top: 15px;
+    color: #e91e63;
+    font-family: Prompt;
+    font-size: 15px;
+}
+
+.items-register:hover {
+    color: black;
+}
+
+.items-mpcheckbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    padding-top: 15px; 
+}
+
+
+/* Style pour le texte reCAPTCHA */
+.recaptcha-text {
+    font-size: 13px;
+    color: black;
+    text-align: center;
+    margin-top: 20px; /* Espace entre les autres éléments et ce texte */
+    font-family: Prompt;
+}
+
+.recaptcha-text a:hover {
+    color: black;
+}
+
+
+/* Style pour le bouton de Déconnexion */
+.logout-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 15px 30px; /* Augmente l'espace interne pour agrandir le bouton */
+    font-size: 16px; /* Taille de police plus grande pour le texte du bouton */
+    font-weight: bold; /* Texte en gras */
+    color: white; /* Couleur du texte du bouton */
+    background-color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+    width: 100%;
+    margin-top: 20px;
+    font-family: Prompt;
+    font-size: 20px;
+}
+
+    .logout-button:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .logout-button:active {
+        background-color: #e91e63;
+    }
 
 
 /* Register */
 
-/* Style for the entire form container */
 .style-form-register {
-    max-width: 600px; /* Maximum width of the form */
-    width: 100%; /* Ensure the form takes full width up to the maximum */
-    margin: 0 auto; /* Center the form horizontally */
-    padding: 20px; /* Add padding around the form */
+    max-width: 600px; 
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 20px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     background-color: #fff; 
     border-radius: 5px; 
-    margin-top: 200px;
+    font-family: Prompt;
+    font-size: 16px;
 }
 
-/* Style for centering the form rows */
+/* Style pour centrer les lignes du formulaire */
 .style-form-register-row {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center the content horizontally */
-    margin-bottom: 15px; /* Add spacing between rows */
-
+    display: flex;
+    justify-content: center; /* Centrer le contenu horizontalement */
+    margin-bottom: 15px; 
 }
+
+.register-container{
+    position: relative; /* Nécessaire pour le positionnement absolu de l'image de fond */
+    display: flex;
+    justify-content: center; /* Centre horizontalement le formulaire */
+    align-items: center; /* Centre verticalement le formulaire */
+    min-height: 100vh; /* Prend toute la hauteur de la vue */
+    background-color: black; /* Couleur de fond noire */
+    overflow: hidden; /* Assure que rien ne dépasse de la fenêtre */
+}
+
+
+.background-container-register{
+    position: absolute;
+    left: 0; /* Positionne l'image à gauche */
+    top: 0;
+    height: 100%;
+    width: 32%;
+    background-image: url('/images/sports/ce.webp'); 
+    background-size: cover; /* Ajuste l'image pour couvrir le conteneur */
+    background-position: 60% center; /* Focalise davantage sur la partie droite de l'image */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    z-index: 0; /* Assure que l'image est derrière le formulaire */
+}
+
+
+.register-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    padding: 15px 30px; /* Augmente l'espace interne pour agrandir le bouton */
+    font-size: 16px; /* Taille de police plus grande pour le texte du bouton */
+    font-weight: bold; /* Texte en gras */
+    color: white; /* Couleur du texte du bouton */
+    background-color: black;
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+.register-button:hover {
+    background-color: white; 
+    color: black;
+}
+
+.register-button:active {
+    background-color: #e91e63; 
+}
+
+.items-title-register{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+}
+
+
+.register-text-terms {
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    font-family: Prompt;
+}
+
+.register-text-terms  a{
+    color: #e91e63;
+}
+
+.register-text-terms a:hover {
+    color: black;
+}
+

@@ -93,6 +93,14 @@
       "PackagePath": "staticwebassets\\images\\sports\\GymnastiqueArtistique.webp"
     },
     {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\Jo-Login.jpg",
+      "PackagePath": "staticwebassets\\images\\sports\\Jo-Login.jpg"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\JoLogin.jpeg",
+      "PackagePath": "staticwebassets\\images\\sports\\JoLogin.jpeg"
+    },
+    {
       "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\Judo.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\Judo.jpg"
     },
@@ -119,6 +127,10 @@
     {
       "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\WaterPolo.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\WaterPolo.jpg"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\ce.webp",
+      "PackagePath": "staticwebassets\\images\\sports\\ce.webp"
     },
     {
       "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\cheval.jpg",
@@ -167,6 +179,14 @@
     {
       "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoswimming.png",
       "PackagePath": "staticwebassets\\images\\sports\\pictoswimming.png"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\test.webp",
+      "PackagePath": "staticwebassets\\images\\sports\\test.webp"
+    },
+    {
+      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\tt.webp",
+      "PackagePath": "staticwebassets\\images\\sports\\tt.webp"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Olympics.Presentation.Microsoft.AspNetCore.StaticWebAssets.props",

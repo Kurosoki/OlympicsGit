@@ -1,30 +1,82 @@
 @page "/login"
+@using Olympics.Metier.Business
+@inject Olympics.Database.Services.UserService userService
 
 <PageTitle>Connexion</PageTitle>
 
-    <RadzenRow>
-        <RadzenColumn Size="12">
-            <RadzenText class="form-title" Text="Connexion" TextStyle="TextStyle.H3" TagName="TagName.H1" />
-        </RadzenColumn>
-    </RadzenRow>
-
 <div class="login-container">
+    <!-- Conteneur pour l'image de fond -->
+    <div class="background-container">
+    </div>     
+    
+    <div class="style-form-login">
+        <RadzenTemplateForm TItem="cUtilisateurConnexionBase" Data="@loginUser" Submit="@LoginUser">
+             <div class="items-title">
+            <RadzenRow>
+                <RadzenColumn Size="12">
+                    <RadzenText Text="Connexion" TextStyle="TextStyle.H3" TagName="TagName.H1" />
+                </RadzenColumn>
+            </RadzenRow>
+            </div>
 
-    <RadzenLogin 
-        Style="width: 636px; height: 428px" 
-        LoginText="Connexion" 
-        ResetPasswordText="Mot de passe oublié ?" 
-        RegisterMessageText="Vous n'avez pas encore de compte?" 
-        RegisterText="S'inscrire " 
-        RememberMe="true" 
-        Password="Mot de passe" 
-        PasswordAutoCompleteType="Radzen.Blazor.AutoCompleteType.CurrentPassword" 
-        AllowRememberMe="true" 
-        PasswordText="Mot de passe" 
-        RememberMeText="Se souvenir de moi" 
-        UserText="Email" 
-        UserNameAutoCompleteType="Radzen.Blazor.AutoCompleteType.Email" 
-        AutoComplete="true">
-    </RadzenLogin>
+            <RadzenRow>
+                <RadzenColumn Size="12">
+                    <RadzenLabel Text="Email" />
+                    <RadzenTextBox @bind-Value="loginUser.EmailClient" Name="Email" Style="width:100%" />
+                    <RadzenRequiredValidator Component="Email" Text="L'email est obligatoire" />
+                    <RadzenEmailValidator Component="Email" Text="Entrez une adresse e-mail valide" />
+                </RadzenColumn>
+            </RadzenRow>
+
+             <div class="items-password">
+            <RadzenRow>
+                <RadzenColumn Size="12">
+                    <RadzenLabel Text="Mot de passe" />
+                    <RadzenPassword @bind-Value="loginUser.ShaMotDePasse" Name="Password" Style="width:100%" />
+                    <RadzenRequiredValidator Component="Password" Text="Le mot de passe est requis" />
+                </RadzenColumn>
+            </RadzenRow>
+            </div>
+
+            <RadzenRow>
+                <RadzenColumn Size="12">
+                     <div class="items-mpcheckbox">
+                    <div class="items-remember">
+                            <input type="checkbox" @bind="loginUser.RememberMe" id="RememberMe" name="RememberMe" />    
+                            <label class ="checkbox-text" for="RememberMe">Se souvenir de moi</label>
+                    </div>
+                    <div class="items-lostpassword">
+                        <RadzenLink Click="@NavigateToForgotPassword" Text="Mot de passe oublié ?" />
+                    </div>
+                    </div>
+                </RadzenColumn>
+            </RadzenRow>
+
+            <!-- Le texte pour reCAPTCHA -->
+            <RadzenRow>
+                <RadzenColumn Size="12">
+                    <div class="recaptcha-text">
+                        Ce site est protégé par reCAPTCHA et la politique de confidentialité de Google
+                        <RadzenLink Target="_blank" Text="la politique de confidentialité" Url="https://policies.google.com/privacy" />
+                        et
+                        <RadzenLink Target="_blank" Text="les conditions d'utilisation" Url="https://policies.google.com/terms" />
+                        s'appliquent.
+                    </div>
+                </RadzenColumn>
+            </RadzenRow>
+
+            <RadzenRow>
+                <RadzenColumn Size="12">
+                        <RadzenButton class="login-button" Text="Connexion" Type="Submit" />
+                </RadzenColumn>
+            </RadzenRow>
+
+            <RadzenRow>
+                <RadzenColumn Size="12">
+                        <a class="items-register" href=" /register"> Vous n'avez pas encore de compte ? S'inscrire </a>
+                </RadzenColumn>
+            </RadzenRow>
+
+        </RadzenTemplateForm>
+    </div>
 </div>
-

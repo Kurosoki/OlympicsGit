@@ -1,14 +1,10 @@
-using System.Net.Http;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.AspNetCore.Components.Routing;
-using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Microsoft.JSInterop;
 using Radzen;
-using Radzen.Blazor;
+using Olympics.Presentation.ServicesAuthen;
+
+
 
 namespace Olympics.Presentation.Components.Layout
 {
@@ -32,20 +28,51 @@ namespace Olympics.Presentation.Components.Layout
         [Inject]
         protected NotificationService NotificationService { get; set; }
 
-        private bool sidebarExpanded = true;
+        [Inject]
+        private AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
-        void SidebarToggleClick()
+        [Inject]
+        private AuthenticationService AuthenticationService { get; set; }
+
+
+
+        private bool isLoggedIn;
+        private string userEmail;
+
+        protected override async Task OnInitializedAsync()
         {
-            sidebarExpanded = !sidebarExpanded;
+            // Vérifier si l'utilisateur est authentifié
+            var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            isLoggedIn = user.Identity.IsAuthenticated;
+
+            // Si connecté, obtenir l'email de l'utilisateur ( si on veut personaliser et afficher l'email usr ex bjr dia..)
+            if (isLoggedIn)
+            {
+                userEmail = user.Identity.Name; // Par exemple, récupérer l'email
+            }
         }
-        private void NavigateToAccueil()
+
+        private async Task OnLogout()
         {
+            await AuthenticationService.LogoutAsync();
             NavigationManager.NavigateTo("/");
         }
+
+
+
+
+
 
         private void NavigateToLogin()
         {
             NavigationManager.NavigateTo("/login");
+        }
+
+        private void NavigateToAccueil()
+        {
+            NavigationManager.NavigateTo("/");
         }
 
         private void NavigateToBilletterie()
@@ -55,7 +82,7 @@ namespace Olympics.Presentation.Components.Layout
 
         private void NavigateToPanier()
         {
-            NavigationManager.NavigateTo("/panier");
+            NavigationManager.NavigateTo("/panier"); //lorsque l'user clique sur btn payer rediriger vers la page de connexion
         }
 
     }

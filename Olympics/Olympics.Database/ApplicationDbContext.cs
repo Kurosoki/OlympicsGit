@@ -17,6 +17,20 @@ namespace Olympics.Database
 
         public DbSet<cUtilisateurBase> Utilisateurs { get; set; }
 
-        // Ajoutez d'autres DbSet pour d'autres entités si nécessaire
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<cUtilisateurBase>()
+                .HasKey(u => u.IDClient); // Configuration explicite de la clé primaire
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseNpgsql("Host=localhost;Database=DBOlympics;Username=Kurosoki;Password=Sensei971!");
+            }
+        }
+
+
     }
 }

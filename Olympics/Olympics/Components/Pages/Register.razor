@@ -1,24 +1,31 @@
 @page "/register"
 @using Olympics.Metier.Business
+@inject Olympics.Database.Services.UserService userService
+
 <PageTitle>S'inscrire</PageTitle>
 
 
+<div class="register-container">
+<!-- Conteneur pour l'image de fond -->
+<div class="background-container-register">
+</div>
 <RadzenRow Class="style-form-register-row">
     <RadzenColumn Size="12">
    
         <div class="style-form-register">
-            <RadzenTemplateForm TItem="cUtilisateurBase" Data="@user" Submit="@HandleSubmit">
+                <RadzenTemplateForm TItem="cUtilisateurBase" Data="@user" Submit="@RegisterUser">
+                    <div class="items-title-register">
                 <RadzenRow>
                     <RadzenColumn Size="12">
                         <RadzenText Text="S'inscrire" TextStyle="TextStyle.H3" TagName="TagName.H1" />
                     </RadzenColumn>
                 </RadzenRow>
-
+                    </div>
                 <RadzenRow Class="style-form-register-row">
                     <RadzenColumn Size="6">
-                        <RadzenLabel Text="PrÈnom" />
+                        <RadzenLabel Text="Pr√©nom" />
                         <RadzenTextBox @bind-Value="user.PrenomClient" Name="FirstName" Style="width:100%" />
-                        <RadzenRequiredValidator Component="FirstName" Text="Le prÈnom est obligatoire" />
+                        <RadzenRequiredValidator Component="FirstName" Text="Le pr√©nom est obligatoire" />
                     </RadzenColumn>
                     <RadzenColumn Size="6">
                         <RadzenLabel Text="Nom" />
@@ -51,12 +58,23 @@
                     </RadzenColumn>
                 </RadzenRow>
 
+                    <RadzenRow>
+                        <RadzenColumn Size="12">
+                            <label class="register-text-terms">
+                                <input type="checkbox" required>
+                                En cr√©ant votre compte, vous acceptez les <a href="lien_vers_termes_et_conditions" target="_blank">termes et conditions</a>.
+                            </label>
+                        </RadzenColumn>
+                    </RadzenRow>
+
+
                 <RadzenRow>
                     <RadzenColumn Size="12">
-                        <RadzenButton Text="S'inscrire" ButtonStyle="ButtonStyle.Primary" Type="Submit" Style="width:100%" />
+                        <RadzenButton class="register-button" Text="S'inscrire" ButtonStyle="ButtonStyle.Primary" Type="Submit" Style="width:100%" />
                     </RadzenColumn>
                 </RadzenRow>
             </RadzenTemplateForm>
         </div>
     </RadzenColumn>
 </RadzenRow>
+</div>

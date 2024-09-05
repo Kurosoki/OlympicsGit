@@ -9,26 +9,51 @@ namespace Olympics.Metier.Utils
 {
     public static class SecurityManager
     {
-        public static string HashPasswordSHA512(string password)
+
+        public static string GenerateSalt(int size = 16)
         {
-            //On crypte le mot de passe en SHA512
-            //On utilise un salt pour rendre le hash plus sécurisé
-            //On utilise UTF8 pour encoder le mot de passe en bytes
-            //On utilise un StringBuilder pour convertir le hash en hexadécimal
-            //On retourne le hash en hexadécimal                   
+            // Génère un salt aléatoire
+            byte[] saltBytes = new byte[size];
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                rng.GetBytes(saltBytes);
+            }
+            return Convert.ToBase64String(saltBytes);
+        }
+
+
+        public static string HashPasswordSHA512(string password, string salt)
+        {   
+            // Concaténer le mot de passe et le salt
+            string saltedPassword = password + salt;
+
+            // Hacher le mot de passe salé avec SHA-512
             using (SHA512 sha512 = SHA512.Create())
             {
-                byte[] bytes = Encoding.UTF8.GetBytes(password);
-                byte[] hash = sha512.ComputeHash(bytes);
+                byte[] bytes = Encoding.UTF8.GetBytes(saltedPassword); // On encode le mot de passe en UTF-8 en une séquence d'octets.
+                byte[] hash = sha512.ComputeHash(bytes); // On hache les octets du mot de passe en utilisant SHA-512.
 
                 StringBuilder stringBuilder = new StringBuilder();
                 foreach (byte b in hash)
                 {
-                    stringBuilder.Append(b.ToString("x2")); // Convertir en hexadécimal
+                    stringBuilder.Append(b.ToString("x2")); // On convertit chaque octet en une chaîne hexadécimale et l'ajoute au StringBuilder.
                 }
 
-                return stringBuilder.ToString();
+                return stringBuilder.ToString(); // On retourne la chaîne hexadécimale représentant le hash.
             }
+
         }
+
+        public static bool VerifyPassword(string enteredPassword, string storedHash, string storedSalt)
+        {
+            // Hachez le mot de passe entré par l'utilisateur en utilisant le même salt
+            string hashOfEnteredPassword = HashPasswordSHA512(enteredPassword, storedSalt);
+
+            // Comparez le hash du mot de passe entré avec le hash stocké
+            return hashOfEnteredPassword.Equals(storedHash);
+        }
+
+
+
     }
 }
