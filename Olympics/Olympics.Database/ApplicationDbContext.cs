@@ -8,7 +8,8 @@ using Olympics.Metier.Business;
 
 namespace Olympics.Database
 {
-    public class ApplicationDbContext : DbContext
+    //ApplicationDbContext hérite de DbContext, qui est la classe de base pour toutes les interactions avec la base de données.
+    public class ApplicationDbContext : DbContext 
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -16,11 +17,26 @@ namespace Olympics.Database
         }
 
         public DbSet<cUtilisateurBase> Utilisateurs { get; set; }
+        public DbSet<cPanierBase> Panier { get; set; }
+        public DbSet<cTicket> Tickets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<cUtilisateurBase>()
                 .HasKey(u => u.IDClient); // Configuration explicite de la clé primaire
+
+            modelBuilder.Entity<cPanierBase>()
+                .HasKey(p => p.IDPanier);
+
+            modelBuilder.Entity<cPanierBase>()
+                .HasMany(p => p.Tickets)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade); 
+            // La suppression en cascade est configurée pour que les tickets associés
+            // à un panier soient également supprimés lorsque le panier est supprimé.
+
+            modelBuilder.Entity<cTicket>()
+                .HasKey(t => t.IDTicket);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

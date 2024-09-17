@@ -32,14 +32,17 @@ namespace Olympics.Presentation.Components.Pages
         [Inject]
         protected NotificationService NotificationService { get; set; }
 
+        [Inject]
+        private ILogger<Login> _logger { get; set; }
+
 
         private cUtilisateurConnexionBase loginUser = new cUtilisateurConnexionBase();
+
 
         private bool loginFailed = false;
 
         private async Task LoginUser()
         {
-            // Valider que l'e-mail a un format valide
             if (!EstEmailValide(loginUser.EmailClient))
             {
                 loginFailed = true;
@@ -47,21 +50,30 @@ namespace Olympics.Presentation.Components.Pages
                 return;
             }
 
-            // Essayer de se connecter avec les informations fournies
-            var result = await userService.LoginUserAsync(loginUser);
-
-            if (result)
+            try
             {
-                NotificationService.Notify(NotificationSeverity.Success, "Succès", "Connexion réussie.");
-                NavigationManager.NavigateTo("/");
+                var result = await userService.LoginUserAsync(loginUser);
+
+                if (result)
+                {
+                    NotificationService.Notify(NotificationSeverity.Success, "Succès", "Connexion réussie.");
+                    NavigationManager.NavigateTo("/");
+                }
+                else
+                {
+                    loginFailed = true;
+                    NotificationService.Notify(NotificationSeverity.Error, "Erreur", "Le mot de passe n'est pas correct.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                loginFailed = true;
-                NotificationService.Notify(NotificationSeverity.Error, "Erreur", "Le mot de passe n'est pas correct.");
-
+                // Log the exception and notify the user
+                var logger = _logger ?? throw new InvalidOperationException("Logger not initialized.");
+                logger.LogError(ex, "An error occurred during login.");
+                NotificationService.Notify(NotificationSeverity.Error, "Erreur", "Une erreur est survenue lors de la connexion.");
             }
         }
+
 
         private bool EstEmailValide(string emailUtilisateur)
         {

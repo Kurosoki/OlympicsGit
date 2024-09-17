@@ -1,30 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "G:\\Examens\\Olympics\\",
+  "WorkspaceRootPath": "G:\\Examens\\RecupOlympics\\Olympics\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\olympics\\olympics\\servicesauthen\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\servicesauthen\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{088B87B2-B29E-4826-8213-495124834E42}|Olympics.Metier\\Olympics.Metier.csproj|g:\\examens\\recupolympics\\olympics\\olympics.metier\\business\\cpanierbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{088B87B2-B29E-4826-8213-495124834E42}|Olympics.Metier\\Olympics.Metier.csproj|solutionrelative:olympics.metier\\business\\cpanierbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\olympics\\olympics\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|g:\\examens\\recupolympics\\olympics\\olympics.database\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|solutionrelative:olympics.database\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|g:\\examens\\olympics\\olympics.database\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|solutionrelative:olympics.database\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|g:\\examens\\recupolympics\\olympics\\olympics.database\\services\\panierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|solutionrelative:olympics.database\\services\\panierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\olympics\\olympics\\components\\pages\\login.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\pages\\login.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\olympics\\olympics\\components\\layout\\mainlayout.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\layout\\mainlayout.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\olympics\\olympics\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\recupolympics\\olympics\\olympics\\components\\pages\\billetterie.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\pages\\billetterie.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Database\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Olympics.Database\\ApplicationDbContext.cs",
+              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Database\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Olympics.Database\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAqwCMAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T15:47:03.181Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -43,79 +48,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "G:\\Examens\\Olympics\\Olympics.Database\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Olympics.Database\\Services\\UserService.cs",
-              "ToolTip": "G:\\Examens\\Olympics\\Olympics.Database\\Services\\UserService.cs",
-              "RelativeToolTip": "Olympics.Database\\Services\\UserService.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAiwDQAAAAuAAAA",
+              "Title": "PanierService.cs",
+              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Database\\Services\\PanierService.cs",
+              "RelativeDocumentMoniker": "Olympics.Database\\Services\\PanierService.cs",
+              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Database\\Services\\PanierService.cs",
+              "RelativeToolTip": "Olympics.Database\\Services\\PanierService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T15:15:09.599Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.razor.cs",
-              "DocumentMoniker": "G:\\Examens\\Olympics\\Olympics\\Components\\Pages\\Login.razor.cs",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Login.razor.cs",
-              "ToolTip": "G:\\Examens\\Olympics\\Olympics\\Components\\Pages\\Login.razor.cs",
-              "RelativeToolTip": "Olympics\\Components\\Pages\\Login.razor.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAQwDIAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T14:59:32.322Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "G:\\Examens\\Olympics\\Olympics\\Program.cs",
-              "RelativeDocumentMoniker": "Olympics\\Program.cs",
-              "ToolTip": "G:\\Examens\\Olympics\\Olympics\\Program.cs",
-              "RelativeToolTip": "Olympics\\Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T14:36:41.278Z",
+              "WhenOpened": "2024-09-17T14:32:43.898Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "G:\\Examens\\Olympics\\Olympics\\ServicesAuthen\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "Olympics\\ServicesAuthen\\AuthenticationService.cs",
-              "ToolTip": "G:\\Examens\\Olympics\\Olympics\\ServicesAuthen\\AuthenticationService.cs",
-              "RelativeToolTip": "Olympics\\ServicesAuthen\\AuthenticationService.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAwCEAAAAnAAAA",
+              "Title": "cPanierBase.cs",
+              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Metier\\Business\\cPanierBase.cs",
+              "RelativeDocumentMoniker": "Olympics.Metier\\Business\\cPanierBase.cs",
+              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Metier\\Business\\cPanierBase.cs",
+              "RelativeToolTip": "Olympics.Metier\\Business\\cPanierBase.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T14:35:18.979Z",
+              "WhenOpened": "2024-09-17T14:08:13.97Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MainLayout.razor.cs",
-              "DocumentMoniker": "G:\\Examens\\Olympics\\Olympics\\Components\\Layout\\MainLayout.razor.cs",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Layout\\MainLayout.razor.cs",
-              "ToolTip": "G:\\Examens\\Olympics\\Olympics\\Components\\Layout\\MainLayout.razor.cs",
-              "RelativeToolTip": "Olympics\\Components\\Layout\\MainLayout.razor.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAcwDEAAAB8AAAA",
+              "DocumentIndex": 3,
+              "Title": "Billetterie.razor.cs",
+              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Billetterie.razor.cs",
+              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Billetterie.razor.cs",
+              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Billetterie.razor.cs",
+              "RelativeToolTip": "Olympics\\Components\\Pages\\Billetterie.razor.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAiwBAAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-03T12:55:44.667Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "G:\\Examens\\Olympics\\Olympics\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "G:\\Examens\\Olympics\\Olympics\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "Olympics\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABQAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-05T14:16:13.455Z",
+              "WhenOpened": "2024-09-17T14:01:34.268Z",
               "EditorCaption": ""
             }
           ]

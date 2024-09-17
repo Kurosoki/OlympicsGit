@@ -1,191 +1,191 @@
 {
   "Files": [
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\css\\material-base.css",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\css\\material-base.css",
       "PackagePath": "staticwebassets\\css\\material-base.css"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\css\\site.css",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\favicon-16x16.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\favicon-16x16.png",
       "PackagePath": "staticwebassets\\favicon-16x16.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\favicon-32x32.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\favicon-32x32.png",
       "PackagePath": "staticwebassets\\favicon-32x32.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\favicon.ico",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Paris\\Paris2024-Variable.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Paris\\Paris2024-Variable.ttf",
       "PackagePath": "staticwebassets\\fonts\\Paris\\Paris2024-Variable.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Black.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Black.ttf",
       "PackagePath": "staticwebassets\\fonts\\Prompt\\Prompt-Black.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Bold.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Bold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Prompt\\Prompt-Bold.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-ExtraBold.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-ExtraBold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Prompt\\Prompt-ExtraBold.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-ExtraLight.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-ExtraLight.ttf",
       "PackagePath": "staticwebassets\\fonts\\Prompt\\Prompt-ExtraLight.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Light.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Light.ttf",
       "PackagePath": "staticwebassets\\fonts\\Prompt\\Prompt-Light.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Medium.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Medium.ttf",
       "PackagePath": "staticwebassets\\fonts\\Prompt\\Prompt-Medium.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Regular.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Regular.ttf",
       "PackagePath": "staticwebassets\\fonts\\Prompt\\Prompt-Regular.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-SemiBold.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-SemiBold.ttf",
       "PackagePath": "staticwebassets\\fonts\\Prompt\\Prompt-SemiBold.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Thin.ttf",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Prompt\\Prompt-Thin.ttf",
       "PackagePath": "staticwebassets\\fonts\\Prompt\\Prompt-Thin.ttf"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\LogoJO2024white.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\LogoJO2024white.png",
       "PackagePath": "staticwebassets\\images\\LogoJO2024white.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\Logo_JO.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\Logo_JO.png",
       "PackagePath": "staticwebassets\\images\\Logo_JO.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\icons\\TEST.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\icons\\TEST.png",
       "PackagePath": "staticwebassets\\images\\icons\\TEST.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\Athletisme.webp",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\Athletisme.webp",
       "PackagePath": "staticwebassets\\images\\sports\\Athletisme.webp"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\Escrime.webp",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\Escrime.webp",
       "PackagePath": "staticwebassets\\images\\sports\\Escrime.webp"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\GymnastiqueArtistique.webp",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\GymnastiqueArtistique.webp",
       "PackagePath": "staticwebassets\\images\\sports\\GymnastiqueArtistique.webp"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\Jo-Login.jpg",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\Jo-Login.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\Jo-Login.jpg"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\JoLogin.jpeg",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\JoLogin.jpeg",
       "PackagePath": "staticwebassets\\images\\sports\\JoLogin.jpeg"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\Judo.jpg",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\Judo.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\Judo.jpg"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\Natation.webp",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\Natation.webp",
       "PackagePath": "staticwebassets\\images\\sports\\Natation.webp"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\SportsEquestres.jpg",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\SportsEquestres.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\SportsEquestres.jpg"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\Tir-a-la-carabine.jpg",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\Tir-a-la-carabine.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\Tir-a-la-carabine.jpg"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\TirALArc.webp",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\TirALArc.webp",
       "PackagePath": "staticwebassets\\images\\sports\\TirALArc.webp"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\VolleyBall.webp",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\VolleyBall.webp",
       "PackagePath": "staticwebassets\\images\\sports\\VolleyBall.webp"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\WaterPolo.jpg",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\WaterPolo.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\WaterPolo.jpg"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\ce.webp",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\ce.webp",
       "PackagePath": "staticwebassets\\images\\sports\\ce.webp"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\cheval.jpg",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\cheval.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\cheval.jpg"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\cloche-gold.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\cloche-gold.png",
       "PackagePath": "staticwebassets\\images\\sports\\cloche-gold.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\j.jpg",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\j.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\j.jpg"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\o.jpg",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\o.jpg",
       "PackagePath": "staticwebassets\\images\\sports\\o.jpg"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoarchery.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoarchery.png",
       "PackagePath": "staticwebassets\\images\\sports\\pictoarchery.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoathletics.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoathletics.png",
       "PackagePath": "staticwebassets\\images\\sports\\pictoathletics.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictobeachvolley.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictobeachvolley.png",
       "PackagePath": "staticwebassets\\images\\sports\\pictobeachvolley.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoequestriandressage.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoequestriandressage.png",
       "PackagePath": "staticwebassets\\images\\sports\\pictoequestriandressage.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictofencing.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictofencing.png",
       "PackagePath": "staticwebassets\\images\\sports\\pictofencing.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictojudo.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictojudo.png",
       "PackagePath": "staticwebassets\\images\\sports\\pictojudo.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictorythmicgymnastic.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictorythmicgymnastic.png",
       "PackagePath": "staticwebassets\\images\\sports\\pictorythmicgymnastic.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoswimming.png",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\pictoswimming.png",
       "PackagePath": "staticwebassets\\images\\sports\\pictoswimming.png"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\test.webp",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\test.webp",
       "PackagePath": "staticwebassets\\images\\sports\\test.webp"
     },
     {
-      "Id": "G:\\Examens\\Olympics\\Olympics\\wwwroot\\images\\sports\\tt.webp",
+      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\tt.webp",
       "PackagePath": "staticwebassets\\images\\sports\\tt.webp"
     },
     {

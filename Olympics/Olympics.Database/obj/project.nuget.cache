@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B5Mje2cnMFuEx9Ud7M6pHUeBLPHzZY6RQ1PAgfiQWUcdG1GDm7vg3WXxXTPAzEMHYrHqgg+0eL/gKf9F3ZHsJQ==",
+  "dgSpecHash": "WO+AdSTh6XR42ehulS1MmDxJy3evoQUhdcVkpGInYYnZ+GzYPW8719DYxRvrB6nQG/gji3q1Md7oXbtDPA2FkA==",
   "success": true,
-  "projectFilePath": "G:\\Examens\\Olympics\\Olympics.Database\\Olympics.Database.csproj",
+  "projectFilePath": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Database\\Olympics.Database.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diama\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\diama\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

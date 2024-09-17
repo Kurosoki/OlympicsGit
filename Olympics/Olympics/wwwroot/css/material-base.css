@@ -12305,13 +12305,13 @@ input {
     color: var(--rz-footer-color);
 }
 
-    .rz-footer.fixed {
+    /* .rz-footer.fixed {
         position: fixed;
         z-index: var(--rz-footer-z);
         bottom: 0;
         left: 0;
         right: 0;
-    }
+    } */
 
 :root {
     --rz-sidebar-z: 1;

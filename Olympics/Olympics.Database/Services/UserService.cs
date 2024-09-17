@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Olympics.Metier.Business;
 using Olympics.Metier.Utils;
 using System.Security.Claims;
@@ -14,12 +16,21 @@ namespace Olympics.Database.Services
     {
         private readonly ApplicationDbContext _context;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ILogger<UserService> _logger;
 
-        public UserService(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor)
+        public UserService(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<UserService> logger)
         {
             _context = context;
             _httpContextAccessor = httpContextAccessor;
+            _logger = logger;
         }
+
+        public string GenerateUniqueKey()
+        {
+
+            return Guid.NewGuid().ToString();
+        }
+
 
         public async Task<bool> RegisterUserAsync(cUtilisateurBase user)
         {
@@ -43,6 +54,9 @@ namespace Olympics.Database.Services
             // Enregistrez le salt avec l'utilisateur pour la vérification future
             user.Salt = salt;
 
+            // Générer la clé unique lors de la création de l'utilisateur
+            user.Key = GenerateUniqueKey();
+
             // Ajouter l'utilisateur à la base de données
             _context.Utilisateurs.Add(user);
             await _context.SaveChangesAsync();
@@ -52,7 +66,6 @@ namespace Olympics.Database.Services
 
         public async Task<bool> LoginUserAsync(cUtilisateurConnexionBase loginUser)
         {
-            var httpContext = _httpContextAccessor.HttpContext;
             var utilisateur = await _context.Utilisateurs
                 .FirstOrDefaultAsync(u => u.EmailClient == loginUser.EmailClient);
 
@@ -62,27 +75,60 @@ namespace Olympics.Database.Services
             }
 
             bool isPasswordValid = SecurityManager.VerifyPassword(loginUser.ShaMotDePasse, utilisateur.ShaMotDePasse, utilisateur.Salt);
+
             if (isPasswordValid)
             {
-                var claims = ClaimsManager.GenerateUserClaims(utilisateur.EmailClient, utilisateur.RoleUtilisateur.ToString());
+                // Si le mot de passe est correct, connecter l'utilisateur
+                await SignInUserAsync(utilisateur, loginUser.RememberMe);  // Appeler la méthode de session
 
-                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-                await httpContext.SignInAsync(
-                    CookieAuthenticationDefaults.AuthenticationScheme,
-                    new ClaimsPrincipal(claimsIdentity),
-                    new AuthenticationProperties
-                    {
-                        IsPersistent = loginUser.RememberMe, // Gère la persistance du cookie
-                        ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(60) // Expire après 60 minutes
-                    });
-
-                return true;
+                return true;  // L'utilisateur est connecté
             }
 
             return false;
-
-
         }
+
+
+        // Méthode pour créer une session utilisateur
+        public async Task SignInUserAsync(cUtilisateurBase utilisateur, bool rememberMe)
+        {
+            var httpContext = _httpContextAccessor.HttpContext;
+
+            if (httpContext == null)
+            {
+                throw new InvalidOperationException("HttpContext is null.");
+            }
+
+            // Vérifier si la réponse a déjà commencé
+            if (!httpContext.Response.HasStarted)
+            {
+                var claims = ClaimsManager.GenerateUserClaims(utilisateur.EmailClient, utilisateur.RoleUtilisateur.ToString());
+
+
+                // Créer une identité avec ces claims
+                var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+                // Options d'authentification
+                var authProperties = new AuthenticationProperties
+                {
+                    IsPersistent = rememberMe,
+                    ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(60)
+                };
+
+                // Connexion de l'utilisateur
+                await httpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(claimsIdentity),
+                    authProperties
+                );
+            }
+            //else
+            //{
+            //    // Logger l'erreur si la réponse a déjà commencé
+            //    _logger.LogWarning("Impossible de définir le cookie, la réponse a déjà commencé.");
+            //}
+        }
+
+
+
     }
 }

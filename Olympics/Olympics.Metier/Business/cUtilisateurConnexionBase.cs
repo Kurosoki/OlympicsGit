@@ -9,6 +9,7 @@ namespace Olympics.Metier.Business
 {
     public class cUtilisateurConnexionBase
     {
+
         [Required]
         [EmailAddress]
         public string EmailClient { get; set; }
@@ -17,7 +18,5 @@ namespace Olympics.Metier.Business
         public string ShaMotDePasse { get; set; }
 
         public bool RememberMe { get; set; }
-
-
     }
 }

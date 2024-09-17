@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
+using Olympics.Metier.Utils;
+
 
 namespace Olympics.Presentation.Components.Pages
 {
+
     public partial class Billetterie
     {
         [Inject]
@@ -31,13 +34,6 @@ namespace Olympics.Presentation.Components.Pages
         protected NotificationService NotificationService { get; set; }
 
 
-        enum TicketType
-        {
-            Solo,
-            Family,
-            Duo
-        }
-
         public class SportTicket
         {
             public string SportName { get; set; }
@@ -55,79 +51,79 @@ namespace Olympics.Presentation.Components.Pages
 {
     new SportTicket
     {
-        SportName = "Athlétisme",
-        QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
+         SportName = "Athlétisme",
+         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
     new SportTicket
     {
-        SportName = "Tir à L'Arc",
-        QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 50.0m, PriceDuo = 100.0m, PriceFamily = 200.0m
+         SportName = "Tir à L'Arc",
+         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
+         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
 
       new SportTicket
     {
-        SportName = "Judo",
-        QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
+         SportName = "Judo",
+         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
     new SportTicket
     {
-        SportName = "Gymnastique Artistique",
-        QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 50.0m, PriceDuo = 100.0m, PriceFamily = 200.0m
+         SportName = "Gymnastique Artistique",
+         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
+         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
 
       new SportTicket
     {
-        SportName = "Natation",
-        QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
+         SportName = "Natation",
+         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
     new SportTicket
     {
-        SportName = "Sports Équestres",
-        QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 50.0m, PriceDuo = 100.0m, PriceFamily = 200.0m
+         SportName = "Sports Équestres",
+         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
+         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
       new SportTicket
     {
-        SportName = "Escrime",
-        QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
+         SportName = "Escrime",
+         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
     new SportTicket
     {
-        SportName = "Tir",
-        QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 50.0m, PriceDuo = 100.0m, PriceFamily = 200.0m
+         SportName = "Tir",
+         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
+         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
         new SportTicket
     {
-        SportName = "Volleyball de plage",
-        QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 50.0m, PriceDuo = 100.0m, PriceFamily = 200.0m
+         SportName = "Volleyball de plage",
+         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
+         PriceSolo = 50.0m, PriceDuo = 120.0m, PriceFamily = 200.0m
     },
 
 };
 
 
-        private void DecreaseQuantity(SportTicket sport, TicketType ticketType)
+        private void DecreaseQuantity(SportTicket sport, TicketTypeManager.TicketType ticketType)
         {
             switch (ticketType)
             {
-                case TicketType.Solo:
+                case TicketTypeManager.TicketType.Solo:
                     if (sport.QuantitySolo > 0)
                         sport.QuantitySolo--;
                     break;
 
-                case TicketType.Duo:
+                case TicketTypeManager.TicketType.Duo:
                     if (sport.QuantityDuo > 0)
                         sport.QuantityDuo--;
                     break;
 
-                case TicketType.Family:
+                case TicketTypeManager.TicketType.Family:
                     if (sport.QuantityFamily > 0)
                         sport.QuantityFamily--;
                     break;
@@ -137,18 +133,19 @@ namespace Olympics.Presentation.Components.Pages
             }
         }
 
-        private void IncreaseQuantity(SportTicket sport, TicketType ticketType)
+        private void IncreaseQuantity(SportTicket sport, TicketTypeManager.TicketType ticketType)
         {
             switch (ticketType)
             {
-                case TicketType.Solo:
+                case TicketTypeManager.TicketType.Solo:
                     sport.QuantitySolo++;
                     break;
 
-                case TicketType.Duo:
+                case TicketTypeManager.TicketType.Duo:
                     sport.QuantityDuo++;
                     break;
-                case TicketType.Family:
+
+                case TicketTypeManager.TicketType.Family:
                     sport.QuantityFamily++;
                     break;
 
@@ -156,6 +153,7 @@ namespace Olympics.Presentation.Components.Pages
                     break;
             }
         }
+
 
     }
 }

@@ -1,16 +1,14 @@
 @inherits LayoutComponentBase
-
-
 <RadzenComponents />
 
-<RadzenLayout style="display: grid; grid-template-areas: 'rz-barreNavigation' 'rz-body' 'rz-footer'; grid-template-columns: 1fr; grid-template-rows: auto 1fr auto;">
-
-
-    <!-- Barre de Navigation -->
-    <div class="rz-barreNavigation" style="grid-area: rz-barreNavigation;">
+<RadzenLayout class="layout-body">
+ 
+ 
+  <!-- Barre de Navigation -->
+  <div class="rz-barreNavigation" >
         <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Center" Gap="0">
             <RadzenColumn Size="4">
-                <RadzenButton class="btn-menu btn-accueil" Click="@NavigateToAccueil">Accueil</RadzenButton>
+                <RadzenButton class="btn-menu btn-accueil" Click="@NavigateToAccueil" >Accueil</RadzenButton>
                 <RadzenButton class="btn-menu" Click="@NavigateToBilletterie">Billetterie</RadzenButton>
 
             </RadzenColumn>
@@ -23,24 +21,14 @@
             <RadzenColumn Size="4">
                 <RadzenStack AlignItems="AlignItems.Center" Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
                     <RadzenButton class="btn-menu" Click="@NavigateToPanier">Panier</RadzenButton>
-
-                    @if (isLoggedIn)
-                    {
-                        <RadzenButton class="btn-menu btn-logout" Click="@OnLogout">D�connexion</RadzenButton>
-                    }
-
-                    else
-                    {
-                        <RadzenButton class="btn-menu btn-login" Click="@NavigateToLogin">Connexion / Inscription</RadzenButton>
-                    }
-
+                    <RadzenButton class="btn-menu btn-login" Click="@NavigateToLogin">Connexion / Inscription</RadzenButton>
                 </RadzenStack>
             </RadzenColumn>
         </RadzenRow>
     </div>
 
-    <!-- Body-->
-    <RadzenBody style="grid-area: rz-body;">
+<!-- Body-->
+    <RadzenBody >
         <RadzenRow>
             <RadzenColumn Size="12">
                 @Body
@@ -48,8 +36,50 @@
         </RadzenRow>
     </RadzenBody>
 
-    <!-- Footer -->
+<!-- Footer -->
+<RadzenFooter class="footer">
+    <RadzenRow>
 
+        <!-- Colonne pour le logo -->
+        <RadzenColumn Size="12" SizeMD="2" class="footer-logo">
+            <RadzenImage Path="images/LogoJO2024white.png" AlternateText="Logo" class="footer-logo-image"></RadzenImage>
+        </RadzenColumn>
 
+        <!-- Colonne pour les liens Accueil et Sports -->
+        <RadzenColumn Size="12" SizeMD="2" class="footer-links">
+            <RadzenText class="footer-title">Jeux Olympiques</RadzenText>
+            <RadzenLink Text="Accueil" Path="/" class="footer-link"></RadzenLink>
+            <RadzenLink Text="Sports" Path="/sports" class="footer-link"></RadzenLink>
+        </RadzenColumn>
+
+        <!-- Colonne pour les liens Célébrer les Jeux -->
+        <RadzenColumn Size="12" SizeMD="2" class="footer-links">
+            <RadzenText class="footer-title">Célébrer les Jeux</RadzenText>
+        </RadzenColumn>
+
+        <!-- Colonne pour les liens Spectateurs -->
+        <RadzenColumn Size="12" SizeMD="2" class="footer-links">
+            <RadzenText class="footer-title">Spectateurs</RadzenText>
+            <RadzenLink Text="Billetterie" Path="/Billetterie" class="footer-link"></RadzenLink>
+        </RadzenColumn>
+        
+        <!-- Colonne pour les liens Relais de la Flamme Olympique -->
+        <RadzenColumn Size="12" SizeMD="2" class="footer-links">
+            <RadzenText class="footer-title">Relais de la Flamme Olympique</RadzenText>
+        </RadzenColumn>
+
+        <!-- Colonne pour les RGPD et texte-->
+        <RadzenColumn Size="12" SizeMD="12">
+            <hr class="long-footer" />
+            <div class="footer-rgpd">
+                <RadzenLink Text="Politique de confidentialité" Path="" class="footer-rgpd-link"></RadzenLink>
+                <RadzenLink Text="Conditions d'utilisation" Path="" class="footer-rgpd-link"></RadzenLink>
+                <RadzenLink Text="Politique des cookies" Path="" class="footer-rgpd-link"></RadzenLink>
+                <RadzenText class="copyright">Copyright 2024. Tous droits réservés</RadzenText>
+            </div>
+        </RadzenColumn>
+    </RadzenRow>
+</RadzenFooter>
 </RadzenLayout>
+
 
