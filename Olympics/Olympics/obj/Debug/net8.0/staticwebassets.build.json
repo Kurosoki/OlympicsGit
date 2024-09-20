@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UGSp1M0rFK69iXPNxCDImzBMhNqx0krxtAU943xv0ug=",
+  "Hash": "aD1C5/ZdlzcZNeC+8agtEUt/qegyzdzy9RUJzIlldmM=",
   "Source": "Olympics.Presentation",
   "BasePath": "_content/Olympics.Presentation",
   "Mode": "Default",
@@ -17,10 +17,10 @@
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\css\\all.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\css\\all.css",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/css/all.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\css\\all.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\css\\all.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\css\\all.min.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\css\\all.min.css",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/css/all.min.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\css\\all.min.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\css\\all.min.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.eot",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.eot",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-brands-400.eot",
       "AssetKind": "All",
@@ -71,13 +71,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.eot"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.eot"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.svg",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.svg",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-brands-400.svg",
       "AssetKind": "All",
@@ -90,13 +90,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.svg"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.svg"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.ttf",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.ttf",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-brands-400.ttf",
       "AssetKind": "All",
@@ -109,13 +109,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.ttf"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.ttf"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.woff",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.woff",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-brands-400.woff",
       "AssetKind": "All",
@@ -128,13 +128,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.woff"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.woff"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.woff2",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-brands-400.woff2",
       "AssetKind": "All",
@@ -147,13 +147,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-brands-400.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-brands-400.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.eot",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.eot",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-regular-400.eot",
       "AssetKind": "All",
@@ -166,13 +166,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.eot"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.eot"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.svg",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.svg",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-regular-400.svg",
       "AssetKind": "All",
@@ -185,13 +185,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.svg"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.svg"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.ttf",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.ttf",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-regular-400.ttf",
       "AssetKind": "All",
@@ -204,13 +204,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.ttf"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.ttf"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.woff",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.woff",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-regular-400.woff",
       "AssetKind": "All",
@@ -223,13 +223,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.woff"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.woff"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.woff2",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-regular-400.woff2",
       "AssetKind": "All",
@@ -242,13 +242,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-regular-400.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-regular-400.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.eot",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.eot",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-solid-900.eot",
       "AssetKind": "All",
@@ -261,13 +261,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.eot"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.eot"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.svg",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.svg",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-solid-900.svg",
       "AssetKind": "All",
@@ -280,13 +280,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.svg"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.svg"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.ttf",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.ttf",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-solid-900.ttf",
       "AssetKind": "All",
@@ -299,13 +299,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.ttf"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.ttf"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.woff",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.woff",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-solid-900.woff",
       "AssetKind": "All",
@@ -318,13 +318,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.woff"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.woff"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.woff2",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v5/webfonts/fa-solid-900.woff2",
       "AssetKind": "All",
@@ -337,13 +337,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v5\\webfonts\\fa-solid-900.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v5\\webfonts\\fa-solid-900.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\css\\all.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\css\\all.css",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/css/all.css",
       "AssetKind": "All",
@@ -356,13 +356,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\css\\all.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\css\\all.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\css\\all.min.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\css\\all.min.css",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/css/all.min.css",
       "AssetKind": "All",
@@ -375,13 +375,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\css\\all.min.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\css\\all.min.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-brands-400.ttf",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-brands-400.ttf",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/webfonts/fa-brands-400.ttf",
       "AssetKind": "All",
@@ -394,13 +394,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-brands-400.ttf"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-brands-400.ttf"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-brands-400.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-brands-400.woff2",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/webfonts/fa-brands-400.woff2",
       "AssetKind": "All",
@@ -413,13 +413,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-brands-400.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-brands-400.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-regular-400.ttf",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-regular-400.ttf",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/webfonts/fa-regular-400.ttf",
       "AssetKind": "All",
@@ -432,13 +432,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-regular-400.ttf"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-regular-400.ttf"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-regular-400.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-regular-400.woff2",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/webfonts/fa-regular-400.woff2",
       "AssetKind": "All",
@@ -451,13 +451,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-regular-400.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-regular-400.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-solid-900.ttf",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-solid-900.ttf",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/webfonts/fa-solid-900.ttf",
       "AssetKind": "All",
@@ -470,13 +470,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-solid-900.ttf"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-solid-900.ttf"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-solid-900.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-solid-900.woff2",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/webfonts/fa-solid-900.woff2",
       "AssetKind": "All",
@@ -489,13 +489,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-solid-900.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-solid-900.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-v4compatibility.ttf",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-v4compatibility.ttf",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/webfonts/fa-v4compatibility.ttf",
       "AssetKind": "All",
@@ -508,13 +508,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-v4compatibility.ttf"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-v4compatibility.ttf"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-v4compatibility.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-v4compatibility.woff2",
       "SourceId": "Blazorise.Icons.FontAwesome",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise.Icons.FontAwesome",
       "RelativePath": "v6/webfonts/fa-v4compatibility.woff2",
       "AssetKind": "All",
@@ -527,13 +527,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.5.3\\staticwebassets\\v6\\webfonts\\fa-v4compatibility.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise.icons.fontawesome\\1.6.1\\staticwebassets\\v6\\webfonts\\fa-v4compatibility.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\blazorise.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\blazorise.css",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "blazorise.css",
       "AssetKind": "All",
@@ -546,13 +546,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\blazorise.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\blazorise.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\blazorise.min.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\blazorise.min.css",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "blazorise.min.css",
       "AssetKind": "All",
@@ -565,13 +565,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\blazorise.min.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\blazorise.min.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\breakpoint.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\breakpoint.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "breakpoint.js",
       "AssetKind": "All",
@@ -584,13 +584,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\breakpoint.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\breakpoint.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\button.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\button.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "button.js",
       "AssetKind": "All",
@@ -603,13 +603,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\button.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\button.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\closable.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\closable.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "closable.js",
       "AssetKind": "All",
@@ -622,13 +622,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\closable.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\closable.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\colorPicker.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\colorPicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "colorPicker.js",
       "AssetKind": "All",
@@ -641,13 +641,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\colorPicker.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\colorPicker.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\datePicker.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\datePicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "datePicker.js",
       "AssetKind": "All",
@@ -660,13 +660,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\datePicker.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\datePicker.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\dragDrop.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\dragDrop.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "dragDrop.js",
       "AssetKind": "All",
@@ -679,13 +679,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\dragDrop.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\dragDrop.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\dropdown.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\dropdown.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "dropdown.js",
       "AssetKind": "All",
@@ -698,13 +698,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\dropdown.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\dropdown.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\fileEdit.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\fileEdit.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "fileEdit.js",
       "AssetKind": "All",
@@ -717,13 +717,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\fileEdit.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\fileEdit.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\filePicker.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\filePicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "filePicker.js",
       "AssetKind": "All",
@@ -736,13 +736,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\filePicker.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\filePicker.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\floatingUi.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\floatingUi.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "floatingUi.js",
       "AssetKind": "All",
@@ -755,13 +755,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\floatingUi.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\floatingUi.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\inputMask.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\inputMask.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "inputMask.js",
       "AssetKind": "All",
@@ -774,13 +774,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\inputMask.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\inputMask.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\io.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\io.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "io.js",
       "AssetKind": "All",
@@ -793,13 +793,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\io.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\io.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\memoEdit.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\memoEdit.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "memoEdit.js",
       "AssetKind": "All",
@@ -812,13 +812,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\memoEdit.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\memoEdit.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\numericPicker.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\numericPicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "numericPicker.js",
       "AssetKind": "All",
@@ -831,13 +831,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\numericPicker.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\numericPicker.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\observer.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\observer.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "observer.js",
       "AssetKind": "All",
@@ -850,13 +850,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\observer.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\observer.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\table.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\table.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "table.js",
       "AssetKind": "All",
@@ -869,13 +869,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\table.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\table.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\textEdit.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\textEdit.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "textEdit.js",
       "AssetKind": "All",
@@ -888,13 +888,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\textEdit.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\textEdit.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\theme.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\theme.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "theme.js",
       "AssetKind": "All",
@@ -907,13 +907,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\theme.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\theme.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\timePicker.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\timePicker.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "timePicker.js",
       "AssetKind": "All",
@@ -926,13 +926,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\timePicker.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\timePicker.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\tooltip.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\tooltip.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "tooltip.js",
       "AssetKind": "All",
@@ -945,13 +945,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\tooltip.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\tooltip.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\utilities.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\utilities.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "utilities.js",
       "AssetKind": "All",
@@ -964,13 +964,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\utilities.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\utilities.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\validators\\DateTimeMaskValidator.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\validators\\DateTimeMaskValidator.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "validators/DateTimeMaskValidator.js",
       "AssetKind": "All",
@@ -983,13 +983,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\validators\\DateTimeMaskValidator.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\validators\\DateTimeMaskValidator.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\validators\\NoValidator.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\validators\\NoValidator.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "validators/NoValidator.js",
       "AssetKind": "All",
@@ -1002,13 +1002,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\validators\\NoValidator.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\validators\\NoValidator.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\validators\\NumericMaskValidator.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\validators\\NumericMaskValidator.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "validators/NumericMaskValidator.js",
       "AssetKind": "All",
@@ -1021,13 +1021,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\validators\\NumericMaskValidator.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\validators\\NumericMaskValidator.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\validators\\RegExMaskValidator.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\validators\\RegExMaskValidator.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "validators/RegExMaskValidator.js",
       "AssetKind": "All",
@@ -1040,13 +1040,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\validators\\RegExMaskValidator.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\validators\\RegExMaskValidator.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\autoNumeric.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\autoNumeric.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/autoNumeric.js",
       "AssetKind": "All",
@@ -1059,13 +1059,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\autoNumeric.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\autoNumeric.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\Behave.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\Behave.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/Behave.js",
       "AssetKind": "All",
@@ -1078,13 +1078,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\Behave.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\Behave.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\flatpickr.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\flatpickr.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/flatpickr.js",
       "AssetKind": "All",
@@ -1097,32 +1097,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\flatpickr.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\flatpickr.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\floating-ui.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\floating-ui-core.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
-      "BasePath": "_content/Blazorise",
-      "RelativePath": "vendors/floating-ui.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\floating-ui.js"
-    },
-    {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\floating-ui-core.js",
-      "SourceId": "Blazorise",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/floating-ui-core.js",
       "AssetKind": "All",
@@ -1135,13 +1116,32 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\floating-ui-core.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\floating-ui-core.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\inputmask.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\floating-ui.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
+      "BasePath": "_content/Blazorise",
+      "RelativePath": "vendors/floating-ui.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\floating-ui.js"
+    },
+    {
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\inputmask.js",
+      "SourceId": "Blazorise",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/inputmask.js",
       "AssetKind": "All",
@@ -1154,13 +1154,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\inputmask.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\inputmask.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\jsencrypt.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\jsencrypt.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/jsencrypt.js",
       "AssetKind": "All",
@@ -1173,13 +1173,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\jsencrypt.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\jsencrypt.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\Pickr.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\Pickr.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/Pickr.js",
       "AssetKind": "All",
@@ -1192,13 +1192,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\Pickr.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\Pickr.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\sha512.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\sha512.js",
       "SourceId": "Blazorise",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\",
       "BasePath": "_content/Blazorise",
       "RelativePath": "vendors/sha512.js",
       "AssetKind": "All",
@@ -1211,32 +1211,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.5.3\\staticwebassets\\vendors\\sha512.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\blazorise\\1.6.1\\staticwebassets\\vendors\\sha512.js"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\dark.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
-      "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/dark.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\dark.css"
-    },
-    {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\dark-base.css",
-      "SourceId": "Radzen.Blazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark-base.css",
       "AssetKind": "All",
@@ -1249,13 +1230,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\dark-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\dark-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/dark-wcag.css",
       "AssetKind": "All",
@@ -1268,15 +1249,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\dark-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\dark-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\default.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/default.css",
+      "RelativePath": "css/dark.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1287,13 +1268,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\default.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\dark.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\default-base.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\default-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default-base.css",
       "AssetKind": "All",
@@ -1306,13 +1287,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\default-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\default-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\default-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\default-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/default-wcag.css",
       "AssetKind": "All",
@@ -1325,15 +1306,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\default-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\default-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\default.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/humanistic.css",
+      "RelativePath": "css/default.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1344,13 +1325,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\default.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-base.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-base.css",
       "AssetKind": "All",
@@ -1363,32 +1344,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-dark.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
-      "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/humanistic-dark.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-dark.css"
-    },
-    {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-dark-base.css",
-      "SourceId": "Radzen.Blazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-dark-base.css",
       "AssetKind": "All",
@@ -1401,13 +1363,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-dark-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-dark-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-dark-wcag.css",
       "AssetKind": "All",
@@ -1420,13 +1382,32 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-dark-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-dark-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
+      "BasePath": "_content/Radzen.Blazor",
+      "RelativePath": "css/humanistic-dark.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-wcag.css",
+      "SourceId": "Radzen.Blazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/humanistic-wcag.css",
       "AssetKind": "All",
@@ -1439,15 +1420,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\humanistic-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/material.css",
+      "RelativePath": "css/humanistic.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1458,13 +1439,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\humanistic.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-base.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-base.css",
       "AssetKind": "All",
@@ -1477,32 +1458,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-dark.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
-      "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/material-dark.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-dark.css"
-    },
-    {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-dark-base.css",
-      "SourceId": "Radzen.Blazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-dark-base.css",
       "AssetKind": "All",
@@ -1515,13 +1477,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-dark-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-dark-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-dark-wcag.css",
       "AssetKind": "All",
@@ -1534,13 +1496,32 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-dark-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-dark-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
+      "BasePath": "_content/Radzen.Blazor",
+      "RelativePath": "css/material-dark.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-wcag.css",
+      "SourceId": "Radzen.Blazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/material-wcag.css",
       "AssetKind": "All",
@@ -1553,15 +1534,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\material-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/software.css",
+      "RelativePath": "css/material.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1572,13 +1553,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\material.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-base.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-base.css",
       "AssetKind": "All",
@@ -1591,32 +1572,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-dark.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
-      "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/software-dark.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-dark.css"
-    },
-    {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-dark-base.css",
-      "SourceId": "Radzen.Blazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-dark-base.css",
       "AssetKind": "All",
@@ -1629,13 +1591,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-dark-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-dark-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-dark-wcag.css",
       "AssetKind": "All",
@@ -1648,13 +1610,32 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-dark-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-dark-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
+      "BasePath": "_content/Radzen.Blazor",
+      "RelativePath": "css/software-dark.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-wcag.css",
+      "SourceId": "Radzen.Blazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/software-wcag.css",
       "AssetKind": "All",
@@ -1667,15 +1648,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\software-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/standard.css",
+      "RelativePath": "css/software.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1686,13 +1667,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\software.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-base.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-base.css",
       "AssetKind": "All",
@@ -1705,32 +1686,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-dark.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-dark-base.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
-      "BasePath": "_content/Radzen.Blazor",
-      "RelativePath": "css/standard-dark.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-dark.css"
-    },
-    {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-dark-base.css",
-      "SourceId": "Radzen.Blazor",
-      "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-dark-base.css",
       "AssetKind": "All",
@@ -1743,13 +1705,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-dark-base.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-dark-base.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-dark-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-dark-wcag.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-dark-wcag.css",
       "AssetKind": "All",
@@ -1762,13 +1724,32 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-dark-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-dark-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-wcag.css",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-dark.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
+      "BasePath": "_content/Radzen.Blazor",
+      "RelativePath": "css/standard-dark.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-dark.css"
+    },
+    {
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-wcag.css",
+      "SourceId": "Radzen.Blazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "css/standard-wcag.css",
       "AssetKind": "All",
@@ -1781,13 +1762,32 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\css\\standard-wcag.css"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard-wcag.css"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\fonts\\MaterialSymbolsOutlined.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard.css",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
+      "BasePath": "_content/Radzen.Blazor",
+      "RelativePath": "css/standard.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\css\\standard.css"
+    },
+    {
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\fonts\\MaterialSymbolsOutlined.woff2",
+      "SourceId": "Radzen.Blazor",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/MaterialSymbolsOutlined.woff2",
       "AssetKind": "All",
@@ -1800,13 +1800,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\fonts\\MaterialSymbolsOutlined.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\fonts\\MaterialSymbolsOutlined.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\fonts\\RobotoFlex.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\fonts\\RobotoFlex.woff2",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/RobotoFlex.woff2",
       "AssetKind": "All",
@@ -1819,13 +1819,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\fonts\\RobotoFlex.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\fonts\\RobotoFlex.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\fonts\\SourceSans3VF-Italic.ttf.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\fonts\\SourceSans3VF-Italic.ttf.woff2",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSans3VF-Italic.ttf.woff2",
       "AssetKind": "All",
@@ -1838,13 +1838,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\fonts\\SourceSans3VF-Italic.ttf.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\fonts\\SourceSans3VF-Italic.ttf.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\fonts\\SourceSans3VF-Upright.ttf.woff2",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\fonts\\SourceSans3VF-Upright.ttf.woff2",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "fonts/SourceSans3VF-Upright.ttf.woff2",
       "AssetKind": "All",
@@ -1857,13 +1857,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\fonts\\SourceSans3VF-Upright.ttf.woff2"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\fonts\\SourceSans3VF-Upright.ttf.woff2"
     },
     {
-      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\Radzen.Blazor.js",
+      "Identity": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\Radzen.Blazor.js",
       "SourceId": "Radzen.Blazor",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\",
       "BasePath": "_content/Radzen.Blazor",
       "RelativePath": "Radzen.Blazor.js",
       "AssetKind": "All",
@@ -1876,7 +1876,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.0\\staticwebassets\\Radzen.Blazor.js"
+      "OriginalItemSpec": "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.2\\staticwebassets\\Radzen.Blazor.js"
     },
     {
       "Identity": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
@@ -1955,25 +1955,6 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\favicon.ico",
-      "SourceId": "Olympics.Presentation",
-      "SourceType": "Discovered",
-      "ContentRoot": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\",
-      "BasePath": "_content/Olympics.Presentation",
-      "RelativePath": "favicon.ico",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
-    },
-    {
       "Identity": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\favicon-16x16.png",
       "SourceId": "Olympics.Presentation",
       "SourceType": "Discovered",
@@ -2010,6 +1991,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon-32x32.png"
+    },
+    {
+      "Identity": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\favicon.ico",
+      "SourceId": "Olympics.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\",
+      "BasePath": "_content/Olympics.Presentation",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
       "Identity": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\fonts\\Paris\\Paris2024-Variable.ttf",
@@ -2392,25 +2392,6 @@
       "OriginalItemSpec": "wwwroot\\images\\sports\\j.jpg"
     },
     {
-      "Identity": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\JoLogin.jpeg",
-      "SourceId": "Olympics.Presentation",
-      "SourceType": "Discovered",
-      "ContentRoot": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\",
-      "BasePath": "_content/Olympics.Presentation",
-      "RelativePath": "images/sports/JoLogin.jpeg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\sports\\JoLogin.jpeg"
-    },
-    {
       "Identity": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\Jo-Login.jpg",
       "SourceId": "Olympics.Presentation",
       "SourceType": "Discovered",
@@ -2428,6 +2409,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\sports\\Jo-Login.jpg"
+    },
+    {
+      "Identity": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\JoLogin.jpeg",
+      "SourceId": "Olympics.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\",
+      "BasePath": "_content/Olympics.Presentation",
+      "RelativePath": "images/sports/JoLogin.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\sports\\JoLogin.jpeg"
     },
     {
       "Identity": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\images\\sports\\Judo.jpg",

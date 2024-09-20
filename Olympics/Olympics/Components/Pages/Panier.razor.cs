@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
+using Microsoft.JSInterop;
+using Olympics.Metier.Business;
+using Olympics.Services;
 using Radzen;
-using Radzen.Blazor;
 
 namespace Olympics.Presentation.Components.Pages
 {
@@ -29,5 +25,37 @@ namespace Olympics.Presentation.Components.Pages
 
         [Inject]
         protected NotificationService NotificationService { get; set; }
+
+        [Inject]
+        private PanierService PanierService { get; set; }
+
+
+
+        private decimal totalPrice;
+        private List<cTicket> cartTickets;
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                cartTickets = await PanierService.GetCartFromSessionAsync();
+                TotalPriceSum();
+                StateHasChanged(); // Mettre à jour l'interface utilisateur
+            }
+        }
+
+
+        private void TotalPriceSum()
+        {
+            if (cartTickets != null)
+            {
+                totalPrice = cartTickets.Sum(ticket => ticket.Quantity * ticket.Price);
+            }
+        }
+
+
+
+
     }
+
 }

@@ -13,7 +13,7 @@ namespace Olympics.Metier.Business
     public class cPanierBase
     {
         public int IDPanier { get; set; }
-        public string IDClient { get; set; } // Pour lier le panier à l'utilisateur
+        public int IDClient { get; set; } // Pour lier le panier à l'utilisateur
         public List<cTicket> Tickets { get; set; } = new List<cTicket>();
         public DateTime DateCreated { get; set; }
         public DateTime DateUpdated { get; set; }
@@ -26,6 +26,7 @@ namespace Olympics.Metier.Business
     public class cTicket
     {
         public int IDTicket { get; set; }
+        public int IDPanier { get; set; }
         public string SportName { get; set; }
         public TicketTypeManager.TicketType TicketType { get; set; }
         public int Quantity { get; set; }

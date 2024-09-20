@@ -10,9 +10,9 @@ namespace Olympics.Metier.Utils
     {
         public enum TicketType
         {
-            Solo,
-            Duo,
-            Family,
+            Solo = 0,
+            Duo = 1 ,
+            Family = 2,
         }
     }
 }

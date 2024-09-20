@@ -1,15 +1,20 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Olympics.Database.Services;
 using Olympics.Database;
+using Olympics.Database.Services;
+using Olympics.Metier.Utils;
 using Olympics.Presentation.Components;
+using Olympics.Services;
 using Radzen;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Ajouter les services nécessaires à l'application
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents().AddHubOptions(options => options.MaximumReceiveMessageSize = 10 * 1024 * 1024);
+    .AddInteractiveServerComponents()
+    .AddHubOptions(options => options.MaximumReceiveMessageSize = 10 * 1024 * 1024);
 
 builder.Services.AddControllers();
 builder.Services.AddRadzenComponents();
@@ -31,10 +36,27 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 // Ajouter IHttpContextAccessor
 builder.Services.AddHttpContextAccessor();
 
+// Ajouter les services de session
+builder.Services.AddDistributedMemoryCache(); // Utiliser un cache en mémoire pour les sessions
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Durée de vie de la session
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+
 // Enregistrement des services
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<SessionService>();
+builder.Services.AddScoped<PanierService>();
+
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
 var app = builder.Build();
+
+// Middleware pour gérer la session
+app.UseSession();
 
 // Middleware pour créer un cookie lors de l'arrivée sur le site
 app.Use(async (context, next) =>

@@ -1,8 +1,38 @@
 @page "/panier"
+@using Olympics.Services
+
 
 <PageTitle>Panier</PageTitle>
-<RadzenRow>
-    <RadzenColumn Size="12">
-        <RadzenText Text="Panier" TextStyle="TextStyle.H3" TagName="TagName.H1" />
-    </RadzenColumn>
-</RadzenRow>
+
+<div class="cart-container">
+    <div class="style-cart-container">
+    <h2>Votre Panier</h2>
+
+    @if (cartTickets != null && cartTickets.Any())
+    {
+        <div class="cart-items">
+            @foreach (var ticket in cartTickets)
+            {
+                <div class="cart-item">
+                    <div class="cart-item-details">
+                        <p class="cart-item-name">Sport: @ticket.SportName</p>
+                        <p class="cart-item-type">Type de ticket: @ticket.TicketType</p>
+                        <p class="cart-item-quantity">Quantité: @ticket.Quantity</p>
+                        <p class="cart-item-price">Prix unitaire: @ticket.Price €</p>
+                        <p class="cart-item-total">Total: @(ticket.Quantity * ticket.Price) €</p>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="cart-summary">
+            <p><b>Total: @totalPrice €</b></p>
+            <RadzenButton Text="Passer à la caisse" class="checkout-btn" />
+        </div>
+    }
+    else
+    {
+        <p>Votre panier est vide.</p>
+    }
+    </div>
+</div>

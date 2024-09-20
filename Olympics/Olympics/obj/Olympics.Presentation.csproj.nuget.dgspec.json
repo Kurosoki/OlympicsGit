@@ -58,6 +58,14 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.4, )"
@@ -128,6 +136,20 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.Authorization": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -201,9 +223,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Blazored.SessionStorage": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
             "Blazorise.Icons.FontAwesome": {
               "target": "Package",
-              "version": "[1.5.3, )"
+              "version": "[1.6.1, )"
             },
             "FontAwesome": {
               "target": "Package",

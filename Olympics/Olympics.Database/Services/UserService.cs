@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Olympics.Metier.Business;
 using Olympics.Metier.Utils;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Components.Authorization;
 
 
 
@@ -17,18 +17,37 @@ namespace Olympics.Database.Services
         private readonly ApplicationDbContext _context;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ILogger<UserService> _logger;
+        private readonly AuthenticationStateProvider _authenticationStateProvider;
 
-        public UserService(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<UserService> logger)
+        public UserService(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<UserService> logger, AuthenticationStateProvider authenticationStateProvider)
         {
             _context = context;
             _httpContextAccessor = httpContextAccessor;
             _logger = logger;
+            _authenticationStateProvider = authenticationStateProvider;
         }
 
         public string GenerateUniqueKey()
         {
 
             return Guid.NewGuid().ToString();
+        }
+
+        public async Task<int?> GetAuthenticatedUserIdAsync()
+        {
+            var authState = await _authenticationStateProvider.GetAuthenticationStateAsync();
+            var user = authState.User;
+
+            if (user.Identity.IsAuthenticated)
+            {
+                var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier); // Assurez-vous que vous avez un claim pour l'ID de l'utilisateur
+                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out var userId))
+                {
+                    return userId;
+                }
+            }
+
+            return null; // Utilisateur non authentifié
         }
 
 
