@@ -339,12 +339,14 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
 
 /* Footer styles */
 .footer {
+  
     background-color: black;
     color: #fff; 
     padding-top: 3%;
     position: relative; /* Rendre le footer fixe */
     bottom: 0; /* Coller le footer au bas */
 }
+
 
 .footer-logo {
     display: flex;
@@ -971,6 +973,7 @@ h2 {
     max-width: 1650px; /* Limite la largeur du texte pour le centrer */
     text-align: justify; 
     font-family: Prompt;
+    margin-bottom: 80px;
 }
 
 

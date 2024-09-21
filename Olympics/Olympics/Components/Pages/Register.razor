@@ -4,6 +4,8 @@
 
 <PageTitle>S'inscrire</PageTitle>
 
+<!-- Le menu de navigation est inclus ici -->
+<Navigation />
 
 <div class="register-container">
     <!-- Conteneur pour l'image de fond -->
@@ -23,9 +25,9 @@
                     </div>
                     <RadzenRow Class="style-form-register-row">
                         <RadzenColumn Size="6">
-                            <RadzenLabel Text="Prénom" />
+                            <RadzenLabel Text="PrÃ©nom" />
                             <RadzenTextBox @bind-Value="user.PrenomClient" Name="FirstName" Style="width:100%" />
-                            <RadzenRequiredValidator Component="FirstName" Text="Le prénom est obligatoire" />
+                            <RadzenRequiredValidator Component="FirstName" Text="Le prï¿½nom est obligatoire" />
                         </RadzenColumn>
                         <RadzenColumn Size="6">
                             <RadzenLabel Text="Nom" />
@@ -62,7 +64,7 @@
                         <RadzenColumn Size="12">
                             <label class="register-text-terms">
                                 <input type="checkbox" required>
-                                En créant votre compte, vous acceptez les <a href="lien_vers_termes_et_conditions" target="_blank">termes et conditions</a>.
+                                En crÃ©ant votre compte, vous acceptez les <a href="lien_vers_termes_et_conditions" target="_blank">termes et conditions</a>.
                             </label>
                         </RadzenColumn>
                     </RadzenRow>
@@ -78,3 +80,4 @@
         </RadzenColumn>
     </RadzenRow>
 </div>
+<Footer /> <!-- Le footer est inclus ici -->

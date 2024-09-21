@@ -1,0 +1,25 @@
+@page "/navigation"
+
+ 
+  <!-- Barre de Navigation -->
+  <div class="rz-barreNavigation" >
+        <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Center" Gap="0">
+            <RadzenColumn Size="4">
+                <RadzenButton class="btn-menu btn-accueil" Click="@NavigateToAccueil" >Accueil</RadzenButton>
+                <RadzenButton class="btn-menu" Click="@NavigateToBilletterie">Billetterie</RadzenButton>
+
+            </RadzenColumn>
+            <!-- Logo -->
+            <RadzenColumn Size="4" class="center-column-header">
+                <RadzenLink Path="/" class="center-link">
+                    <RadzenImage class="logo-Paris2024" Path="images/LogoJO2024white.png" AlternateText="Application logo"></RadzenImage>
+                </RadzenLink>
+            </RadzenColumn>
+            <RadzenColumn Size="4">
+                <RadzenStack AlignItems="AlignItems.Center" Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
+                    <RadzenButton class="btn-menu" Click="@NavigateToPanier">Panier</RadzenButton>
+                    <RadzenButton class="btn-menu btn-login" Click="@NavigateToLogin">Connexion / Inscription</RadzenButton>
+                </RadzenStack>
+            </RadzenColumn>
+        </RadzenRow>
+    </div>

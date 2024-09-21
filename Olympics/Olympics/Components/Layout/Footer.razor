@@ -1,0 +1,46 @@
+@page "/footer"
+
+<!-- Footer -->
+    <RadzenFooter class="footer">
+        <RadzenRow>
+
+            <!-- Colonne pour le logo -->
+            <RadzenColumn Size="12" SizeMD="2" class="footer-logo">
+                <RadzenImage Path="images/LogoJO2024white.png" AlternateText="Logo" class="footer-logo-image"></RadzenImage>
+            </RadzenColumn>
+
+            <!-- Colonne pour les liens Accueil et Sports -->
+            <RadzenColumn Size="12" SizeMD="2" class="footer-links">
+                <RadzenText class="footer-title">Jeux Olympiques</RadzenText>
+                <RadzenLink Text="Accueil" Path="/" class="footer-link"></RadzenLink>
+            <RadzenLink Text="Sports" Path="#sports-section" class="footer-link"></RadzenLink>
+            </RadzenColumn>
+
+            <!-- Colonne pour les liens Célébrer les Jeux -->
+            <RadzenColumn Size="12" SizeMD="2" class="footer-links">
+                <RadzenText class="footer-title">Célébrer les Jeux</RadzenText>
+            </RadzenColumn>
+
+            <!-- Colonne pour les liens Spectateurs -->
+            <RadzenColumn Size="12" SizeMD="2" class="footer-links">
+                <RadzenText class="footer-title">Spectateurs</RadzenText>
+                <RadzenLink Text="Billetterie" Path="/Billetterie" class="footer-link"></RadzenLink>
+            </RadzenColumn>
+
+            <!-- Colonne pour les liens Relais de la Flamme Olympique -->
+            <RadzenColumn Size="12" SizeMD="2" class="footer-links">
+                <RadzenText class="footer-title">Relais de la Flamme Olympique</RadzenText>
+            </RadzenColumn>
+
+            <!-- Colonne pour les RGPD et texte-->
+            <RadzenColumn Size="12" SizeMD="12">
+                <hr class="long-footer" />
+                <div class="footer-rgpd">
+                    <RadzenLink Text="Politique de confidentialité" Path="/PrivacyPolicy" class="footer-rgpd-link"></RadzenLink>
+                    <RadzenLink Text="Conditions d'utilisation" Path="/legal-notices" class="footer-rgpd-link"></RadzenLink>
+                    <RadzenText class="copyright">©Copyright 2024 Stécy Ma. Tous droits réservés</RadzenText>
+                </div>
+            </RadzenColumn>
+        </RadzenRow>
+    </RadzenFooter>
+

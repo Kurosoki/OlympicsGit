@@ -22,8 +22,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[G:/Examens/RecupOlympics/Olympics/Olympics/Components/Layout/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcRm9vdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/Examens/RecupOlympics/Olympics/Olympics/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Examens/RecupOlympics/Olympics/Olympics/Components/Layout/Navigation.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2aWdhdGlvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/Billetterie.razor]
@@ -44,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/Register.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/RGPD/LegalNotices.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSR1BEXExlZ2FsTm90aWNlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/RGPD/PrivacyPolicy.razor]

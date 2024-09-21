@@ -32,31 +32,8 @@ namespace Olympics.Presentation.Components.Layout
         [Inject]
         protected NotificationService NotificationService { get; set; }
 
-        private bool sidebarExpanded = true;
 
-        void SidebarToggleClick()
-        {
-            sidebarExpanded = !sidebarExpanded;
-        }
-        private void NavigateToAccueil()
-        {
-            NavigationManager.NavigateTo("/");
-        }
-
-        private void NavigateToLogin()
-        {
-            NavigationManager.NavigateTo("/login");
-        }
-
-        private void NavigateToBilletterie()
-        {
-            NavigationManager.NavigateTo("/billetterie");
-        }
-
-        private void NavigateToPanier()
-        {
-            NavigationManager.NavigateTo("/panier");
-        }
+       
 
     }
 }
