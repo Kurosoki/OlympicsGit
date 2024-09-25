@@ -32,12 +32,16 @@ namespace Olympics.Presentation.Components.Pages
         [Inject]
         protected NotificationService NotificationService { get; set; }
 
+        [Inject]
+        protected UserService UserService { get; set; }
+
 
         // Déclarez une instance de cUtilisateurBase
         private cUtilisateurBase user = new cUtilisateurBase();
 
         private bool isRegistered = false;
         private bool registrationFailed = false;
+        private string motDePasseConfirmation;
 
         // Méthode pour gérer la soumission du formulaire
         public async Task RegisterUser()
@@ -45,11 +49,11 @@ namespace Olympics.Presentation.Components.Pages
             // Récuperer les propriétés du modèle
             string nomUtilisateur = user.NomClient;
             string prenomUtilisateur = user.PrenomClient;
-            string emailUtilisateur = user.EmailClient;
+            string emailUtilisateur = user.EmailClient.ToLower();
             string motDePasseUtilisateur = user.ShaMotDePasse;
-            string motDePasseConfirmation = user.ShaMotDePasseVerif;
 
-            // Vérifiez que le mot de passe possède les caractéristiques attendues
+
+            // Vérifie que le mot de passe possède les caractéristiques attendues
             if (!EstMotDePasseValide(motDePasseUtilisateur))
             {
                 registrationFailed = true;
@@ -57,7 +61,7 @@ namespace Olympics.Presentation.Components.Pages
                 return;
             }
 
-            // Vérifiez que les mots de passe correspondent
+            // Vérifie que les mots de passe correspondent
             if (motDePasseUtilisateur != motDePasseConfirmation)
             {
                 registrationFailed = true;
@@ -73,7 +77,7 @@ namespace Olympics.Presentation.Components.Pages
             }
 
             // Créer un nouvel utilisateur avec les informations fournies dans le formulaire
-            var result = await userService.RegisterUserAsync(user);
+            var result = await UserService.RegisterUserAsync(user);
 
             if (result)
             {

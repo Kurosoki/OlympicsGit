@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,10 @@ builder.Services.AddRazorComponents()
 builder.Services.AddControllers();
 builder.Services.AddRadzenComponents();
 builder.Services.AddHttpClient();
+
+builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+builder.Services.AddAuthorizationCore();
+
 
 // Ajouter DbContext avec PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -49,9 +54,10 @@ builder.Services.AddSession(options =>
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<SessionService>();
 builder.Services.AddScoped<PanierService>();
+builder.Services.AddScoped<PayementService>();
 
-builder.Services.AddAuthorizationCore();
-builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
+
+builder.Services.AddBlazoredLocalStorage();
 
 var app = builder.Build();
 

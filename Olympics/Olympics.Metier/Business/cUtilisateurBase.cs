@@ -1,38 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Olympics.Metier.Business
 {
+    [Table("utilisateurs")]
     public class cUtilisateurBase 
     {
+        [Column("idclient")] 
         public int IDClient { get; set; }
 
         [Required]
+        [Column("nomclient")] 
         public string NomClient { get; set; }
 
         [Required]
+        [Column("prenomclient")] 
         public string PrenomClient { get; set; }
 
         [Required]
         [EmailAddress]
+        [Column("emailclient")] 
         public string EmailClient { get; set; }
 
         [Required]
+        [Column("shamotdepasse")] 
         public string ShaMotDePasse { get; set; }
 
-        [Required]
-        public string ShaMotDePasseVerif { get; set; }
-
+        [Column("salt")] 
         public string Salt { get; set; }
 
+        [Column("key")] 
         public string Key { get; set; }
 
+        [Column("roleutilisateur")] 
         public RoleUtilisateur RoleUtilisateur { get; set; }
-
     }
 
     public enum RoleUtilisateur
@@ -40,4 +41,5 @@ namespace Olympics.Metier.Business
         Utilisateur,
         Administrateur,
     }
+
 }

@@ -18,6 +18,23 @@
         <hr class="billetterie-long-hr" />
     </RadzenColumn>
 
+
+    <!-- Formulaire pour ajouter ou modifier une offre -->
+    @if (isAdmin)
+    {
+        <RadzenColumn Size="12">
+            <RadzenCard>
+                <RadzenTextBox @bind-Value="newOffer.Title" Placeholder="Titre de l'offre" />
+                <RadzenTextBox @bind-Value="newOffer.Description" Placeholder="Description de l'offre" />
+                <RadzenNumeric @bind-Value="newOffer.PriceSolo" Placeholder="Prix Solo" />
+                <RadzenNumeric @bind-Value="newOffer.PriceDuo" Placeholder="Prix Duo" />
+                <RadzenNumeric @bind-Value="newOffer.PriceFamily" Placeholder="Prix Famille" />
+                <RadzenButton Text="Ajouter/Modifier Offre" Click="@(async () => await SaveOffer())" />
+            </RadzenCard>
+        </RadzenColumn>
+    }
+
+
     <!-- Première carte de sport -->
     <RadzenColumn Size="12" class="billetterie-card-column">
         <div class="billetterie-card-sport">
@@ -70,6 +87,16 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- Bouton pour supprimer une offre -->
+                    @if (isAdmin)
+                    {
+                        <div class="billetterie-card-panier-button">
+                        <button class="billetterie-card-supp-button" @onclick="async () => await DeleteOffer(offer.ID))">
+                                Supprimer Offre
+                            </button>
+                        </div>
+                    }
                 </RadzenColumn>
             </RadzenRow>
         </div>

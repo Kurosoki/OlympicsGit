@@ -43,6 +43,9 @@ namespace Olympics.Presentation.Components.Pages
         [Inject]
         private UserService UserService { get; set; }
 
+        [Inject]
+        private OffresService OffresService { get; set; }
+
 
 
         public class SportTicket
@@ -62,13 +65,13 @@ namespace Olympics.Presentation.Components.Pages
 {
     new SportTicket
     {
-         SportName = "AthlÈtisme",
+         SportName = "AthlÔøΩtisme",
          QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
     },
     new SportTicket
     {
-         SportName = "Tir ‡ L'Arc",
+         SportName = "Tir ÔøΩ L'Arc",
          QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
     },
@@ -94,7 +97,7 @@ namespace Olympics.Presentation.Components.Pages
     },
     new SportTicket
     {
-         SportName = "Sports …questres",
+         SportName = "Sports ÔøΩquestres",
          QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
     },
@@ -191,7 +194,7 @@ namespace Olympics.Presentation.Components.Pages
 
             if (userId == null)
             {
-                // Utilisateur non authentifiÈ : stocker dans sessionStorage
+                // Utilisateur non authentifiÔøΩ : stocker dans sessionStorage
                 var cartTickets = await PanierService.GetCartFromSessionAsync();
 
                 var ticket = new cTicket
@@ -207,15 +210,20 @@ namespace Olympics.Presentation.Components.Pages
             }
             else
             {
-                // Utilisateur authentifiÈ : stocker dans la base de donnÈes
+                // Utilisateur authentifiÔøΩ : stocker dans la base de donnÔøΩes
                 var panier = await PanierService.GetPanierByIdAsync(userId.Value);
+
                 if (panier == null)
                 {
-                    panier = new cPanierBase { IDPanier = userId.Value };
+                    panier = new cPanierBase
+                    {
+                        IDClient = userId.Value, // Associer le panier ÔøΩ l'utilisateur
+                    };
                 }
 
                 var ticket = new cTicket
                 {
+                    IDPanier = panier.IDPanier, // Lier le ticket au panier
                     SportName = sportTicket.SportName,
                     TicketType = ticketType,
                     Quantity = quantity,
@@ -229,28 +237,64 @@ namespace Olympics.Presentation.Components.Pages
 
 
 
+        private bool isAdmin = false; // Remplacez ceci par votre logique de v√©rification d'admin
+        private bool isConnected = false;
+       // private Offer newOffer = new Offer(); // Remplacez par votre mod√®le d'offre
 
-        private int GetQuantityByTicketType(SportTicket sportTicket, TicketTypeManager.TicketType ticketType)
+
+
+        private async Task IsAdmin(bool isAdmin)
         {
-            return ticketType switch
+            if (isConnected)
             {
-                TicketTypeManager.TicketType.Solo => sportTicket.QuantitySolo,
-                TicketTypeManager.TicketType.Duo => sportTicket.QuantityDuo,
-                TicketTypeManager.TicketType.Family => sportTicket.QuantityFamily,
-                _ => 0
-            };
+                if (isAdmin)
+                {
+                    // Logique pour les administrateurs
+                }
+                else
+                {
+                    // Logique pour les utilisateurs normaux
+                }
+            }
+            else
+            {
+                // Logique pour un √©chec de connexion
+            }
+
         }
 
-        private decimal GetPriceByTicketType(SportTicket sportTicket, TicketTypeManager.TicketType ticketType)
-        {
-            return ticketType switch
-            {
-                TicketTypeManager.TicketType.Solo => sportTicket.PriceSolo,
-                TicketTypeManager.TicketType.Duo => sportTicket.PriceDuo,
-                TicketTypeManager.TicketType.Family => sportTicket.PriceFamily,
-                _ => 0m
-            };
-        }
+
+
+        //private async Task SaveOffer()
+        //{
+        //    // Logique pour ajouter ou modifier une offre dans la base de donn√©es
+        //    if (newOffer.ID == 0)
+        //    {
+        //        // Ajouter une nouvelle offre
+        //        await OffresService.AddOffer(newOffer);
+        //    }
+        //    else
+        //    {
+        //        // Modifier une offre existante
+        //        await OffresService.UpdateOffer(newOffer);
+        //    }
+
+        //    // R√©initialiser le formulaire
+        //    newOffer = new Offer();
+        //}
+
+        //private async Task DeleteOffer(int offerId)
+        //{
+        //    // Logique pour supprimer l'offre de la base de donn√©es
+        //    await OffresService.DeleteOffer(offerId);
+        //}
+
+
+
+
+
+
+
 
 
     }

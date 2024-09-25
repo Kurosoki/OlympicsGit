@@ -7,6 +7,7 @@
 <!-- Le menu de navigation est inclus ici -->
 <Navigation />
 
+
 <div class="register-container">
     <!-- Conteneur pour l'image de fond -->
     <div class="background-container-register">
@@ -39,7 +40,7 @@
                     <RadzenRow Class="style-form-register-row">
                         <RadzenColumn Size="6">
                             <RadzenLabel Text="Email" />
-                            <RadzenTextBox @bind-Value="user.EmailClient" Name="Email" Style="width:100%" />
+                            <RadzenTextBox @bind-Value="user.EmailClient" Name="Email" Style="width:100%" oninput="toLowerCaseInput(event)"/>
                             <RadzenRequiredValidator Component="Email" Text="L'email est obligatoire" />
                             <RadzenEmailValidator Component="Email" Text="Entrez une adresse e-mail valide" />
                         </RadzenColumn>
@@ -54,7 +55,7 @@
                     <RadzenRow Class="style-form-register-row">
                         <RadzenColumn Size="6">
                             <RadzenLabel Text="Confirmer le mot de passe" />
-                            <RadzenPassword @bind-Value="user.ShaMotDePasseVerif" Name="PasswordConfirm" Style="width:100%" />
+                            <RadzenPassword @bind-Value="motDePasseConfirmation" Name="PasswordConfirm" Style="width:100%" />
                             <RadzenRequiredValidator Component="PasswordConfirm" Text="Un mot de passe de confirmation est requis" />
                             <RadzenCompareValidator Component="PasswordConfirm" Value="@(user.ShaMotDePasse)" Text="Les mots de passe ne correspondent pas" />
                         </RadzenColumn>

@@ -14,7 +14,7 @@
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)radzen.blazor\5.2.2\buildTransitive\Radzen.Blazor.props" Condition="Exists('$(NuGetPackageRoot)radzen.blazor\5.2.2\buildTransitive\Radzen.Blazor.props')" />
+    <Import Project="$(NuGetPackageRoot)radzen.blazor\5.2.4\buildTransitive\Radzen.Blazor.props" Condition="Exists('$(NuGetPackageRoot)radzen.blazor\5.2.4\buildTransitive\Radzen.Blazor.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\8.0.4\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\8.0.4\buildTransitive\net8.0\Microsoft.EntityFrameworkCore.props')" />
     <Import Project="$(NuGetPackageRoot)blazorise\1.6.1\buildTransitive\Blazorise.props" Condition="Exists('$(NuGetPackageRoot)blazorise\1.6.1\buildTransitive\Blazorise.props')" />
     <Import Project="$(NuGetPackageRoot)blazorise.icons.fontawesome\1.6.1\buildTransitive\Blazorise.Icons.FontAwesome.props" Condition="Exists('$(NuGetPackageRoot)blazorise.icons.fontawesome\1.6.1\buildTransitive\Blazorise.Icons.FontAwesome.props')" />

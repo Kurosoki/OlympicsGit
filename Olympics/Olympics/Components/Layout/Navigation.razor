@@ -1,7 +1,4 @@
-@page "/navigation"
-
- 
-  <!-- Barre de Navigation -->
+<!-- Barre de Navigation -->
   <div class="rz-barreNavigation" >
         <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Center" Gap="0">
             <RadzenColumn Size="4">
@@ -18,7 +15,14 @@
             <RadzenColumn Size="4">
                 <RadzenStack AlignItems="AlignItems.Center" Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
                     <RadzenButton class="btn-menu" Click="@NavigateToPanier">Panier</RadzenButton>
+                @if (isLoggedIn)
+                {
+                    @* <RadzenButton class="btn-menu btn-logout" Click="@Logout">Déconnexion</RadzenButton> *@
+                }
+                else
+                {
                     <RadzenButton class="btn-menu btn-login" Click="@NavigateToLogin">Connexion / Inscription</RadzenButton>
+                }
                 </RadzenStack>
             </RadzenColumn>
         </RadzenRow>

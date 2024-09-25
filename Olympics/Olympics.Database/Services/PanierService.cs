@@ -1,28 +1,25 @@
-﻿using System.Text.Json;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.JSInterop;
 using Olympics.Database;
 using Olympics.Metier.Business;
-using Microsoft.JSInterop;
 
 namespace Olympics.Services
 {
     public class PanierService
     {
         private readonly ApplicationDbContext _context;
-        private readonly IJSRuntime jsRuntime;
+        private readonly IJSRuntime _jsRuntime;
 
         public PanierService(ApplicationDbContext context, IJSRuntime jsRuntime)
         {
             _context = context;
-            this.jsRuntime = jsRuntime;
+            _jsRuntime = jsRuntime;
         }
 
         // Méthode pour récupérer les tickets dans le panier sessionStorage
         public async Task<List<cTicket>> GetCartFromSessionAsync()
         {
-            var cartJson = await jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "cart");
+            var cartJson = await _jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "cart");
             if (string.IsNullOrEmpty(cartJson))
             {
                 return new List<cTicket>();
@@ -34,12 +31,18 @@ namespace Olympics.Services
         public async Task SetCartInSessionAsync(List<cTicket> cartTickets)
         {
             var cartJson = System.Text.Json.JsonSerializer.Serialize(cartTickets);
-            await jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "cart", cartJson);
+            await _jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "cart", cartJson);
         }
 
 
+        // Méthode pour effacer le panier stocké en sessionStorage
+        public async Task ClearCartFromSessionAsync()
+        {
+            await _jsRuntime.InvokeVoidAsync("sessionStorage.removeItem", "cart");
+        }
 
-        //Récupérer un panier spécifique avec tous ses tickets 
+
+        //Récupérer un panier spécifique avec tous ses tickets en bdd
         public async Task<cPanierBase> GetPanierByIdAsync(int idPanier)
         {
             return await _context.Panier
@@ -48,15 +51,15 @@ namespace Olympics.Services
         }
 
 
-        //Création d'un nouveau panier
-        public async Task CreatePanierAsync(cPanierBase panier)
+        //Création d'un nouveau panier en bdd
+        public async Task CreatePanierAsync(cPanierBase newPanier)
         {
-            _context.Panier.Add(panier);
+            _context.Panier.Add(newPanier);
             await _context.SaveChangesAsync();
         }
 
 
-        //Sauvegarder les modifications du panier
+        //Sauvegarder les modifications du panier en bdd
         public async Task UpdatePanierAsync(cPanierBase panier)
         {
             _context.Panier.Update(panier);
@@ -64,7 +67,7 @@ namespace Olympics.Services
         }
 
 
-        //Supprimer un panier et ses tickets 
+        //Supprimer un panier et ses tickets en bdd
         public async Task DeletePanierAsync(int idPanier)
         {
             var panier = _context.Panier

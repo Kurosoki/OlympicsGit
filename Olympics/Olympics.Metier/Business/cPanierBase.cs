@@ -1,35 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using Olympics.Metier.Utils;
-
-
+﻿using Olympics.Metier.Utils;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Olympics.Metier.Business
 {
+    [Table("paniers")] 
     public class cPanierBase
     {
+        [Key]
+        [Column("idpanier")] 
         public int IDPanier { get; set; }
-        public int IDClient { get; set; } // Pour lier le panier à l'utilisateur
-        public List<cTicket> Tickets { get; set; } = new List<cTicket>();
+
+        [Column("idclient")] 
+        public int IDClient { get; set; }
+
+        [Column("datecreated")] 
         public DateTime DateCreated { get; set; }
+
+        [Column("dateupdated")] 
         public DateTime DateUpdated { get; set; }
 
-        // Propriété pour calculer le prix total du panier
-        public decimal TotalPrice => Tickets.Sum(ticket => ticket.Quantity * ticket.Price);
+        // Relation avec les tickets
+        public List<cTicket> Tickets { get; set; } = new List<cTicket>();
     }
 
 
+    [Table("tickets")] 
     public class cTicket
     {
+        [Key]
+        [Column("idticket")] 
         public int IDTicket { get; set; }
+
+        [ForeignKey("cPanierBase")]
+        [Column("idpanier")] 
         public int IDPanier { get; set; }
+
+        [Column("sportname")] 
         public string SportName { get; set; }
+
+        [Column("tickettype")] 
         public TicketTypeManager.TicketType TicketType { get; set; }
+
+        [Column("quantity")] 
         public int Quantity { get; set; }
+
+        [Column("price")] 
         public decimal Price { get; set; }
     }
+
+
 }

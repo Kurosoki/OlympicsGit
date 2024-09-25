@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
+using Olympics.Database.Services;
+using Olympics.Services;
 
 namespace Olympics.Presentation.Components.Layout
 {
@@ -30,7 +32,23 @@ namespace Olympics.Presentation.Components.Layout
         [Inject]
         protected NotificationService NotificationService { get; set; }
 
+        [Inject]
+        private UserService UserService { get; set; }
 
+
+        private bool isLoggedIn = false;
+
+        //protected override async Task OnInitializedAsync()
+        //{
+        //    var userId = await UserService.GetAuthenticatedUserIdAsync();
+        //    isLoggedIn = userId.HasValue;
+        //}
+
+        //private async Task Logout()
+        //{
+        //    await UserService.LogoutUserAsync();
+        //    isLoggedIn = false; // Mettre à jour l'état après la déconnexion
+        //}
 
         private void NavigateToAccueil()
         {
