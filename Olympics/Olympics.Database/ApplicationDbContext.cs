@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Olympics.Metier.Business;
+using Olympics.Metier.Models;
 
 namespace Olympics.Database
 {
@@ -18,7 +18,7 @@ namespace Olympics.Database
 
         public DbSet<cUtilisateurBase> Utilisateurs { get; set; }
         public DbSet<cPanierBase> Panier { get; set; }
-        public DbSet<cTicket> Tickets { get; set; }
+        public DbSet<cOffresBase> Offres { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,8 +35,8 @@ namespace Olympics.Database
             // La suppression en cascade est configurée pour que les tickets associés
             // à un panier soient également supprimés lorsque le panier est supprimé.
 
-            modelBuilder.Entity<cTicket>()
-                .HasKey(t => t.IDTicket);
+            modelBuilder.Entity<cOffresBase>()
+                .HasKey(o => o.IDOffre);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

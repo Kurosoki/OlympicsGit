@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AuthentificationServer\AuthentificationServer\AuthentificationServer.csproj" />
     <ProjectReference Include="..\Olympics.Metier\Olympics.Metier.csproj" />
   </ItemGroup>
 

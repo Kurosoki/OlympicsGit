@@ -3,13 +3,17 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Olympics.Metier.Business;
+using Olympics.Metier.Models;
 using Olympics.Metier.Utils;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
 using System.Text.Json;
 using Olympics.Services;
+using System.Text;
+using System.Net.Http.Json;
+using AuthentificationServer.Classes; 
+
 
 
 namespace Olympics.Database.Services
@@ -22,9 +26,11 @@ namespace Olympics.Database.Services
         private readonly AuthenticationStateProvider _authenticationStateProvider;
         private readonly IJSRuntime _jsRuntime;
         private readonly PanierService _panierService;
+        private readonly HttpClient _httpClient;
 
-        public UserService(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<UserService> logger, AuthenticationStateProvider authenticationStateProvider, IJSRuntime jsRuntime, PanierService panierService)
+        public UserService(HttpClient httpClient, ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<UserService> logger, AuthenticationStateProvider authenticationStateProvider, IJSRuntime jsRuntime, PanierService panierService)
         {
+            _httpClient = httpClient;
             _context = context;
             _httpContextAccessor = httpContextAccessor;
             _logger = logger;
@@ -45,7 +51,7 @@ namespace Olympics.Database.Services
 
             if (user.Identity.IsAuthenticated)
             {
-                var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier); 
+                var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
                 if (userIdClaim != null && int.TryParse(userIdClaim.Value, out var userId))
                 {
                     return userId;
@@ -94,7 +100,7 @@ namespace Olympics.Database.Services
 
             if (utilisateur == null)
             {
-                return (false, false);
+                return (false, false); // L'utilisateur n'existe pas
             }
 
             bool isPasswordValid = SecurityManager.VerifyPassword(loginUser.ShaMotDePasse, utilisateur.ShaMotDePasse, utilisateur.Salt);
@@ -102,59 +108,72 @@ namespace Olympics.Database.Services
             if (isPasswordValid)
             {
                 ////  ////  ////  INTERROGER L'API SUR L'AUTHENTIFICATION   ////  ////  ////
+                
+                using var httpClient = new HttpClient();
 
-                // Connexion de l'utilisateur
-                //await SignInUserAsync(utilisateur, loginUser.RememberMe);  
-
-
-                ////  ////  ////  ROLE DE L' UTILISATEUR   ////  ////  ////
-
-                // Vérifiez le rôle de l'utilisateur
-                bool isAdmin = utilisateur.RoleUtilisateur == RoleUtilisateur.Administrateur;
-
-
-                ////  ////  ////  RECUPERER LE PANIER   ////  ////  ////
-
-
-                // Récupérer le panier depuis le session storage
-                var cartTickets = await _panierService.GetCartFromSessionAsync();
-
-                if (cartTickets != null && cartTickets.Count > 0)
+                var loginRequest = new LoginRequest
                 {
-                    // Vérifier si l'utilisateur a déjà un panier dans la base de données
-                    var existingPanier = await _context.Panier
-                        .Include(p => p.Tickets)  // Inclure les tickets du panier existant
-                        .FirstOrDefaultAsync(p => p.IDClient == utilisateur.IDClient);
+                    Username = utilisateur.PrenomClient,
+                    Email = utilisateur.EmailClient,
+                    Ip = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString(),
+                    UserAgent = _httpContextAccessor.HttpContext.Request.Headers["User-Agent"].ToString()
+                };
 
-                    if (existingPanier != null )
+                var response = await httpClient.PostAsJsonAsync("https://localhost:7187/api/auth/login", loginRequest);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
+                    var token = loginResponse.Token;
+
+
+                    ////  ////  ////  ROLE DE L' UTILISATEUR   ////  ////  ////
+                    
+                    bool isAdmin = utilisateur.RoleUtilisateur == RoleUtilisateur.Administrateur;
+
+                    ////  ////  ////  RECUPERER LE PANIER   ////  ////  ////
+
+                    // Récupérer le panier depuis le session storage
+                    var cartTickets = await _panierService.GetCartFromSessionAsync();
+
+                    if (cartTickets != null && cartTickets.Count > 0)
                     {
-                        // Si un panier existe, ajouter les tickets du session storage au panier existant
-                        existingPanier.Tickets.AddRange(cartTickets);
-                        existingPanier.DateUpdated = DateTime.Now;  // Mise à jour de la date de modification
-                        await _panierService.UpdatePanierAsync(existingPanier);
-                    }
-                    else
-                    {
-                        // Si l'utilisateur n'a pas encore de panier, en créer un nouveau
-                        var newPanier = new cPanierBase
+                        var existingPanier = await _context.Panier
+                            .Include(p => p.Tickets)
+                            .FirstOrDefaultAsync(p => p.IDClient == utilisateur.IDClient);
+
+                        if (existingPanier != null)
                         {
-                            IDClient = utilisateur.IDClient,  // Associer le panier à l'utilisateur
-                            Tickets = cartTickets,  // Ajouter les tickets du session storage
-                            DateCreated = DateTime.Now,
-                            DateUpdated = DateTime.Now
-                        };
-                        await _panierService.CreatePanierAsync(newPanier);
+                            existingPanier.Tickets.AddRange(cartTickets);
+                            existingPanier.DateUpdated = DateTime.Now; 
+                            await _panierService.UpdatePanierAsync(existingPanier);
+                        }
+                        else
+                        {
+                            var newPanier = new cPanierBase
+                            {
+                                IDClient = utilisateur.IDClient,
+                                Tickets = cartTickets,
+                                DateCreated = DateTime.Now,
+                                DateUpdated = DateTime.Now
+                            };
+                            await _panierService.CreatePanierAsync(newPanier);
+                        }
+                        await _panierService.ClearCartFromSessionAsync();
                     }
-                    // Effacer le panier du session storage après avoir été associé
-                    await _panierService.ClearCartFromSessionAsync();
-                }
 
-                return (true, isAdmin);  // Utilisateur connecté et retourne si c'est un admin
+                    return (true, isAdmin); // Utilisateur connecté et retourne si c'est un admin
+                }
             }
 
+            // Si on arrive ici, cela signifie que le mot de passe est invalide ou la réponse de l'API n'est pas un succès
             return (false, false); // Échec de la connexion
         }
 
 
+
+
+
     }
 }
+

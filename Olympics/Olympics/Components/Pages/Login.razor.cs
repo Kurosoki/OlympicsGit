@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
-using Olympics.Metier.Business;
+using Olympics.Metier.Models;
 using Olympics.Database.Services;
 
 namespace Olympics.Presentation.Components.Pages
@@ -33,6 +33,9 @@ namespace Olympics.Presentation.Components.Pages
         protected NotificationService NotificationService { get; set; }
 
         [Inject]
+        protected UserService UserService { get; set; }
+
+        [Inject]
         private ILogger<Login> _logger { get; set; }
 
 
@@ -52,9 +55,9 @@ namespace Olympics.Presentation.Components.Pages
 
             try
             {
-                var result = await userService.LoginUserAsync(loginUser);
+                var (isConnected, isAdmin) = await UserService.LoginUserAsync(loginUser);
 
-                if (result)
+                if (isConnected)
                 {
                     NotificationService.Notify(NotificationSeverity.Success, "Succès", "Connexion réussie.");
                     NavigationManager.NavigateTo("/");
@@ -81,9 +84,9 @@ namespace Olympics.Presentation.Components.Pages
             string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
             return System.Text.RegularExpressions.Regex.IsMatch(emailEnMinuscules, pattern);
         }
-    
 
-    private void NavigateToForgotPassword() //Idée de rajout
+
+        private void NavigateToForgotPassword() //Idée de rajout
         {
             // Rediriger vers la page de réinitialisation de mot de passe
             NavigationManager.NavigateTo("/forgot-password");

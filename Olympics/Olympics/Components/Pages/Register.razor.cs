@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
-using Olympics.Metier.Business;
+using Olympics.Metier.Models;
 using Olympics.Database.Services;
 
 namespace Olympics.Presentation.Components.Pages

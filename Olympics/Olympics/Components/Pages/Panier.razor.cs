@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using Olympics.Database.Services;
-using Olympics.Metier.Business;
+using Olympics.Metier.Models;
 using Olympics.Services;
 using Radzen;
 
@@ -40,15 +40,15 @@ namespace Olympics.Presentation.Components.Pages
         private decimal totalPrice;
         private List<cTicket> cartTickets;
 
-        //protected override async Task OnAfterRenderAsync(bool firstRender)
-        //{
-        //    if (firstRender)
-        //    {
-        //        cartTickets = await PanierService.GetCartFromSessionAsync();
-        //        TotalPriceSum();
-        //        StateHasChanged(); // Mettre à jour l'interface utilisateur
-        //    }
-        //}
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                cartTickets = await PanierService.GetCartFromSessionAsync();
+                TotalPriceSum();
+                StateHasChanged(); // Mettre à jour l'interface utilisateur
+            }
+        }
 
         private void TotalPriceSum()
         {
@@ -58,27 +58,37 @@ namespace Olympics.Presentation.Components.Pages
             }
         }
 
-        //private async Task OnCheckoutClicked()
-        //{
-        //    var utilisateur = await UserService.GetCurrentUserAsync(); 
+        private async Task OnCheckoutClicked()
+        {
+            // Vérifiez si l'utilisateur est connecté
+            var isUserLoggedIn = await SessionService.ValidateUserSessionAsync(); // Implémentez cette méthode pour vérifier la session
 
-        //    var panier = await PanierService.GetCurrentCartAsync(); 
+            if (isUserLoggedIn)
+            {
+                // Récupérez l'utilisateur connecté et les informations sur le panier
+                var utilisateur = await UserService.GetCurrentUserAsync(); // Implémentez cette méthode pour obtenir l'utilisateur actuel
+                var panier = await PanierService.GetPanierByIdAsync(utilisateur.idPanier); // Récupérez le panier de l'utilisateur
+                var montant = totalPrice; // Ou calculez le montant total selon vos besoins
 
-        //    var montant = (int)totalPrice; // Convertir le total en montant
+                // Effectuez le paiement
+                var payementResult = await PayementService.MockPayementAsync(utilisateur, panier, montant);
 
-        //    var payementResult = await PayementService.MockPayementAsync(utilisateur, panier, montant);
-
-        //    if (payementResult.IsSuccess)
-        //    {
-        //        // Rediriger vers le QR Code
-        //        NavigationManager.NavigateTo(payementResult.QrCodeUrl);
-        //    }
-        //    else
-        //    {
-        //        // Gérer l'échec du paiement, par exemple afficher un message d'erreur
-        //        NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Échec du paiement", Detail = "Une erreur s'est produite lors du paiement.", Duration = 4000 });
-        //    }
-        //}
+                if (payementResult)
+                {
+                    NotificationService.Notify(NotificationSeverity.Success, "Succès", "Paiement réussi.");
+                    NavigationManager.NavigateTo("/confirmation"); // Redirigez vers une page de confirmation
+                }
+                else
+                {
+                    NotificationService.Notify(NotificationSeverity.Error, "Erreur", "Échec du paiement.");
+                }
+            }
+            else
+            {
+                // Redirigez l'utilisateur vers la page de connexion
+                NavigationManager.NavigateTo("/login");
+            }
+        }
 
 
 

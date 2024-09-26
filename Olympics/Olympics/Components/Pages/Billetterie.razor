@@ -18,13 +18,13 @@
         <hr class="billetterie-long-hr" />
     </RadzenColumn>
 
-
-    <!-- Formulaire pour ajouter ou modifier une offre -->
-    @if (isAdmin)
+    <!-- Afficher uniquement si l'utilisateur est admin et connecté
+     Formulaire pour ajouter ou modifier une offre -->
+    @if (isAdmin && isConnected)
     {
         <RadzenColumn Size="12">
             <RadzenCard>
-                <RadzenTextBox @bind-Value="newOffer.Title" Placeholder="Titre de l'offre" />
+                <RadzenTextBox @bind-Value="newOffer.NomOffre" Placeholder="Titre de l'offre" />
                 <RadzenTextBox @bind-Value="newOffer.Description" Placeholder="Description de l'offre" />
                 <RadzenNumeric @bind-Value="newOffer.PriceSolo" Placeholder="Prix Solo" />
                 <RadzenNumeric @bind-Value="newOffer.PriceDuo" Placeholder="Prix Duo" />
@@ -88,15 +88,15 @@
                         </div>
                     </div>
 
-                    <!-- Bouton pour supprimer une offre -->
+                 @*    <!-- Bouton pour supprimer une offre -->
                     @if (isAdmin)
                     {
                         <div class="billetterie-card-panier-button">
-                        <button class="billetterie-card-supp-button" @onclick="async () => await DeleteOffer(offer.ID))">
+                        <button class="billetterie-card-supp-button" @onclick="async () => await DeleteOffer(offer.ID)">
                                 Supprimer Offre
                             </button>
                         </div>
-                    }
+                    } *@
                 </RadzenColumn>
             </RadzenRow>
         </div>

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using Olympics.Metier.Utils;
-using Olympics.Metier.Business;
+using Olympics.Metier.Models;
 using Olympics.Services;
 using Blazorise;
 using Olympics.Database.Services;
@@ -235,59 +235,48 @@ namespace Olympics.Presentation.Components.Pages
             }
         }
 
-
-
-        private bool isAdmin = false; // Remplacez ceci par votre logique de vérification d'admin
         private bool isConnected = false;
-       // private Offer newOffer = new Offer(); // Remplacez par votre modèle d'offre
+        private bool isAdmin = false;
+        private cOffresBase newOffer = new cOffresBase();
+        private cUtilisateurConnexionBase loginUser = new cUtilisateurConnexionBase();
 
-
-
-        private async Task IsAdmin(bool isAdmin)
+        protected override async Task OnInitializedAsync()
         {
-            if (isConnected)
+            await CheckIfUserIsAdminAsync();
+        }
+
+        private async Task CheckIfUserIsAdminAsync()
+        {        
+            // Appeler la méthode de connexion
+            (isConnected, isAdmin) = await UserService.LoginUserAsync(loginUser);
+        }
+
+
+        private async Task SaveOffer()
+        {
+            // Logique pour ajouter ou modifier une offre dans la base de données
+            if (newOffer.IDOffre == 0)
             {
-                if (isAdmin)
-                {
-                    // Logique pour les administrateurs
-                }
-                else
-                {
-                    // Logique pour les utilisateurs normaux
-                }
+                // Ajouter une nouvelle offre
+                await OffresService.AjouterOffreAsync(newOffer);
             }
             else
             {
-                // Logique pour un échec de connexion
+                // Modifier une offre existante
+                await OffresService.ModifierOffreAsync(newOffer);
             }
+
+            // Réinitialiser l'offre après l'enregistrement
+            newOffer = new cOffresBase();
 
         }
 
 
-
-        //private async Task SaveOffer()
-        //{
-        //    // Logique pour ajouter ou modifier une offre dans la base de données
-        //    if (newOffer.ID == 0)
-        //    {
-        //        // Ajouter une nouvelle offre
-        //        await OffresService.AddOffer(newOffer);
-        //    }
-        //    else
-        //    {
-        //        // Modifier une offre existante
-        //        await OffresService.UpdateOffer(newOffer);
-        //    }
-
-        //    // Réinitialiser le formulaire
-        //    newOffer = new Offer();
-        //}
-
-        //private async Task DeleteOffer(int offerId)
-        //{
-        //    // Logique pour supprimer l'offre de la base de données
-        //    await OffresService.DeleteOffer(offerId);
-        //}
+        private async Task DeleteOffer(int offerId)
+        {
+            // Logique pour supprimer l'offre de la base de données
+            await OffresService.SupprimerOffreAsync(offerId);
+        }
 
 
 

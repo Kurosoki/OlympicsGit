@@ -31,7 +31,7 @@
 
         <div class="cart-summary">
             <p><b>Total: @totalPrice €</b></p>
-                <RadzenButton Text="Passer à la caisse" class="checkout-btn"/>
+                <RadzenButton Text="Passer à la caisse" class="checkout-btn" @onclick="OnCheckoutClicked" />
             </div>
     }
     else

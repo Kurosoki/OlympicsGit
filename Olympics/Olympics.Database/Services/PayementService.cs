@@ -1,4 +1,4 @@
-﻿using Olympics.Metier.Business;
+﻿using Olympics.Metier.Models;
 using System.Drawing;
 using ZXing;
 

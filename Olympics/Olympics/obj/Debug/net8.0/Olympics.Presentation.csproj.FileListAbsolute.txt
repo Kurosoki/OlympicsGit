@@ -141,3 +141,9 @@ G:\Examens\RecupOlympics\OlympicsGit-74ff6fd347b3e52418078a4a050f2f833ec7df8a\Ol
 G:\Examens\RecupOlympics\OlympicsGit-74ff6fd347b3e52418078a4a050f2f833ec7df8a\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.genruntimeconfig.cache
 G:\Examens\RecupOlympics\OlympicsGit-74ff6fd347b3e52418078a4a050f2f833ec7df8a\Olympics\Olympics\obj\Debug\net8.0\ref\Olympics.Presentation.dll
 G:\Examens\RecupOlympics\OlympicsGit-74ff6fd347b3e52418078a4a050f2f833ec7df8a\Olympics\Olympics\bin\Debug\net8.0\System.Security.Permissions.dll
+G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.csproj.AssemblyReference.cache
+G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.GeneratedMSBuildEditorConfig.editorconfig
+G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.AssemblyInfoInputs.cache
+G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.AssemblyInfo.cs
+G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.csproj.CoreCompileInputs.cache
+G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.MvcApplicationPartsAssemblyInfo.cache

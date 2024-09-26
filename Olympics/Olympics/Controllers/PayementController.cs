@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Olympics.Database.Services;
-using Olympics.Metier.Business;
+using Olympics.Metier.Models;
 
 namespace Olympics.Presentation.Controllers
 {

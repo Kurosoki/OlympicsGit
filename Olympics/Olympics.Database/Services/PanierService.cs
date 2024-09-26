@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.JSInterop;
 using Olympics.Database;
-using Olympics.Metier.Business;
+using Olympics.Metier.Models;
 
 namespace Olympics.Services
 {
