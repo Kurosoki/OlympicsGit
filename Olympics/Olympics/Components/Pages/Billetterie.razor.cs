@@ -46,6 +46,9 @@ namespace Olympics.Presentation.Components.Pages
         [Inject]
         private OffresService OffresService { get; set; }
 
+        [Inject]
+        private SessionService SessionService { get; set; }
+
 
 
         public class SportTicket
@@ -188,13 +191,20 @@ namespace Olympics.Presentation.Components.Pages
             }
         }
 
-        private async Task AjouterBilletAuPanier(SportTicket sportTicket, TicketTypeManager.TicketType ticketType, int quantity, decimal price)
+        private async Task AjouterBilletAuPanier(SportTicket sportTicket, TicketTypeManager.TicketType ticketType, int quantity, decimal price, string email = null)
         {
-            var userId = await UserService.GetAuthenticatedUserIdAsync();
+            // Vérifier d'abord si l'utilisateur est connecté
+            bool isUserLoggedIn = await SessionService.ValidateUserSessionAsync();
+            int? userId = null;
+
+            if (!isUserLoggedIn && email != null)
+            {
+                userId = await UserService.GetUserIdByEmailAsync(email);
+            }
 
             if (userId == null)
             {
-                // Utilisateur non authentifi� : stocker dans sessionStorage
+                // Utilisateur non authentifié ou ID non trouvé : stocker dans sessionStorage
                 var cartTickets = await PanierService.GetCartFromSessionAsync();
 
                 var ticket = new cTicket
@@ -210,14 +220,14 @@ namespace Olympics.Presentation.Components.Pages
             }
             else
             {
-                // Utilisateur authentifi� : stocker dans la base de donn�es
+                // Utilisateur authentifié : stocker dans la base de données
                 var panier = await PanierService.GetPanierByIdAsync(userId.Value);
 
                 if (panier == null)
                 {
                     panier = new cPanierBase
                     {
-                        IDClient = userId.Value, // Associer le panier � l'utilisateur
+                        IDClient = userId.Value, // Associer le panier à l'utilisateur
                     };
                 }
 
@@ -234,6 +244,7 @@ namespace Olympics.Presentation.Components.Pages
                 await PanierService.UpdatePanierAsync(panier);
             }
         }
+
 
         private bool isConnected = false;
         private bool isAdmin = false;

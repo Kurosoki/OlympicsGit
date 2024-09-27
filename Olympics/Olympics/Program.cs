@@ -20,10 +20,7 @@ builder.Services.AddRazorComponents()
 builder.Services.AddControllers();
 builder.Services.AddRadzenComponents();
 builder.Services.AddHttpClient();
-
-//builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 builder.Services.AddAuthorizationCore();
-
 
 // Ajouter DbContext avec PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -32,6 +29,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Ajouter IHttpContextAccessor
 builder.Services.AddHttpContextAccessor();
 
+// Ajouter Data Protection
+builder.Services.AddDataProtection();
+
 // Enregistrement des services
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<SessionService>();
@@ -39,8 +39,18 @@ builder.Services.AddScoped<PanierService>();
 builder.Services.AddScoped<PayementService>();
 builder.Services.AddScoped<OffresService>();
 
-
+// Ajouter Blazored LocalStorage
 builder.Services.AddBlazoredLocalStorage();
+
+// Ajouter le cache distribué et les sessions avant la construction de l'application
+builder.Services.AddDistributedMemoryCache(); // Nécessaire pour stocker les sessions en mémoire
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Expiration de la session après 30 minutes d'inactivité
+    options.Cookie.HttpOnly = true; // Empêche l'accès au cookie par JavaScript
+    options.Cookie.IsEssential = true; // Le cookie est nécessaire même si les cookies non essentiels sont refusés
+    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Le cookie est uniquement transmis via HTTPS
+});
 
 var app = builder.Build();
 
@@ -78,6 +88,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// Redirection des requêtes HTTP vers HTTPS
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

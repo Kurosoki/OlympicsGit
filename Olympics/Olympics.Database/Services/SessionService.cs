@@ -6,20 +6,48 @@ using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace Olympics.Database.Services
 {
     public class SessionService
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IDataProtectionProvider _dataProtectionProvider;
 
-        public SessionService(IHttpContextAccessor httpContextAccessor)
+        public SessionService(IHttpContextAccessor httpContextAccessor, IDataProtectionProvider dataProtectionProvider)
         {
             _httpContextAccessor = httpContextAccessor;
+            _dataProtectionProvider = dataProtectionProvider;
         }
 
-        public async Task<bool> ValidateUserSessionAsync(string token)
+        public async Task<bool> ValidateUserSessionAsync()
         {
+
+            // Récupérer le token chiffré depuis les cookies
+            var encryptedToken = _httpContextAccessor.HttpContext.Request.Cookies["AuthToken"];
+
+
+            if (string.IsNullOrEmpty(encryptedToken))
+            {
+                return false; // Si le token est absent, la session n'est pas valide
+            }
+
+
+            // Déchiffrez le token avant de l'utiliser
+            var protector = _dataProtectionProvider.CreateProtector("AuthTokenProtector");
+
+            string token;
+
+            try
+            {
+                token = protector.Unprotect(encryptedToken); // Déchiffrez le token
+            }
+            catch
+            {
+                return false; // Si la déchiffrement échoue, la session n'est pas valide
+            }
+
             // Créez le client HTTP
             using var httpClient = new HttpClient();
 

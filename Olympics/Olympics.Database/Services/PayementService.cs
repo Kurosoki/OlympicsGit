@@ -13,7 +13,7 @@ namespace Olympics.Database.Services
             _userService = userService;
         }
 
-        public async Task<cPayementBase> MockPayementAsync(cUtilisateurBase utilisateur, cPanierBase panier, int montant)
+        public async Task<cPayementBase> MockPayementAsync(cUtilisateurBase utilisateur, cPanierBase panier, decimal montant)
         {
             // Simule un délai pour le traitement du paiement
             await Task.Delay(1000);

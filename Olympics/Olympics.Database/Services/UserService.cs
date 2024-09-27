@@ -12,7 +12,9 @@ using System.Text.Json;
 using Olympics.Services;
 using System.Text;
 using System.Net.Http.Json;
-using AuthentificationServer.Classes; 
+using AuthentificationServer.Classes;
+using Microsoft.AspNetCore.DataProtection;
+using System.IdentityModel.Tokens.Jwt;
 
 
 
@@ -27,8 +29,14 @@ namespace Olympics.Database.Services
         private readonly IJSRuntime _jsRuntime;
         private readonly PanierService _panierService;
         private readonly HttpClient _httpClient;
+        private readonly IDataProtectionProvider _dataProtectionProvider;
+        private readonly SessionService _sessionService;
+        private cUtilisateurBase _currentUser;
 
-        public UserService(HttpClient httpClient, ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, ILogger<UserService> logger, AuthenticationStateProvider authenticationStateProvider, IJSRuntime jsRuntime, PanierService panierService)
+
+        public UserService(HttpClient httpClient, ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, 
+        ILogger<UserService> logger, AuthenticationStateProvider authenticationStateProvider, IJSRuntime jsRuntime, 
+        PanierService panierService, IDataProtectionProvider dataProtectionProvider, SessionService sessionService)
         {
             _httpClient = httpClient;
             _context = context;
@@ -37,6 +45,8 @@ namespace Olympics.Database.Services
             _authenticationStateProvider = authenticationStateProvider;
             _jsRuntime = jsRuntime;
             _panierService = panierService;
+            _dataProtectionProvider = dataProtectionProvider;
+            _sessionService = sessionService;
         }
 
         public string GenerateUniqueKey()
@@ -44,21 +54,73 @@ namespace Olympics.Database.Services
             return Guid.NewGuid().ToString();
         }
 
-        public async Task<int?> GetAuthenticatedUserIdAsync()
-        {
-            var authState = await _authenticationStateProvider.GetAuthenticationStateAsync();
-            var user = authState.User;
 
-            if (user.Identity.IsAuthenticated)
+        public async Task<cUtilisateurBase> GetUserByEmailAsync(string email)
+        {
+
+            if (string.IsNullOrWhiteSpace(email))
             {
-                var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier);
-                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out var userId))
-                {
-                    return userId;
-                }
+                throw new ArgumentException("L'e-mail ne peut pas être vide.", nameof(email));
             }
 
-            return null; // Utilisateur non authentifié
+            // Vérifiez si l'utilisateur est connecté
+            var isUserLoggedIn = await _sessionService.ValidateUserSessionAsync();
+
+            if (isUserLoggedIn)
+            {
+                // Récupérez l'utilisateur par son e-mail
+                var utilisateur = await _context.Utilisateurs
+                    .FirstOrDefaultAsync(u => u.EmailClient.Equals(email, StringComparison.OrdinalIgnoreCase));
+
+                return utilisateur; 
+            }
+
+            return null; 
+        }
+
+
+        public async Task<int?> GetUserIdByEmailAsync(string email)
+        {
+            var utilisateur = await GetUserByEmailAsync(email);
+            return utilisateur?.IDClient; 
+        }
+
+
+        //Cette propriété est utilisée pour fournir un accès direct aux informations
+        //de l'utilisateur connecté sans avoir à exposer la variable privée _currentUser à l'extérieur de la classe.
+        public cUtilisateurBase CurrentUser => _currentUser;
+
+        public async Task<cUtilisateurBase> GetAuthenticatedUserAsync()
+        {
+            // Vérifiez si l'utilisateur est connecté
+            var isUserLoggedIn = await _sessionService.ValidateUserSessionAsync();
+
+            if (isUserLoggedIn)
+            {
+
+                var email = await GetUserEmailFromTokenAsync();
+                _currentUser = await GetUserByEmailAsync(email);
+                return _currentUser; // Retournez l'utilisateur trouvé
+            }
+
+            return null; 
+        }
+
+        public async Task<string> GetUserEmailFromTokenAsync()
+        {
+            var token = _httpContextAccessor.HttpContext.Request.Cookies["AuthToken"];
+            var protector = _dataProtectionProvider.CreateProtector("AuthTokenProtector");
+            var decryptedToken = protector.Unprotect(token);
+
+            var jwtHandler = new JwtSecurityTokenHandler();
+            var tokenS = jwtHandler.ReadToken(decryptedToken) as JwtSecurityToken;
+
+            if (tokenS != null)
+            {
+                var email = tokenS.Claims.First(claim => claim.Type == "email").Value;
+                return email;
+            }
+            return null;
         }
 
 
@@ -126,10 +188,25 @@ namespace Olympics.Database.Services
                     var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponse>();
                     var token = loginResponse.Token;
 
+                    // Chiffrer le token avec Data Protection
+                    var protector = _dataProtectionProvider.CreateProtector("AuthTokenProtector");
+                    var encryptedToken = protector.Protect(token);
+
+                    // Création du cookie HttpOnly pour stocker le token d'authentification
+                    var cookieOptions = new CookieOptions
+                    {
+                        HttpOnly = true,  // Cette propriété indique au navigateur de ne pas inclure le cookie dans les requêtes effectuées par le code JavaScript.
+                        Secure = true,    // Assure que le cookie est envoyé seulement sur HTTPS
+                        Expires = DateTimeOffset.UtcNow.AddHours(1) // Expire après 1 heure 
+                    };
+
+                    _httpContextAccessor.HttpContext.Response.Cookies.Append("AuthToken", encryptedToken, cookieOptions);
+
 
                     ////  ////  ////  ROLE DE L' UTILISATEUR   ////  ////  ////
-                    
+
                     bool isAdmin = utilisateur.RoleUtilisateur == RoleUtilisateur.Administrateur;
+
 
                     ////  ////  ////  RECUPERER LE PANIER   ////  ////  ////
 

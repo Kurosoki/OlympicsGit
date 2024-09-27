@@ -36,6 +36,9 @@ namespace Olympics.Presentation.Components.Pages
         [Inject]
         private UserService UserService { get; set; }
 
+        [Inject]
+        private SessionService SessionService { get; set; }
+
 
         private decimal totalPrice;
         private List<cTicket> cartTickets;
@@ -61,19 +64,20 @@ namespace Olympics.Presentation.Components.Pages
         private async Task OnCheckoutClicked()
         {
             // Vérifiez si l'utilisateur est connecté
-            var isUserLoggedIn = await SessionService.ValidateUserSessionAsync(); // Implémentez cette méthode pour vérifier la session
+            var isUserLoggedIn = await SessionService.ValidateUserSessionAsync(); 
 
             if (isUserLoggedIn)
             {
+
                 // Récupérez l'utilisateur connecté et les informations sur le panier
-                var utilisateur = await UserService.GetCurrentUserAsync(); // Implémentez cette méthode pour obtenir l'utilisateur actuel
-                var panier = await PanierService.GetPanierByIdAsync(utilisateur.idPanier); // Récupérez le panier de l'utilisateur
-                var montant = totalPrice; // Ou calculez le montant total selon vos besoins
+                var utilisateur = await UserService.GetAuthenticatedUserAsync();
+                var panier = await PanierService.GetPanierByIdAsync(utilisateur.IDClient); // Récupérez le panier de l'utilisateur
+                var montant = totalPrice;
 
                 // Effectuez le paiement
                 var payementResult = await PayementService.MockPayementAsync(utilisateur, panier, montant);
 
-                if (payementResult)
+                if (payementResult.IsSuccess)
                 {
                     NotificationService.Notify(NotificationSeverity.Success, "Succès", "Paiement réussi.");
                     NavigationManager.NavigateTo("/confirmation"); // Redirigez vers une page de confirmation

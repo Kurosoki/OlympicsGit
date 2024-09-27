@@ -6,12 +6,11 @@ namespace Olympics.Database.Services
     public class OffresService
     {
         private readonly ApplicationDbContext _context;
-        private readonly cOffresBase _offres;
 
-        public OffresService(ApplicationDbContext context, cOffresBase offres)
+
+        public OffresService(ApplicationDbContext context)
         {
             _context = context;
-            _offres = offres;
         }
 
         // Ajouter une nouvelle offre
