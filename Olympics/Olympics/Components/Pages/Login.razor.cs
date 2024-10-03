@@ -38,6 +38,9 @@ namespace Olympics.Presentation.Components.Pages
         [Inject]
         private ILogger<Login> _logger { get; set; }
 
+        [Inject]
+        private SessionService SessionService { get; set; }
+
 
         private cUtilisateurConnexionBase loginUser = new cUtilisateurConnexionBase();
 
@@ -55,27 +58,40 @@ namespace Olympics.Presentation.Components.Pages
 
             try
             {
+                // Essayez de vous connecter
                 var (isConnected, isAdmin) = await UserService.LoginUserAsync(loginUser);
 
+                // Vérifiez si l'utilisateur est connecté
                 if (isConnected)
                 {
-                    NotificationService.Notify(NotificationSeverity.Success, "Succès", "Connexion réussie.");
-                    NavigationManager.NavigateTo("/");
+                    // Vérifiez la session
+                    bool isSessionValid = await SessionService.ValidateUserSessionAsync();
+                    if (isSessionValid)
+                    {
+                        NotificationService.Notify(NotificationSeverity.Success, "Succès", "Connexion réussie.");
+                        NavigationManager.NavigateTo("/"); // Redirigez vers la page d'accueil ou la page désirée
+                    }
+                    else
+                    {
+                        loginFailed = true;
+                        NotificationService.Notify(NotificationSeverity.Error, "Erreur", "La session a expiré. Veuillez vous reconnecter.");
+                    }
                 }
                 else
                 {
                     loginFailed = true;
-                    NotificationService.Notify(NotificationSeverity.Error, "Erreur", "Le mot de passe n'est pas correct.");
+                    NotificationService.Notify(NotificationSeverity.Error, "Erreur", "Identifiants invalides");
                 }
             }
             catch (Exception ex)
             {
-                // Log the exception and notify the user
+                // Enregistrez l'exception et notifiez l'utilisateur
                 var logger = _logger ?? throw new InvalidOperationException("Logger not initialized.");
                 logger.LogError(ex, "An error occurred during login.");
                 NotificationService.Notify(NotificationSeverity.Error, "Erreur", "Une erreur est survenue lors de la connexion.");
             }
         }
+
 
 
         private bool EstEmailValide(string emailUtilisateur)

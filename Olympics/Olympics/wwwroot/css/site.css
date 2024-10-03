@@ -160,6 +160,9 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
 .btn-login {
     margin-right: 3%; /* Marge à droite pour le bouton Connexion / Inscription */
 }
+.btn-logout{
+    margin-right: 3%; 
+}
 
 /* Logo JO 2024 */
 .logo-Paris2024{

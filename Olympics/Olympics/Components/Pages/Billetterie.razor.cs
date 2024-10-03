@@ -68,13 +68,13 @@ namespace Olympics.Presentation.Components.Pages
 {
     new SportTicket
     {
-         SportName = "Athl�tisme",
+         SportName = "Athlétisme",
          QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
     },
     new SportTicket
     {
-         SportName = "Tir � L'Arc",
+         SportName = "Tir à L'Arc",
          QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
     },
@@ -100,7 +100,7 @@ namespace Olympics.Presentation.Components.Pages
     },
     new SportTicket
     {
-         SportName = "Sports �questres",
+         SportName = "Sports équestres",
          QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
          PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
     },
@@ -221,7 +221,7 @@ namespace Olympics.Presentation.Components.Pages
             else
             {
                 // Utilisateur authentifié : stocker dans la base de données
-                var panier = await PanierService.GetPanierByIdAsync(userId.Value);
+                var panier = await PanierService.GetPanierByUserIdAsync(userId.Value);
 
                 if (panier == null)
                 {
@@ -243,6 +243,9 @@ namespace Olympics.Presentation.Components.Pages
                 panier.Tickets.Add(ticket);
                 await PanierService.UpdatePanierAsync(panier);
             }
+            // Afficher la popup de confirmation
+
+            NotificationService.Notify(NotificationSeverity.Info,"Ticket ajouté au panier avec succès.");
         }
 
 

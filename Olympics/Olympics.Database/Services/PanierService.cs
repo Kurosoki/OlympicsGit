@@ -43,11 +43,18 @@ namespace Olympics.Services
 
 
         //Récupérer un panier spécifique avec tous ses tickets en bdd
-        public async Task<cPanierBase> GetPanierByIdAsync(int idPanier)
+        public async Task<cPanierBase> GetPanierByPanierIdAsync(int idPanier)
         {
             return await _context.Panier
                 .Include(p => p.Tickets)
                 .FirstOrDefaultAsync(p => p.IDPanier == idPanier);
+        }
+
+        public async Task<cPanierBase> GetPanierByUserIdAsync(int idClient)
+        {
+            return await _context.Panier
+                .Include(p => p.Tickets)
+                .FirstOrDefaultAsync(p => p.IDClient == idClient);
         }
 
 

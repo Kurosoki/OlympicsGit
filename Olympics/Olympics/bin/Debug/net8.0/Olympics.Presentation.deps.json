@@ -15,7 +15,7 @@
           "Newtonsoft.Json": "13.0.3",
           "Olympics.Database": "1.0.0",
           "Olympics.Metier": "1.0.0",
-          "Radzen.Blazor": "5.2.4",
+          "Radzen.Blazor": "5.2.8",
           "System.Drawing.Common": "8.0.8"
         },
         "runtime": {
@@ -486,6 +486,18 @@
           }
         }
       },
+      "ProtectedBrowserStorage.NETStandard/1.1.2": {
+        "dependencies": {
+          "Blazored.LocalStorage": "4.5.0",
+          "Blazored.SessionStorage": "2.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ProtectedLocalStore.dll": {
+            "assemblyVersion": "1.1.2.0",
+            "fileVersion": "1.1.2.0"
+          }
+        }
+      },
       "QRCoder/1.6.0": {
         "runtime": {
           "lib/net6.0/QRCoder.dll": {
@@ -494,7 +506,7 @@
           }
         }
       },
-      "Radzen.Blazor/5.2.4": {
+      "Radzen.Blazor/5.2.8": {
         "dependencies": {
           "DartSassBuilder": "1.0.0",
           "Microsoft.AspNetCore.Components": "8.0.8",
@@ -503,8 +515,8 @@
         },
         "runtime": {
           "lib/net8.0/Radzen.Blazor.dll": {
-            "assemblyVersion": "5.2.4.0",
-            "fileVersion": "5.2.4.0"
+            "assemblyVersion": "5.2.8.0",
+            "fileVersion": "5.2.8.0"
           }
         }
       },
@@ -624,6 +636,7 @@
       },
       "AuthentificationServer/1.0.0": {
         "dependencies": {
+          "ProtectedBrowserStorage.NETStandard": "1.1.2",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "runtime": {
@@ -633,6 +646,8 @@
       "Olympics.Database/1.0.0": {
         "dependencies": {
           "AuthentificationServer": "1.0.0",
+          "Blazored.LocalStorage": "4.5.0",
+          "Blazored.SessionStorage": "2.4.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
           "Microsoft.AspNetCore.Components.Authorization": "8.0.8",
           "Microsoft.JSInterop": "8.0.8",
@@ -1077,6 +1092,13 @@
       "path": "npgsql.entityframeworkcore.postgresql/8.0.4",
       "hashPath": "npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512"
     },
+    "ProtectedBrowserStorage.NETStandard/1.1.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dHZHC2wylPJErR146skePnvmlSb/SpQPz7l3kTkRioGh1Z2MLZ4lAxrhxXZoQECy3rrWPEp4yDcB+6J1MTrwtw==",
+      "path": "protectedbrowserstorage.netstandard/1.1.2",
+      "hashPath": "protectedbrowserstorage.netstandard.1.1.2.nupkg.sha512"
+    },
     "QRCoder/1.6.0": {
       "type": "package",
       "serviceable": true,
@@ -1084,12 +1106,12 @@
       "path": "qrcoder/1.6.0",
       "hashPath": "qrcoder.1.6.0.nupkg.sha512"
     },
-    "Radzen.Blazor/5.2.4": {
+    "Radzen.Blazor/5.2.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-m+tyeDo43sgXB6Qg0yfs6GzJ2Nw+10G9ibQCnpZRVc5pkITSCC6T6vsdyyk6czTqqUZssx+Ni4Z2GO161jdBmA==",
-      "path": "radzen.blazor/5.2.4",
-      "hashPath": "radzen.blazor.5.2.4.nupkg.sha512"
+      "sha512": "sha512-dUW22tgIU7BJHHQikS30+Q25bC08pieuZeAHiBLE6iSa4/73RBF6cIxQ5Fn8RleStPJOIOmQaJnxFVQ9jMMocA==",
+      "path": "radzen.blazor/5.2.8",
+      "hashPath": "radzen.blazor.5.2.8.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/6.4.0": {
       "type": "package",

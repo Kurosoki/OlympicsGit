@@ -962,6 +962,19 @@
           }
         }
       },
+      "ProtectedBrowserStorage.NETStandard/1.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Blazored.LocalStorage": "2.1.6",
+          "Blazored.SessionStorage": "1.0.12"
+        },
+        "compile": {
+          "lib/netstandard2.0/ProtectedLocalStore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ProtectedLocalStore.dll": {}
+        }
+      },
       "QRCoder/1.6.0": {
         "type": "package",
         "compile": {
@@ -971,7 +984,7 @@
           "lib/net6.0/QRCoder.dll": {}
         }
       },
-      "Radzen.Blazor/5.2.4": {
+      "Radzen.Blazor/5.2.8": {
         "type": "package",
         "dependencies": {
           "DartSassBuilder": "1.0.0",
@@ -1274,6 +1287,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "ProtectedBrowserStorage.NETStandard": "1.1.2",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "compile": {
@@ -1291,6 +1305,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "AuthentificationServer": "1.0.0",
+          "Blazored.LocalStorage": "4.5.0",
+          "Blazored.SessionStorage": "2.4.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.2.0",
           "Microsoft.AspNetCore.Components.Authorization": "8.0.8",
           "Microsoft.JSInterop": "8.0.8",
@@ -2806,6 +2822,19 @@
         "postgresql.png"
       ]
     },
+    "ProtectedBrowserStorage.NETStandard/1.1.2": {
+      "sha512": "dHZHC2wylPJErR146skePnvmlSb/SpQPz7l3kTkRioGh1Z2MLZ4lAxrhxXZoQECy3rrWPEp4yDcB+6J1MTrwtw==",
+      "type": "package",
+      "path": "protectedbrowserstorage.netstandard/1.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/ProtectedLocalStore.dll",
+        "logo.png",
+        "protectedbrowserstorage.netstandard.1.1.2.nupkg.sha512",
+        "protectedbrowserstorage.netstandard.nuspec"
+      ]
+    },
     "QRCoder/1.6.0": {
       "sha512": "XmPA81eo+oRxBuyVdswsSkTGTE1d3thfF11Z1PdD7oB56A6HU4G4AAOdySmGRMb/cljwlFTMWUtosGEnwpS6GA==",
       "type": "package",
@@ -2827,10 +2856,10 @@
         "qrcoder.nuspec"
       ]
     },
-    "Radzen.Blazor/5.2.4": {
-      "sha512": "m+tyeDo43sgXB6Qg0yfs6GzJ2Nw+10G9ibQCnpZRVc5pkITSCC6T6vsdyyk6czTqqUZssx+Ni4Z2GO161jdBmA==",
+    "Radzen.Blazor/5.2.8": {
+      "sha512": "dUW22tgIU7BJHHQikS30+Q25bC08pieuZeAHiBLE6iSa4/73RBF6cIxQ5Fn8RleStPJOIOmQaJnxFVQ9jMMocA==",
       "type": "package",
-      "path": "radzen.blazor/5.2.4",
+      "path": "radzen.blazor/5.2.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2847,7 +2876,7 @@
         "lib/net7.0/Radzen.Blazor.xml",
         "lib/net8.0/Radzen.Blazor.dll",
         "lib/net8.0/Radzen.Blazor.xml",
-        "radzen.blazor.5.2.4.nupkg.sha512",
+        "radzen.blazor.5.2.8.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",
@@ -2856,6 +2885,10 @@
         "staticwebassets/css/default-base.css",
         "staticwebassets/css/default-wcag.css",
         "staticwebassets/css/default.css",
+        "staticwebassets/css/fluent-base.css",
+        "staticwebassets/css/fluent-dark-base.css",
+        "staticwebassets/css/fluent-dark.css",
+        "staticwebassets/css/fluent.css",
         "staticwebassets/css/humanistic-base.css",
         "staticwebassets/css/humanistic-dark-base.css",
         "staticwebassets/css/humanistic-dark-wcag.css",
@@ -2868,6 +2901,10 @@
         "staticwebassets/css/material-dark.css",
         "staticwebassets/css/material-wcag.css",
         "staticwebassets/css/material.css",
+        "staticwebassets/css/material3-base.css",
+        "staticwebassets/css/material3-dark-base.css",
+        "staticwebassets/css/material3-dark.css",
+        "staticwebassets/css/material3.css",
         "staticwebassets/css/software-base.css",
         "staticwebassets/css/software-dark-base.css",
         "staticwebassets/css/software-dark-wcag.css",

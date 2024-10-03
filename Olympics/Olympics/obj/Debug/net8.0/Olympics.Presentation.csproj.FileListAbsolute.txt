@@ -146,7 +146,6 @@ G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentatio
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.AssemblyInfoInputs.cache
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.AssemblyInfo.cs
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.csproj.CoreCompileInputs.cache
-G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.MvcApplicationPartsAssemblyInfo.cs
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.MvcApplicationPartsAssemblyInfo.cache
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\AuthentificationServer.deps.json
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\AuthentificationServer.runtimeconfig.json
@@ -186,6 +185,7 @@ G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Microsoft.Win32.Syst
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Newtonsoft.Json.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Npgsql.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\ProtectedLocalStore.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\QRCoder.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Radzen.Blazor.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -203,6 +203,7 @@ G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Olympics.Metier.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Olympics.Database.pdb
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Olympics.Metier.pdb
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\AuthentificationServer.pdb
+G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.MvcApplicationPartsAssemblyInfo.cs
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\staticwebassets.build.json
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\staticwebassets.development.json
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\staticwebassets\msbuild.Olympics.Presentation.Microsoft.AspNetCore.StaticWebAssets.props

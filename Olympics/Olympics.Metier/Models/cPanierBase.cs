@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Olympics.Metier.Models
 {
-    [Table("paniers")] 
+    [Table("panier")] 
     public class cPanierBase
     {
         [Key]
@@ -14,10 +14,10 @@ namespace Olympics.Metier.Models
         [Column("idclient")] 
         public int IDClient { get; set; }
 
-        [Column("datecreated")] 
-        public DateTime DateCreated { get; set; }
+        [Column("datecreated")]
+        public DateTime DateCreated { get; set; } 
 
-        [Column("dateupdated")] 
+        [Column("dateupdated")]
         public DateTime DateUpdated { get; set; }
 
         // Relation avec les tickets
@@ -32,9 +32,11 @@ namespace Olympics.Metier.Models
         [Column("idticket")] 
         public int IDTicket { get; set; }
 
-        [ForeignKey("cPanierBase")]
+        [ForeignKey("Panier")]  // Indique que IDPanier est une clé étrangère
         [Column("idpanier")] 
         public int IDPanier { get; set; }
+
+        public cPanierBase Panier { get; set; }  // Propriété de navigation vers cPanierBase
 
         [Column("sportname")] 
         public string SportName { get; set; }

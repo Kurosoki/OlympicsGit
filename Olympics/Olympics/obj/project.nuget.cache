@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RXkqFdRvTVif2mDctXqnf4I8dRy/VrSyddDbefUgOZSQTEpnwAJhihCZlI4rmZzQUi/tPoaz7J9HNDEfWI+90w==",
+  "dgSpecHash": "80vFtAh94vEx74t3K3/0VvLNviFKUfPUukqfJSejd6iyQq5K+Xr6ddAO6Ank9N4GLfm2W3GYENcOyli5HX+riw==",
   "success": true,
   "projectFilePath": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Olympics.Presentation.csproj",
   "expectedPackageFiles": [
@@ -63,8 +63,9 @@
     "C:\\Users\\diama\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\diama\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
     "C:\\Users\\diama\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.4\\npgsql.entityframeworkcore.postgresql.8.0.4.nupkg.sha512",
+    "C:\\Users\\diama\\.nuget\\packages\\protectedbrowserstorage.netstandard\\1.1.2\\protectedbrowserstorage.netstandard.1.1.2.nupkg.sha512",
     "C:\\Users\\diama\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512",
-    "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.4\\radzen.blazor.5.2.4.nupkg.sha512",
+    "C:\\Users\\diama\\.nuget\\packages\\radzen.blazor\\5.2.8\\radzen.blazor.5.2.8.nupkg.sha512",
     "C:\\Users\\diama\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\diama\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\diama\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

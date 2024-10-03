@@ -19,6 +19,7 @@ namespace Olympics.Database
         public DbSet<cUtilisateurBase> Utilisateurs { get; set; }
         public DbSet<cPanierBase> Panier { get; set; }
         public DbSet<cOffresBase> Offres { get; set; }
+        public DbSet<cTicket> Tickets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -30,14 +31,32 @@ namespace Olympics.Database
 
             modelBuilder.Entity<cPanierBase>()
                 .HasMany(p => p.Tickets)
-                .WithOne()
-                .OnDelete(DeleteBehavior.Cascade); 
-            // La suppression en cascade est configurée pour que les tickets associés
-            // à un panier soient également supprimés lorsque le panier est supprimé.
+                .WithOne(t => t.Panier) // Ajoute la propriété de navigation
+                .HasForeignKey(t => t.IDPanier) // Configure la clé étrangère
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<cOffresBase>()
                 .HasKey(o => o.IDOffre);
+
+            // Configuration des propriétés DateTime sans conversion
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                var clrType = entityType.ClrType;
+
+                var dateTimeProperties = clrType.GetProperties()
+                    .Where(p => p.PropertyType == typeof(DateTime) || p.PropertyType == typeof(DateTime?));
+
+                foreach (var property in dateTimeProperties)
+                {
+                    modelBuilder.Entity(clrType)
+                        .Property(property.Name)
+                        .HasColumnType("timestamp without time zone"); // Spécifiez le type ici
+                }
+            }
+
+            base.OnModelCreating(modelBuilder);
         }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

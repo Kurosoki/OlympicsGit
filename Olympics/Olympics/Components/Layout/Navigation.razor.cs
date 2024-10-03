@@ -35,20 +35,28 @@ namespace Olympics.Presentation.Components.Layout
         [Inject]
         private UserService UserService { get; set; }
 
+        [Inject]
+        private SessionService SessionService { get; set; }
+
 
         private bool isLoggedIn = false;
 
-        //protected override async Task OnInitializedAsync()
-        //{
-        //    var userId = await UserService.GetAuthenticatedUserIdAsync();
-        //    isLoggedIn = userId.HasValue;
-        //}
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {   
+                isLoggedIn = await SessionService.ValidateUserSessionAsync();
+                StateHasChanged(); // Récupérez l'état du composant
+            }
+        }
 
-        //private async Task Logout()
-        //{
-        //    await UserService.LogoutUserAsync();
-        //    isLoggedIn = false; // Mettre à jour l'état après la déconnexion
-        //}
+        private async Task Logout()
+        {
+            isLoggedIn = await SessionService.ValidateUserSessionAsync();
+            await UserService.LogoutUserAsync();
+            isLoggedIn = false; // Mettre à jour l'état après la déconnexion
+            StateHasChanged();
+        }
 
         private void NavigateToAccueil()
         {
@@ -62,6 +70,7 @@ namespace Olympics.Presentation.Components.Layout
 
         private void NavigateToBilletterie()
         {
+
             NavigationManager.NavigateTo("/billetterie");
         }
 

@@ -38,8 +38,8 @@ namespace Olympics.Metier.Models
 
     public enum RoleUtilisateur
     {
-        Utilisateur,
-        Administrateur,
+        Utilisateur = 0,
+        Administrateur = 1,
     }
 
 }

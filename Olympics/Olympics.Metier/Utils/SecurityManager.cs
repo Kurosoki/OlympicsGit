@@ -10,6 +10,20 @@ namespace Olympics.Metier.Utils
     public static class SecurityManager
     {
 
+        // Clé et IV AES générés au lancement de l'application
+        private static readonly byte[] aesKey;
+        private static readonly byte[] aesIV;
+
+        static SecurityManager()
+        {
+            // Générer la clé et l'IV AES au démarrage de l'application
+            using (Aes aes = Aes.Create())
+            {
+                aesKey = aes.Key;
+                aesIV = aes.IV;
+            }
+        }
+
         public static string GenerateSalt(int size = 16)
         {
             // Génère un salt aléatoire
@@ -53,6 +67,52 @@ namespace Olympics.Metier.Utils
             return hashOfEnteredPassword.Equals(storedHash);
         }
 
+        // Méthode pour chiffrer une chaîne de caractères en utilisant AES et retourner une chaîne Base64
+        public static string EncryptAES(string plainText)
+        {
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = aesKey;
+                aes.IV = aesIV;
+
+                ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                    {
+                        // Écrire les données à chiffrer dans le flux
+                        swEncrypt.Write(plainText);
+                    }
+                    byte[] encryptedBytes = msEncrypt.ToArray();
+                    // Convertir les bytes chiffrés en chaîne Base64
+                    return Convert.ToBase64String(encryptedBytes);
+                }
+            }
+        }
+
+        // Méthode pour déchiffrer une chaîne Base64 en utilisant AES
+        public static string DecryptAES(string cipherTextBase64)
+        {
+            byte[] cipherTextBytes = Convert.FromBase64String(cipherTextBase64);
+
+            using (Aes aes = Aes.Create())
+            {
+                aes.Key = aesKey;
+                aes.IV = aesIV;
+
+                ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+
+                using (MemoryStream msDecrypt = new MemoryStream(cipherTextBytes))
+                using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                {
+                    // Lire les données déchiffrées du flux
+                    return srDecrypt.ReadToEnd();
+                }
+            }
+        }
 
 
     }

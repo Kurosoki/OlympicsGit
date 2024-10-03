@@ -1,20 +1,19 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using AuthentificationServer.Classes;
+using AuthentificationServer.DAL;
+using Blazored.LocalStorage;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.JSInterop;
 using Olympics.Metier.Models;
 using Olympics.Metier.Utils;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Components.Authorization;
-using Microsoft.JSInterop;
-using System.Text.Json;
 using Olympics.Services;
-using System.Text;
-using System.Net.Http.Json;
-using AuthentificationServer.Classes;
-using Microsoft.AspNetCore.DataProtection;
 using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http.Json;
+using System.Security.Cryptography;
+
 
 
 
@@ -32,11 +31,12 @@ namespace Olympics.Database.Services
         private readonly IDataProtectionProvider _dataProtectionProvider;
         private readonly SessionService _sessionService;
         private cUtilisateurBase _currentUser;
+        private readonly ILocalStorageService _localStorage;
 
 
-        public UserService(HttpClient httpClient, ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, 
-        ILogger<UserService> logger, AuthenticationStateProvider authenticationStateProvider, IJSRuntime jsRuntime, 
-        PanierService panierService, IDataProtectionProvider dataProtectionProvider, SessionService sessionService)
+        public UserService(HttpClient httpClient, ApplicationDbContext context, IHttpContextAccessor httpContextAccessor,
+        ILogger<UserService> logger, AuthenticationStateProvider authenticationStateProvider, IJSRuntime jsRuntime,
+        PanierService panierService, IDataProtectionProvider dataProtectionProvider, SessionService sessionService, ILocalStorageService localStorage)
         {
             _httpClient = httpClient;
             _context = context;
@@ -47,6 +47,7 @@ namespace Olympics.Database.Services
             _panierService = panierService;
             _dataProtectionProvider = dataProtectionProvider;
             _sessionService = sessionService;
+            _localStorage = localStorage;
         }
 
         public string GenerateUniqueKey()
@@ -63,26 +64,26 @@ namespace Olympics.Database.Services
                 throw new ArgumentException("L'e-mail ne peut pas être vide.", nameof(email));
             }
 
-            // Vérifiez si l'utilisateur est connecté
+            // Vérifier si l'utilisateur est connecté
             var isUserLoggedIn = await _sessionService.ValidateUserSessionAsync();
 
             if (isUserLoggedIn)
             {
-                // Récupérez l'utilisateur par son e-mail
+                // Récupérer l'utilisateur par son e-mail
                 var utilisateur = await _context.Utilisateurs
                     .FirstOrDefaultAsync(u => u.EmailClient.Equals(email, StringComparison.OrdinalIgnoreCase));
 
-                return utilisateur; 
+                return utilisateur;
             }
 
-            return null; 
+            return null;
         }
 
 
         public async Task<int?> GetUserIdByEmailAsync(string email)
         {
             var utilisateur = await GetUserByEmailAsync(email);
-            return utilisateur?.IDClient; 
+            return utilisateur?.IDClient;
         }
 
 
@@ -92,7 +93,7 @@ namespace Olympics.Database.Services
 
         public async Task<cUtilisateurBase> GetAuthenticatedUserAsync()
         {
-            // Vérifiez si l'utilisateur est connecté
+            // Vérifier si l'utilisateur est connecté
             var isUserLoggedIn = await _sessionService.ValidateUserSessionAsync();
 
             if (isUserLoggedIn)
@@ -100,11 +101,12 @@ namespace Olympics.Database.Services
 
                 var email = await GetUserEmailFromTokenAsync();
                 _currentUser = await GetUserByEmailAsync(email);
-                return _currentUser; // Retournez l'utilisateur trouvé
+                return _currentUser; // Retourner l'utilisateur trouvé
             }
 
-            return null; 
+            return null;
         }
+
 
         public async Task<string> GetUserEmailFromTokenAsync()
         {
@@ -157,12 +159,15 @@ namespace Olympics.Database.Services
 
         public async Task<(bool IsConnected, bool IsAdmin)> LoginUserAsync(cUtilisateurConnexionBase loginUser)
         {
+            // Appeler la méthode pour nettoyer les sessions expirées avant de créer une nouvelle session
+            SessionManager.CleanupExpiredSessions();
+
             var utilisateur = await _context.Utilisateurs
                 .FirstOrDefaultAsync(u => u.EmailClient == loginUser.EmailClient);
 
             if (utilisateur == null)
             {
-                return (false, false); // L'utilisateur n'existe pas
+                return (false, false);
             }
 
             bool isPasswordValid = SecurityManager.VerifyPassword(loginUser.ShaMotDePasse, utilisateur.ShaMotDePasse, utilisateur.Salt);
@@ -170,7 +175,7 @@ namespace Olympics.Database.Services
             if (isPasswordValid)
             {
                 ////  ////  ////  INTERROGER L'API SUR L'AUTHENTIFICATION   ////  ////  ////
-                
+
                 using var httpClient = new HttpClient();
 
                 var loginRequest = new LoginRequest
@@ -192,25 +197,18 @@ namespace Olympics.Database.Services
                     var protector = _dataProtectionProvider.CreateProtector("AuthTokenProtector");
                     var encryptedToken = protector.Protect(token);
 
-                    // Création du cookie HttpOnly pour stocker le token d'authentification
-                    var cookieOptions = new CookieOptions
-                    {
-                        HttpOnly = true,  // Cette propriété indique au navigateur de ne pas inclure le cookie dans les requêtes effectuées par le code JavaScript.
-                        Secure = true,    // Assure que le cookie est envoyé seulement sur HTTPS
-                        Expires = DateTimeOffset.UtcNow.AddHours(1) // Expire après 1 heure 
-                    };
-
-                    _httpContextAccessor.HttpContext.Response.Cookies.Append("AuthToken", encryptedToken, cookieOptions);
+                    // Chiffrer le token et la date d'expiration avec AES
+                    await _localStorage.SetItemAsync(SecurityManager.EncryptAES("Token"), SecurityManager.EncryptAES(encryptedToken));
+                    await _localStorage.SetItemAsync(SecurityManager.EncryptAES("ExpireDate"), SecurityManager.EncryptAES(loginResponse.Expiration.ToString("o")));
 
 
-                    ////  ////  ////  ROLE DE L' UTILISATEUR   ////  ////  ////
+                    ////  ////  ////  IDENTIFIER LE ROLE DE L'UTILISATEUR  ////  ////  ////
 
                     bool isAdmin = utilisateur.RoleUtilisateur == RoleUtilisateur.Administrateur;
 
 
-                    ////  ////  ////  RECUPERER LE PANIER   ////  ////  ////
+                    ////  ////  ////  RECUPERER LE PANIER  ////  ////  ////
 
-                    // Récupérer le panier depuis le session storage
                     var cartTickets = await _panierService.GetCartFromSessionAsync();
 
                     if (cartTickets != null && cartTickets.Count > 0)
@@ -221,8 +219,12 @@ namespace Olympics.Database.Services
 
                         if (existingPanier != null)
                         {
+                            foreach (var ticket in cartTickets)
+                            {
+                                ticket.IDPanier = existingPanier.IDPanier; // Lier chaque ticket au panier
+                            }
                             existingPanier.Tickets.AddRange(cartTickets);
-                            existingPanier.DateUpdated = DateTime.Now; 
+                            existingPanier.DateUpdated = DateTime.Now;
                             await _panierService.UpdatePanierAsync(existingPanier);
                         }
                         else
@@ -230,27 +232,91 @@ namespace Olympics.Database.Services
                             var newPanier = new cPanierBase
                             {
                                 IDClient = utilisateur.IDClient,
-                                Tickets = cartTickets,
+                                Tickets = new List<cTicket>(),
                                 DateCreated = DateTime.Now,
-                                DateUpdated = DateTime.Now
+                                DateUpdated = DateTime.Now,
                             };
+
+                            // Créer le panier dans la base de données pour obtenir un ID
                             await _panierService.CreatePanierAsync(newPanier);
+
+                            // Lier les tickets au nouveau panier après sa création
+                            foreach (var ticket in cartTickets)
+                            {
+                                ticket.IDPanier = newPanier.IDPanier;
+                                newPanier.Tickets.Add(ticket); // Ajouter le ticket à la liste
+                            }
+
+                            // Mettre à jour le panier avec les tickets
+                            await _panierService.UpdatePanierAsync(newPanier);
                         }
-                        await _panierService.ClearCartFromSessionAsync();
+
+                        var updatedPanier = await _panierService.GetPanierByUserIdAsync(utilisateur.IDClient);
                     }
 
-                    return (true, isAdmin); // Utilisateur connecté et retourne si c'est un admin
+                    return (true, isAdmin);
                 }
             }
 
             // Si on arrive ici, cela signifie que le mot de passe est invalide ou la réponse de l'API n'est pas un succès
-            return (false, false); // Échec de la connexion
+            return (false, false); 
         }
 
+        public async Task<bool> LogoutUserAsync()
+        {
+            // Récupérer le token d'authentification chiffré depuis le localStorage
+            string encryptedToken = await _localStorage.GetItemAsync<string>(SecurityManager.EncryptAES("Token"));
+            string encryptedExpirationDate = await _localStorage.GetItemAsync<string>(SecurityManager.EncryptAES("ExpireDate"));
 
+            if (string.IsNullOrEmpty(encryptedToken) || string.IsNullOrEmpty(encryptedExpirationDate))
+            {
+                return false;   // Pas de token, rien à supprimer
+            }
 
+            try
+            {
+                //  Déchiffrer avec AES
+                var aesDecryptedToken = SecurityManager.DecryptAES(encryptedToken);
+                var aesDecryptedExpiration = SecurityManager.DecryptAES(encryptedExpirationDate);
 
+                // Déchiffrer avec Data Protection
+                var protector = _dataProtectionProvider.CreateProtector("AuthTokenProtector");
+                var token = protector.Unprotect(aesDecryptedToken);
+                DateTime expirationDate = Convert.ToDateTime(aesDecryptedExpiration);
 
+                using var httpClient = new HttpClient();
+
+                // Préparer la requête de déconnexion en envoyant un objet ValidateSessionRequest
+                var logoutRequest = new ValidateSessionRequest
+                {
+                    Token = token,
+                    Ip = _httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString(),
+                    UserAgent = _httpContextAccessor.HttpContext.Request.Headers["User-Agent"].ToString(),
+                    Expiration = expirationDate
+                };
+
+                var response = await httpClient.PostAsJsonAsync("https://localhost:7187/api/auth/logout", logoutRequest);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    // Suppression des données dans le localStorage
+                    await _localStorage.RemoveItemAsync(SecurityManager.EncryptAES("Token"));
+                    await _localStorage.RemoveItemAsync(SecurityManager.EncryptAES("ExpireDate"));
+
+                    // Méthode pour nettoyer le panier en sessionStorage
+                    await _panierService.ClearCartFromSessionAsync();
+
+                    // On ajoute un logging ici pour vérifier que le localStorage est bien vidé
+                    Console.WriteLine("Déconnexion réussie et token supprimé du localStorage.");
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return false;
+        }
     }
 }
 

@@ -1,3 +1,4 @@
+using AuthentificationServer.Services;
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -7,12 +8,16 @@ using Olympics.Database.Services;
 using Olympics.Metier.Utils;
 using Olympics.Presentation.Components;
 using Olympics.Services;
+using ProtectedLocalStore;
 using Radzen;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Ajouter les services nécessaires à l'application
+//le service de nettoyage des sessions
+builder.Services.AddHostedService<SessionCleanupService>();
+
+// les services nécessaires à l'application
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddHubOptions(options => options.MaximumReceiveMessageSize = 10 * 1024 * 1024);
@@ -21,15 +26,17 @@ builder.Services.AddControllers();
 builder.Services.AddRadzenComponents();
 builder.Services.AddHttpClient();
 builder.Services.AddAuthorizationCore();
-
-// Ajouter DbContext avec PostgreSQL
+// Clé et IV (équivalent à Aes.Create())
+//builder.Services.AddProtectedLocalStore(new EncryptionService(
+//                new ProtectedLocalStore.KeyInfo("z4i7MT3dmNnlcTAzEsLvf66sLqW1e7lrohv2BD6Luyg=", "SM8A/pEln/rNlpEfyDN3gw==")));
+//  DbContext avec PostgreSQL
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Ajouter IHttpContextAccessor
+//  IHttpContextAccessor
 builder.Services.AddHttpContextAccessor();
 
-// Ajouter Data Protection
+//  Data Protection
 builder.Services.AddDataProtection();
 
 // Enregistrement des services
@@ -39,10 +46,11 @@ builder.Services.AddScoped<PanierService>();
 builder.Services.AddScoped<PayementService>();
 builder.Services.AddScoped<OffresService>();
 
-// Ajouter Blazored LocalStorage
+
+//Blazored LocalStorage
 builder.Services.AddBlazoredLocalStorage();
 
-// Ajouter le cache distribué et les sessions avant la construction de l'application
+//le cache distribué et les sessions avant la construction de l'application
 builder.Services.AddDistributedMemoryCache(); // Nécessaire pour stocker les sessions en mémoire
 builder.Services.AddSession(options =>
 {

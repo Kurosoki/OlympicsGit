@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\JavaScript\\cookieManager.js",
-      "PackagePath": "staticwebassets\\JavaScript\\cookieManager.js"
-    },
-    {
       "Id": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\JavaScript\\script.js",
       "PackagePath": "staticwebassets\\JavaScript\\script.js"
     },

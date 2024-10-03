@@ -31,7 +31,8 @@
 
         <div class="cart-summary">
             <p><b>Total: @totalPrice €</b></p>
-                <RadzenButton Text="Passer à la caisse" class="checkout-btn" @onclick="OnCheckoutClicked" />
+                <button @onclick="ViderPanierCompletAsync" class="btn btn-danger">Vider le Panier</button>
+                <button @onclick="OnCheckoutClicked" class="checkout-btn">Passer à la caisse</button>
             </div>
     }
     else
