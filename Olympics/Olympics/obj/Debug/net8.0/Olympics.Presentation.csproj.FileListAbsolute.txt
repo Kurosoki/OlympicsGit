@@ -169,6 +169,7 @@ G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Microsoft.AspNetCore
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
@@ -203,7 +204,6 @@ G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Olympics.Metier.dll
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Olympics.Database.pdb
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\Olympics.Metier.pdb
 G:\Examens\RecupOlympics\Olympics\Olympics\bin\Debug\net8.0\AuthentificationServer.pdb
-G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\Olympics.Presentation.MvcApplicationPartsAssemblyInfo.cs
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\staticwebassets.build.json
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\staticwebassets.development.json
 G:\Examens\RecupOlympics\Olympics\Olympics\obj\Debug\net8.0\staticwebassets\msbuild.Olympics.Presentation.Microsoft.AspNetCore.StaticWebAssets.props

@@ -42,8 +42,6 @@ namespace Olympics.Presentation.Components.Pages
 
         private decimal totalPrice;
         private List<cTicket> cartTickets = new List<cTicket>();
-        private List<cTicket> sessionCartTickets = new List<cTicket>();
-        private cPanierBase panierBdd;
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -51,34 +49,28 @@ namespace Olympics.Presentation.Components.Pages
             {
                 // Vérifiez si l'utilisateur est connecté
                 var isUserLoggedIn = await SessionService.ValidateUserSessionAsync();
-                sessionCartTickets = await PanierService.GetCartFromSessionAsync(); // Récupérer les tickets de session
 
                 if (isUserLoggedIn)
                 {
-                    var utilisateur = await UserService.GetAuthenticatedUserAsync();
-                    if (utilisateur != null)
-                    {
-                        // Récupérez le panier de l'utilisateur à partir de la base de données
-                        panierBdd = await PanierService.GetPanierByUserIdAsync(utilisateur.IDClient);
+                    // Si connecté, récupérez le panier de la BDD
+                    var panier = PanierService.ObtenirPanier();
 
-                        // Si le panier existe, ajoutez ses tickets à cartTickets
-                        if (panierBdd != null)
-                        {
-                            cartTickets.AddRange(panierBdd.Tickets);
-                        }
+                    if (panier != null)
+                    {
+                        cartTickets = panier.Tickets;
                     }
                 }
-
                 else
                 {
-                    // Si l'utilisateur n'est pas connecté, utilisez uniquement les tickets de session
-                    cartTickets = sessionCartTickets;
+                    // Si non connecté, récupérez le panier en sessionStorage
+                    cartTickets = await PanierService.GetCartFromSessionAsync();
                 }
 
-                TotalPriceSum(); // Calculez le total des prix
+                TotalPriceSum(); 
                 StateHasChanged(); 
             }
         }
+
 
         private void TotalPriceSum()
         {
@@ -86,11 +78,6 @@ namespace Olympics.Presentation.Components.Pages
             if (cartTickets != null)
             {
                 totalPrice += cartTickets.Sum(ticket => ticket.Quantity * ticket.Price);
-            }
-
-            if (panierBdd?.Tickets != null)
-            {
-                totalPrice += panierBdd.Tickets.Sum(ticket => ticket.Quantity * ticket.Price);
             }
         }
 
@@ -102,10 +89,16 @@ namespace Olympics.Presentation.Components.Pages
 
             if (isUserLoggedIn)
             {
+                var panier = PanierService.ObtenirPanier();
 
-                // Récupérez l'utilisateur connecté et les informations sur le panier
-                var utilisateur = await UserService.GetAuthenticatedUserAsync();
-                var panier = await PanierService.GetPanierByUserIdAsync(utilisateur.IDClient); // Récupérez le panier de l'utilisateur
+                // Vérifier si le panier n'est pas vide avant de procéder au payement
+                if (panier.Tickets == null || !panier.Tickets.Any()) //vérifier si la liste des tickets est vide.
+                {
+                    NotificationService.Notify(NotificationSeverity.Warning, "Panier vide", "Votre panier ne contient aucun billet.");
+                    return; // Sortir de la méthode si le panier est vide
+                }
+
+                var utilisateur = await UserService.GetUserByIdAsync(panier.IDClient);
                 var montant = totalPrice;
 
                 // Effectuez le paiement
@@ -130,10 +123,12 @@ namespace Olympics.Presentation.Components.Pages
         }
 
 
+
+
         private async Task ViderPanierCompletAsync()
         {
-            // Essayer de récupérer l'utilisateur authentifié (peut être null si non connecté)
-            var utilisateur = await UserService.GetAuthenticatedUserAsync();
+            // On récupérer l'utilisateur authentifié grâce a son panier
+            var panier = PanierService.ObtenirPanier();
 
             // Confirmer l'action de vider le panier
             var confirmation = await DialogService.Confirm("Êtes-vous sûr de vouloir vider le panier ?", "Confirmation");
@@ -145,13 +140,9 @@ namespace Olympics.Presentation.Components.Pages
                 totalPrice = 0;
 
                 // Si l'utilisateur est connecté, vider également le panier de la base de données
-                if (utilisateur != null)
+                if (panier != null)
                 {
-                    var panier = await PanierService.GetPanierByUserIdAsync(utilisateur.IDClient);
-                    if (panier != null)
-                    {
-                        await PanierService.DeletePanierAsync(panier.IDPanier);
-                    }
+                   await PanierService.RemoveTicketsFromPanierAsync(panier.IDPanier);
                 }
 
                 // Envoyer une notification à l'utilisateur

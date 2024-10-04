@@ -10,9 +10,11 @@ namespace Olympics.Metier.Models
         [Column("idpayement")] 
         public int IDPayement { get; set; }
 
-        [ForeignKey("cPanierBase")]
+        [ForeignKey("Panier")]
         [Column("idpanier")] 
         public int IDPanier { get; set; }
+
+        public cPanierBase Panier { get; set; }
 
         [Column("dateachat")] 
         public DateTime DateAchat { get; set; }
@@ -27,13 +29,4 @@ namespace Olympics.Metier.Models
         public string QrCodeUrl { get; set; }
     }
 
-
-    //public class cTicketPayé
-    //{
-    //    public int IDTicket { get; set; }
-    //    public int IDClient { get; set; }
-    //    public string KeyFinal {  get; set; }
-    //    public DateTime DateAchat { get; set; }
-
-    //}
 }

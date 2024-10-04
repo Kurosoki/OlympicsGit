@@ -157,7 +157,7 @@
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[8.0.8, )"
             },
             "QRCoder": {
               "target": "Package",
@@ -248,7 +248,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[8.1.0, )"
             }
           },
           "imports": [

@@ -46,17 +46,22 @@ namespace Olympics.Presentation.Components.Layout
             if (firstRender)
             {   
                 isLoggedIn = await SessionService.ValidateUserSessionAsync();
-                StateHasChanged(); // Récupérez l'état du composant
+                StateHasChanged(); 
             }
         }
 
         private async Task Logout()
         {
-            isLoggedIn = await SessionService.ValidateUserSessionAsync();
-            await UserService.LogoutUserAsync();
-            isLoggedIn = false; // Mettre à jour l'état après la déconnexion
-            StateHasChanged();
+            
+            if (await SessionService.ValidateUserSessionAsync())
+            {
+                await UserService.LogoutUserAsync(); 
+            }
+
+            isLoggedIn = false; 
+            NavigationManager.NavigateTo("/", forceLoad: true);
         }
+
 
         private void NavigateToAccueil()
         {

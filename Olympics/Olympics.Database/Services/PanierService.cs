@@ -43,12 +43,6 @@ namespace Olympics.Services
 
 
         //Récupérer un panier spécifique avec tous ses tickets en bdd
-        public async Task<cPanierBase> GetPanierByPanierIdAsync(int idPanier)
-        {
-            return await _context.Panier
-                .Include(p => p.Tickets)
-                .FirstOrDefaultAsync(p => p.IDPanier == idPanier);
-        }
 
         public async Task<cPanierBase> GetPanierByUserIdAsync(int idClient)
         {
@@ -57,6 +51,17 @@ namespace Olympics.Services
                 .FirstOrDefaultAsync(p => p.IDClient == idClient);
         }
 
+        public cPanierBase PanierActuel { get; set; }
+
+        public void MettreAJourPanier(cPanierBase panierUtilisateur)
+        {
+            PanierActuel = panierUtilisateur;
+        }
+
+        public cPanierBase ObtenirPanier()
+        {
+            return PanierActuel;
+        }
 
         //Création d'un nouveau panier en bdd
         public async Task CreatePanierAsync(cPanierBase newPanier)
@@ -73,20 +78,36 @@ namespace Olympics.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task RemoveTicketsFromPanierAsync(int panierId)
+        {
+            // Récupérez le panier
+            var panier = await _context.Panier.Include(p => p.Tickets)
+                                                  .FirstOrDefaultAsync(p => p.IDPanier == panierId);
+
+            if (panier == null)
+            {
+                throw new InvalidOperationException("Le panier n'existe pas.");
+            }
+
+            // Supprimez tous les tickets du panier
+            _context.Tickets.RemoveRange(panier.Tickets);
+            await _context.SaveChangesAsync();
+        }
+
 
         //Supprimer un panier et ses tickets en bdd
-        public async Task DeletePanierAsync(int idPanier)
-        {
-            var panier = _context.Panier
-                                 .Include(p => p.Tickets)
-                                 .FirstOrDefault(p => p.IDPanier == idPanier);
+        //public async Task DeletePanierAsync(int idPanier)
+        //{
+        //    var panier = _context.Panier
+        //                         .Include(p => p.Tickets)
+        //                         .FirstOrDefault(p => p.IDPanier == idPanier);
 
-            if (panier != null)
-            {
-                _context.Panier.Remove(panier);
-                await _context.SaveChangesAsync();
-            }
-        }
+        //    if (panier != null)
+        //    {
+        //        _context.Panier.Remove(panier);
+        //        await _context.SaveChangesAsync();
+        //    }
+        //}
 
 
 

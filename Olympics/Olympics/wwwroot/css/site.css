@@ -980,3 +980,47 @@ h2 {
 }
 
 
+/* Style pour le corps de la page */
+
+/* Style pour le conteneur de confirmation */
+.confirmation-container {
+    background-color: #fff; /* Fond blanc pour le bloc */
+    color: #000; /* Couleur du texte noir pour le bloc */
+    padding: 20px; /* Espacement interne */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombre légère autour du bloc */
+    max-width: 400px; /* Largeur maximale du bloc */
+    width: 100%; /* Largeur à 100% de son parent */
+    text-align: center; /* Centrage du texte */
+}
+
+/* Style pour le titre principal */
+h1 {
+    margin-bottom: 20px; /* Espacement en bas du titre */
+}
+
+/* Style pour le texte de remerciement */
+.thank-you {
+    margin-bottom: 20px; /* Espacement en bas du texte de remerciement */
+}
+
+/* Style pour les détails de paiement */
+.payment-details {
+    list-style: none; /* Suppression des puces de la liste */
+    padding: 0; /* Suppression du padding */
+    margin: 0; /* Suppression des marges */
+}
+
+/* Style pour les images QR Code */
+.qr-code {
+    margin-top: 20px; /* Espacement en haut du QR Code */
+    max-width: 100%; /* Largeur maximale de l'image */
+    height: auto; /* Hauteur automatique pour conserver le ratio */
+}
+
+/* Style pour le footer */
+footer {
+    margin-top: 20px; /* Espacement en haut du footer */
+}
+
+

@@ -15,8 +15,6 @@ using System.Net.Http.Json;
 using System.Security.Cryptography;
 
 
-
-
 namespace Olympics.Database.Services
 {
     public class UserService
@@ -55,76 +53,11 @@ namespace Olympics.Database.Services
             return Guid.NewGuid().ToString();
         }
 
-
-        public async Task<cUtilisateurBase> GetUserByEmailAsync(string email)
+        public async Task<cUtilisateurBase> GetUserByIdAsync(int userId)
         {
-
-            if (string.IsNullOrWhiteSpace(email))
-            {
-                throw new ArgumentException("L'e-mail ne peut pas être vide.", nameof(email));
-            }
-
-            // Vérifier si l'utilisateur est connecté
-            var isUserLoggedIn = await _sessionService.ValidateUserSessionAsync();
-
-            if (isUserLoggedIn)
-            {
-                // Récupérer l'utilisateur par son e-mail
-                var utilisateur = await _context.Utilisateurs
-                    .FirstOrDefaultAsync(u => u.EmailClient.Equals(email, StringComparison.OrdinalIgnoreCase));
-
-                return utilisateur;
-            }
-
-            return null;
+            return await _context.Utilisateurs
+                .FirstOrDefaultAsync(u => u.IDClient == userId);
         }
-
-
-        public async Task<int?> GetUserIdByEmailAsync(string email)
-        {
-            var utilisateur = await GetUserByEmailAsync(email);
-            return utilisateur?.IDClient;
-        }
-
-
-        //Cette propriété est utilisée pour fournir un accès direct aux informations
-        //de l'utilisateur connecté sans avoir à exposer la variable privée _currentUser à l'extérieur de la classe.
-        public cUtilisateurBase CurrentUser => _currentUser;
-
-        public async Task<cUtilisateurBase> GetAuthenticatedUserAsync()
-        {
-            // Vérifier si l'utilisateur est connecté
-            var isUserLoggedIn = await _sessionService.ValidateUserSessionAsync();
-
-            if (isUserLoggedIn)
-            {
-
-                var email = await GetUserEmailFromTokenAsync();
-                _currentUser = await GetUserByEmailAsync(email);
-                return _currentUser; // Retourner l'utilisateur trouvé
-            }
-
-            return null;
-        }
-
-
-        public async Task<string> GetUserEmailFromTokenAsync()
-        {
-            var token = _httpContextAccessor.HttpContext.Request.Cookies["AuthToken"];
-            var protector = _dataProtectionProvider.CreateProtector("AuthTokenProtector");
-            var decryptedToken = protector.Unprotect(token);
-
-            var jwtHandler = new JwtSecurityTokenHandler();
-            var tokenS = jwtHandler.ReadToken(decryptedToken) as JwtSecurityToken;
-
-            if (tokenS != null)
-            {
-                var email = tokenS.Claims.First(claim => claim.Type == "email").Value;
-                return email;
-            }
-            return null;
-        }
-
 
         public async Task<bool> RegisterUserAsync(cUtilisateurBase user)
         {
@@ -211,13 +144,15 @@ namespace Olympics.Database.Services
 
                     var cartTickets = await _panierService.GetCartFromSessionAsync();
 
-                    if (cartTickets != null && cartTickets.Count > 0)
-                    {
-                        var existingPanier = await _context.Panier
-                            .Include(p => p.Tickets)
-                            .FirstOrDefaultAsync(p => p.IDClient == utilisateur.IDClient);
+                    // Vérifier si l'utilisateur a déjà un panier existant
+                    var existingPanier = await _context.Panier
+                        .Include(p => p.Tickets)
+                        .FirstOrDefaultAsync(p => p.IDClient == utilisateur.IDClient);
 
-                        if (existingPanier != null)
+                    if (existingPanier != null)
+                    {
+                        // Si des tickets de session existent, les ajouter au panier existant
+                        if (cartTickets != null && cartTickets.Count > 0)
                         {
                             foreach (var ticket in cartTickets)
                             {
@@ -225,41 +160,49 @@ namespace Olympics.Database.Services
                             }
                             existingPanier.Tickets.AddRange(cartTickets);
                             existingPanier.DateUpdated = DateTime.Now;
+
+                            // Mettre à jour le panier existant dans la base de données
                             await _panierService.UpdatePanierAsync(existingPanier);
                         }
-                        else
+                    }
+                    else
+                    {
+                        // Sinon, créer un nouveau panier
+                        var newPanier = new cPanierBase
                         {
-                            var newPanier = new cPanierBase
-                            {
-                                IDClient = utilisateur.IDClient,
-                                Tickets = new List<cTicket>(),
-                                DateCreated = DateTime.Now,
-                                DateUpdated = DateTime.Now,
-                            };
+                            IDClient = utilisateur.IDClient,
+                            Tickets = new List<cTicket>(), // Initialement vide
+                            DateCreated = DateTime.Now,
+                            DateUpdated = DateTime.Now,
+                        };
 
-                            // Créer le panier dans la base de données pour obtenir un ID
-                            await _panierService.CreatePanierAsync(newPanier);
+                        // Créer le panier dans la base de données pour obtenir un ID
+                        await _panierService.CreatePanierAsync(newPanier);
 
-                            // Lier les tickets au nouveau panier après sa création
+                        // Lier les tickets de session au nouveau panier
+                        if (cartTickets != null && cartTickets.Count > 0)
+                        {
                             foreach (var ticket in cartTickets)
                             {
-                                ticket.IDPanier = newPanier.IDPanier;
+                                ticket.IDPanier = newPanier.IDPanier; // Lier le ticket au nouveau panier
                                 newPanier.Tickets.Add(ticket); // Ajouter le ticket à la liste
                             }
-
-                            // Mettre à jour le panier avec les tickets
-                            await _panierService.UpdatePanierAsync(newPanier);
                         }
 
-                        var updatedPanier = await _panierService.GetPanierByUserIdAsync(utilisateur.IDClient);
+                        // Mettre à jour le panier avec les tickets
+                        await _panierService.UpdatePanierAsync(newPanier);
                     }
+
+                    var panierUtilisateur = await _panierService.GetPanierByUserIdAsync(utilisateur.IDClient);
+                    // Mettre à jour le panier dans le service pour qu'il soit accessible partout
+                    _panierService.MettreAJourPanier(panierUtilisateur);
 
                     return (true, isAdmin);
                 }
             }
 
             // Si on arrive ici, cela signifie que le mot de passe est invalide ou la réponse de l'API n'est pas un succès
-            return (false, false); 
+            return (false, false);
         }
 
         public async Task<bool> LogoutUserAsync()

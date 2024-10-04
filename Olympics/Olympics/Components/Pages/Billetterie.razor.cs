@@ -191,18 +191,14 @@ namespace Olympics.Presentation.Components.Pages
             }
         }
 
-        private async Task AjouterBilletAuPanier(SportTicket sportTicket, TicketTypeManager.TicketType ticketType, int quantity, decimal price, string email = null)
+        private async Task AjouterBilletAuPanier(SportTicket sportTicket, TicketTypeManager.TicketType ticketType, int quantity, decimal price)
         {
-            // Vérifier d'abord si l'utilisateur est connecté
             bool isUserLoggedIn = await SessionService.ValidateUserSessionAsync();
-            int? userId = null;
 
-            if (!isUserLoggedIn && email != null)
-            {
-                userId = await UserService.GetUserIdByEmailAsync(email);
-            }
+            // On récupère le panier actuel pour obtenir l'ID de l'utilisateur
+            var panier = PanierService.ObtenirPanier();
 
-            if (userId == null)
+            if (panier == null || panier.IDClient == 0)
             {
                 // Utilisateur non authentifié ou ID non trouvé : stocker dans sessionStorage
                 var cartTickets = await PanierService.GetCartFromSessionAsync();
@@ -221,16 +217,6 @@ namespace Olympics.Presentation.Components.Pages
             else
             {
                 // Utilisateur authentifié : stocker dans la base de données
-                var panier = await PanierService.GetPanierByUserIdAsync(userId.Value);
-
-                if (panier == null)
-                {
-                    panier = new cPanierBase
-                    {
-                        IDClient = userId.Value, // Associer le panier à l'utilisateur
-                    };
-                }
-
                 var ticket = new cTicket
                 {
                     IDPanier = panier.IDPanier, // Lier le ticket au panier
@@ -242,8 +228,9 @@ namespace Olympics.Presentation.Components.Pages
 
                 panier.Tickets.Add(ticket);
                 await PanierService.UpdatePanierAsync(panier);
+
+                PanierService.MettreAJourPanier(panier);
             }
-            // Afficher la popup de confirmation
 
             NotificationService.Notify(NotificationSeverity.Info,"Ticket ajouté au panier avec succès.");
         }

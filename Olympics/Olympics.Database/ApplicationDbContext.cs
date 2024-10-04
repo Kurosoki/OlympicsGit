@@ -35,6 +35,15 @@ namespace Olympics.Database
                 .HasForeignKey(t => t.IDPanier) // Configure la clé étrangère
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<cPayementBase>()
+                .HasKey(p => p.IDPayement); 
+
+            modelBuilder.Entity<cPayementBase>()
+                .HasOne(p => p.Panier) // Configure la relation avec cPanierBase
+                .WithMany() // Indique que cPanierBase n'a pas besoin d'une collection de cPayementBase
+                .HasForeignKey(p => p.IDPanier) 
+                .OnDelete(DeleteBehavior.Cascade); // Comportement lors de la suppression
+
             modelBuilder.Entity<cOffresBase>()
                 .HasKey(o => o.IDOffre);
 

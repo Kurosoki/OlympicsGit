@@ -1,0 +1,26 @@
+@page "/confirmation"
+@using Microsoft.AspNetCore.WebUtilities
+
+<PageTitle>Confirmation</PageTitle>
+
+<!-- Le menu de navigation est inclus ici -->
+<Navigation />
+
+<div class="confirmation-container">
+    <h1>Confirmation de Paiement</h1>
+    <p class="thank-you">Merci pour votre achat ! Votre paiement a été effectué avec succès.</p>
+
+    <h2>Détails de votre paiement :</h2>
+    <ul class="payment-details">
+        <li><strong>Date d'achat :</strong> <span id="dateachat">@dateachat</span></li>
+        <li><strong>Montant :</strong> <span id="montant">@montant</span></li>
+    </ul>
+
+    <h2>Votre QR Code :</h2>
+    @if (!string.IsNullOrEmpty(qrCodeBase64))
+    {
+        <img src="data:image/png;base64,@qrCodeBase64" alt="QR Code" class="qr-code" />
+    }
+</div>
+
+<Footer /> <!-- Le footer est inclus ici -->
