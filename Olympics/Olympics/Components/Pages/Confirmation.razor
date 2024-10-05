@@ -7,20 +7,25 @@
 <Navigation />
 
 <div class="confirmation-container">
-    <h1>Confirmation de Paiement</h1>
-    <p class="thank-you">Merci pour votre achat ! Votre paiement a été effectué avec succès.</p>
+    <div class="style-form-confirmation">
+        <h1>Confirmation de Paiement</h1>
+        <p class="thank-you">Merci pour votre achat ! Votre paiement a été effectué avec succès.</p>
 
-    <h2>Détails de votre paiement :</h2>
-    <ul class="payment-details">
-        <li><strong>Date d'achat :</strong> <span id="dateachat">@dateachat</span></li>
-        <li><strong>Montant :</strong> <span id="montant">@montant</span></li>
-    </ul>
+        <h2>Détails de votre paiement :</h2>
+        <ul class="payment-details">
+            <li><strong>Date d'achat :</strong> <span id="dateachat">@dateAchat </span></li>
+            <li><strong>Montant :</strong> <span id="montant">@montant €</span></li>
+        </ul>
 
-    <h2>Votre QR Code :</h2>
-    @if (!string.IsNullOrEmpty(qrCodeBase64))
-    {
-        <img src="data:image/png;base64,@qrCodeBase64" alt="QR Code" class="qr-code" />
-    }
+        <h2>Votre QR Code :</h2>
+        @if (!string.IsNullOrEmpty(qrCodeBase64))
+        {
+            <img src="data:image/png;base64,@qrCodeBase64" alt="QR Code" class="qr-code" />
+        }
+
+        <!-- Bouton retour -->
+        <button class="confirmation-button" @onclick="NavigateToHome">Retour à l'accueil</button>
+    </div>
 </div>
 
 <Footer /> <!-- Le footer est inclus ici -->

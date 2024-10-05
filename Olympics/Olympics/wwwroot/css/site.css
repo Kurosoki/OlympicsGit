@@ -979,48 +979,105 @@ h2 {
     margin-bottom: 80px;
 }
 
+/* Style pour la page de confirmation */
 
-/* Style pour le corps de la page */
-
-/* Style pour le conteneur de confirmation */
+/* Conteneur de la page de confirmation */
 .confirmation-container {
-    background-color: #fff; /* Fond blanc pour le bloc */
-    color: #000; /* Couleur du texte noir pour le bloc */
-    padding: 20px; /* Espacement interne */
-    border-radius: 10px; /* Coins arrondis */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ombre légère autour du bloc */
-    max-width: 400px; /* Largeur maximale du bloc */
-    width: 100%; /* Largeur à 100% de son parent */
-    text-align: center; /* Centrage du texte */
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centre horizontalement le formulaire */
+    align-items: center; /* Centre verticalement le formulaire */
+    min-height: 100vh; /* Prend toute la hauteur de la vue */
+    background-color: black; /* Fond noir pour la page */
+    overflow: hidden; /* Assure que rien ne dépasse de la fenêtre */
 }
 
-/* Style pour le titre principal */
+
+.style-form-confirmation {
+    background: white;
+    padding: 40px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+    font-family: Prompt, sans-serif;
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    top: 150px;
+    margin-bottom: 200px;
+}
+
 h1 {
-    margin-bottom: 20px; /* Espacement en bas du titre */
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
 }
 
-/* Style pour le texte de remerciement */
+
+h2 {
+    font-size: 20px; 
+    font-weight: bold;
+    margin-top: 30px; 
+    margin-bottom: 10px; 
+}
+
+
 .thank-you {
-    margin-bottom: 20px; /* Espacement en bas du texte de remerciement */
+    font-size: 18px; 
+    margin-bottom: 20px; 
+    color: #333; 
 }
 
-/* Style pour les détails de paiement */
+
 .payment-details {
-    list-style: none; /* Suppression des puces de la liste */
-    padding: 0; /* Suppression du padding */
-    margin: 0; /* Suppression des marges */
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
 }
 
-/* Style pour les images QR Code */
+    
+.payment-details li {
+    font-size: 16px; 
+    margin-bottom: 10px; 
+}
+
+   
+.payment-details strong {
+     color: #e91e63; 
+}
+
+
 .qr-code {
-    margin-top: 20px; /* Espacement en haut du QR Code */
-    max-width: 100%; /* Largeur maximale de l'image */
-    height: auto; /* Hauteur automatique pour conserver le ratio */
+    margin-top: 20px; 
+    max-width: 100%; 
+    height: auto; 
 }
 
-/* Style pour le footer */
-footer {
-    margin-top: 20px; /* Espacement en haut du footer */
+.confirmation-button {
+    display: flex;
+    justify-content: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+  
+.confirmation-button:hover {
+   background-color: white;
+   color: black;
+}
+
+.confirmation-button:active {
+   background-color: #e91e63;
 }
 
 

@@ -48,9 +48,6 @@ namespace Olympics.Database.Services
             // Créer un QR Code à partir de la clé finale
              string qrCodeBase64 = GenerateQRCode(finalKey);
 
-            // Rediriger vers la page de confirmation + encoder la chaîne Base64
-            _navigationManager.NavigateTo($"/confirmation?qrCodeBase64={HttpUtility.UrlEncode(qrCodeBase64)}");
-
             // Retourner un résultat de paiement
             var paiementResult = new cPayementBase
             {
@@ -59,6 +56,13 @@ namespace Olympics.Database.Services
                 DateAchat = DateTime.Now,
                 Montant = montant,
             };
+
+            // Encoder les valeurs avant de les passer dans l'URL
+            string encodedDateAchat = HttpUtility.UrlEncode(paiementResult.DateAchat.ToString("yyyy-MM-dd HH:mm:ss"));
+            string encodedMontant = HttpUtility.UrlEncode(paiementResult.Montant.ToString("F2")); // Format standard avec 2 décimales
+
+            // Rediriger vers la page de confirmation avec les valeurs encodées
+            _navigationManager.NavigateTo($"/confirmation?qrCodeBase64={HttpUtility.UrlEncode(qrCodeBase64)}&dateAchat={encodedDateAchat}&montant={encodedMontant}");
 
             // Vider le panier après le paiement réussi
             await _panierService.RemoveTicketsFromPanierAsync(panier.IDPanier);

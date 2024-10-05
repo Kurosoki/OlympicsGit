@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
 using Olympics.Database.Services;
+using System.Web;
 
 namespace Olympics.Presentation.Components.Pages
 {
@@ -32,22 +33,26 @@ namespace Olympics.Presentation.Components.Pages
         protected NotificationService NotificationService { get; set; }
 
 
-
         private string qrCodeBase64;
-        private string dateachat;
-        private string montant;
+        private string dateAchat;
+        private decimal montant;
 
         protected override void OnInitialized()
         {
             // Récupérer les paramètres de l'URL
-            var uri = NavigationManager.ToAbsoluteUri(NavigationManager.Uri);
-            var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
-            qrCodeBase64 = query["qrCodeBase64"];
-            dateachat = query["dateAchat"];
-            montant = query["montant"];
+            var uri = new Uri(NavigationManager.Uri);
+            var queryParams = HttpUtility.ParseQueryString(uri.Query);
+
+            // Récupérer et décoder chaque paramètre
+            qrCodeBase64 = queryParams["qrCodeBase64"];
+            dateAchat = HttpUtility.UrlDecode(queryParams["dateAchat"]);
+            montant = decimal.Parse(HttpUtility.UrlDecode(queryParams["montant"])); 
         }
 
-
+        private void NavigateToHome()
+        {
+            NavigationManager.NavigateTo("/");
+        }
 
     }
 }

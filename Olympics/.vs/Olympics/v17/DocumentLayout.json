@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "G:\\Examens\\RecupOlympics\\Olympics\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\recupolympics\\olympics\\olympics\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\recupolympics\\olympics\\olympics\\components\\pages\\confirmation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\pages\\confirmation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -15,20 +11,12 @@
       "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\pages\\confirmation.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\recupolympics\\olympics\\olympics\\components\\pages\\panier.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\pages\\panier.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|g:\\examens\\recupolympics\\olympics\\olympics.database\\services\\payementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|solutionrelative:olympics.database\\services\\payementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\recupolympics\\olympics\\olympics\\components\\pages\\billetterie.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\pages\\billetterie.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\recupolympics\\olympics\\olympics\\components\\pages\\panier.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\pages\\panier.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\recupolympics\\olympics\\olympics\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,89 +38,55 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "site.css",
               "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Olympics\\wwwroot\\css\\site.css",
               "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\wwwroot\\css\\site.css",
               "RelativeToolTip": "Olympics\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAM4DAAAAAAAAAAAcwNcDAAAAAAAA",
+              "ViewState": "AQIAANYDAAAAAAAAAAAcwPADAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-10-04T15:18:26.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Panier.razor",
-              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Panier.razor",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Panier.razor",
-              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Panier.razor",
-              "RelativeToolTip": "Olympics\\Components\\Pages\\Panier.razor",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAA4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T15:12:01.393Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Billetterie.razor",
-              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Billetterie.razor",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Billetterie.razor",
-              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Billetterie.razor",
-              "RelativeToolTip": "Olympics\\Components\\Pages\\Billetterie.razor",
-              "ViewState": "AQIAACMCAAAAAAAAAAAAADQCAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T15:03:43.004Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Confirmation.razor",
-              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Confirmation.razor",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Confirmation.razor",
-              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Confirmation.razor",
-              "RelativeToolTip": "Olympics\\Components\\Pages\\Confirmation.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-04T13:54:19.938Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Confirmation.razor.cs",
-              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Confirmation.razor.cs",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Confirmation.razor.cs",
-              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Confirmation.razor.cs",
-              "RelativeToolTip": "Olympics\\Components\\Pages\\Confirmation.razor.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAswCkAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T13:47:22.431Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Panier.razor.cs",
-              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Panier.razor.cs",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Panier.razor.cs",
-              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Panier.razor.cs",
-              "RelativeToolTip": "Olympics\\Components\\Pages\\Panier.razor.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAmwGkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T13:15:07.479Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "PayementService.cs",
               "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Database\\Services\\PayementService.cs",
               "RelativeDocumentMoniker": "Olympics.Database\\Services\\PayementService.cs",
               "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Database\\Services\\PayementService.cs",
               "RelativeToolTip": "Olympics.Database\\Services\\PayementService.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAIwDoAAAAQAAAA",
+              "ViewState": "AQIAADAAAAAAAAAAAAAIwD4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T12:55:58.492Z"
+              "WhenOpened": "2024-10-05T17:35:36.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Confirmation.razor.cs",
+              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Confirmation.razor.cs",
+              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Confirmation.razor.cs",
+              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Confirmation.razor.cs",
+              "RelativeToolTip": "Olympics\\Components\\Pages\\Confirmation.razor.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAADwvzAAAABUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-05T15:47:40.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Confirmation.razor",
+              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Confirmation.razor",
+              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Confirmation.razor",
+              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Confirmation.razor",
+              "RelativeToolTip": "Olympics\\Components\\Pages\\Confirmation.razor",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAWwA0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-04T13:54:19.938Z",
+              "EditorCaption": ""
             }
           ]
         }
