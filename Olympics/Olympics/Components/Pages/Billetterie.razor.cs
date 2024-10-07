@@ -1,17 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using Radzen;
-using Radzen.Blazor;
-using Olympics.Metier.Utils;
-using Olympics.Metier.Models;
-using Olympics.Services;
-using Blazorise;
+using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.JSInterop;
+using Olympics.Database;
 using Olympics.Database.Services;
+using Olympics.Metier.Models;
+using Olympics.Metier.Utils;
+using Olympics.Services;
+using Radzen;
 
 
 namespace Olympics.Presentation.Components.Pages
@@ -44,86 +39,72 @@ namespace Olympics.Presentation.Components.Pages
         private UserService UserService { get; set; }
 
         [Inject]
-        private OffresService OffresService { get; set; }
+        private OffreService OffreService { get; set; }
 
         [Inject]
         private SessionService SessionService { get; set; }
 
+        [Inject]
+        private ILogger<Billetterie> _logger { get; set; }
 
+        [Inject]
+        private ApplicationDbContext Context { get; set; }
 
-        public class SportTicket
+        protected override async Task OnInitializedAsync()
         {
-            public string SportName { get; set; }
-
-            public int QuantitySolo { get; set; }
-            public int QuantityDuo { get; set; }
-            public int QuantityFamily { get; set; }
-
-            public decimal PriceSolo { get; set; }
-            public decimal PriceDuo { get; set; }
-            public decimal PriceFamily { get; set; }
+            await CheckIfUserIsAdminAsync();
         }
 
-        List<SportTicket> sportTickets = new List<SportTicket>
-{
-    new SportTicket
-    {
-         SportName = "Athlétisme",
-         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
-    },
-    new SportTicket
-    {
-         SportName = "Tir à L'Arc",
-         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
-    },
+        // Méthode de soumission du formulaire
+        private async Task CreateSportTicket()
+        {
+            await OffreService.SaveSportTicketAsync(newSportTicket);
+            newSportTicket = new SportTicket(); // Réinitialiser le modèle
+        }
 
-      new SportTicket
-    {
-         SportName = "Judo",
-         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
-    },
-    new SportTicket
-    {
-         SportName = "Gymnastique Artistique",
-         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
-    },
 
-      new SportTicket
-    {
-         SportName = "Natation",
-         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
-    },
-    new SportTicket
-    {
-         SportName = "Sports équestres",
-         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
-    },
-      new SportTicket
-    {
-         SportName = "Escrime",
-         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
-    },
-    new SportTicket
-    {
-         SportName = "Tir",
-         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
-    },
-        new SportTicket
-    {
-         SportName = "Volleyball de plage",
-         QuantitySolo = 0, QuantityDuo = 0, QuantityFamily = 0,
-         PriceSolo = 20.0m, PriceDuo = 35.0m, PriceFamily = 150.0m
-    },
+        private bool onlineUser = false;
+        private bool isAdmin = false;
 
-};
+        private async Task CheckIfUserIsAdminAsync()
+        {
+
+            var (isConnected, isAdminStatus) = SessionService.GetUserStatus();
+
+            // Mettre à jour les variables membres
+            onlineUser = isConnected;
+            isAdmin = isAdminStatus;
+
+            StateHasChanged(); 
+        }
+
+        private SportTicket newSportTicket = new SportTicket();
+
+        List<SportTicket> sportTickets = new List<SportTicket>();
+
+
+        private async Task Image()
+        { 
+
+        }
+
+        private async Task LoadImage(InputFileChangeEventArgs e)
+        {
+            // Récupère le fichier téléchargé
+            var file = e.GetMultipleFiles(1).FirstOrDefault(); // Prend le premier fichier téléchargé
+
+            // Vérifiez que le fichier existe
+            if (file != null)
+            {
+                // Lire le fichier et l'afficher
+                var buffer = new byte[file.Size];
+                await file.OpenReadStream().ReadAsync(buffer);
+
+                // Convertir le fichier en URL Base64
+                newSportTicket.ImageUrl = $"data:{file.ContentType};base64,{Convert.ToBase64String(buffer)}";
+            }
+        }
+
 
 
         private void DecreaseQuantity(SportTicket sport, TicketTypeManager.TicketType ticketType)
@@ -234,57 +215,6 @@ namespace Olympics.Presentation.Components.Pages
 
             NotificationService.Notify(NotificationSeverity.Info,"Ticket ajouté au panier avec succès.");
         }
-
-
-        private bool isConnected = false;
-        private bool isAdmin = false;
-        private cOffresBase newOffer = new cOffresBase();
-        private cUtilisateurConnexionBase loginUser = new cUtilisateurConnexionBase();
-
-        protected override async Task OnInitializedAsync()
-        {
-            await CheckIfUserIsAdminAsync();
-        }
-
-        private async Task CheckIfUserIsAdminAsync()
-        {        
-            // Appeler la méthode de connexion
-            (isConnected, isAdmin) = await UserService.LoginUserAsync(loginUser);
-        }
-
-
-        private async Task SaveOffer()
-        {
-            // Logique pour ajouter ou modifier une offre dans la base de données
-            if (newOffer.IDOffre == 0)
-            {
-                // Ajouter une nouvelle offre
-                await OffresService.AjouterOffreAsync(newOffer);
-            }
-            else
-            {
-                // Modifier une offre existante
-                await OffresService.ModifierOffreAsync(newOffer);
-            }
-
-            // Réinitialiser l'offre après l'enregistrement
-            newOffer = new cOffresBase();
-
-        }
-
-
-        private async Task DeleteOffer(int offerId)
-        {
-            // Logique pour supprimer l'offre de la base de données
-            await OffresService.SupprimerOffreAsync(offerId);
-        }
-
-
-
-
-
-
-
 
 
     }

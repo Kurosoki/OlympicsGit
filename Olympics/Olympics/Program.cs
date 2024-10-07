@@ -44,7 +44,7 @@ builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<SessionService>();
 builder.Services.AddScoped<PanierService>();
 builder.Services.AddScoped<PayementService>();
-builder.Services.AddScoped<OffresService>();
+builder.Services.AddScoped<OffreService>();
 
 
 //Blazored LocalStorage

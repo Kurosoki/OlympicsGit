@@ -1,15 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Olympics.Metier.Models;
-using QRCoder;
-using System.Drawing;
-using ZXing.QrCode.Internal;
-using System.Drawing.Imaging;
-using System.IO;
-using ZXing;
-using ZXing.QrCode;
-using ZXing.Common;
-using System.Web;
 using Olympics.Services;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Web;
+using ZXing;
+using ZXing.Common;
 
 
 

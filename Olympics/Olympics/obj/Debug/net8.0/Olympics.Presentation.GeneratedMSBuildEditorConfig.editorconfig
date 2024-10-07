@@ -50,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/Offres.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xPZmZyZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/Panier.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQYW5pZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

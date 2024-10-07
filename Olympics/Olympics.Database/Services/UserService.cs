@@ -89,7 +89,6 @@ namespace Olympics.Database.Services
             return true;
         }
 
-
         public async Task<(bool IsConnected, bool IsAdmin)> LoginUserAsync(cUtilisateurConnexionBase loginUser)
         {
             // Appeler la méthode pour nettoyer les sessions expirées avant de créer une nouvelle session
@@ -197,6 +196,9 @@ namespace Olympics.Database.Services
                     // Mettre à jour le panier dans le service pour qu'il soit accessible partout
                     _panierService.MettreAJourPanier(panierUtilisateur);
 
+                    // Connexion réussie, stocker l'état utilisateur
+                    _sessionService.SetUserStatus (true, isAdmin);
+
                     return (true, isAdmin);
                 }
             }
@@ -251,6 +253,8 @@ namespace Olympics.Database.Services
 
                     // On ajoute un logging ici pour vérifier que le localStorage est bien vidé
                     Console.WriteLine("Déconnexion réussie et token supprimé du localStorage.");
+
+                    _sessionService.ClearUserStatus();
                     return true;
                 }
             }

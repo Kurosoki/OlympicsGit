@@ -1002,7 +1002,7 @@
           "lib/net6.0/QRCoder.dll": {}
         }
       },
-      "Radzen.Blazor/5.2.9": {
+      "Radzen.Blazor/5.2.10": {
         "type": "package",
         "dependencies": {
           "DartSassBuilder": "1.0.0",
@@ -2908,10 +2908,10 @@
         "qrcoder.nuspec"
       ]
     },
-    "Radzen.Blazor/5.2.9": {
-      "sha512": "BobNKvMlb82j7ylYfNvWq8zxlFPjnfarjulFkEcdny4w3Gd53t22GCiQN0E9otagTRooPl6MQUaELaJBEVCMUA==",
+    "Radzen.Blazor/5.2.10": {
+      "sha512": "w/RQf3ix6ZkEa/ER+3lzyG1tUItzljr+JiKDgN8OUyiLAMQEIvaqfBa68ymyDry2xm5wIvDmByIaiLNczfcrQA==",
       "type": "package",
-      "path": "radzen.blazor/5.2.9",
+      "path": "radzen.blazor/5.2.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2928,7 +2928,7 @@
         "lib/net7.0/Radzen.Blazor.xml",
         "lib/net8.0/Radzen.Blazor.dll",
         "lib/net8.0/Radzen.Blazor.xml",
-        "radzen.blazor.5.2.9.nupkg.sha512",
+        "radzen.blazor.5.2.10.nupkg.sha512",
         "radzen.blazor.nuspec",
         "staticwebassets/Radzen.Blazor.js",
         "staticwebassets/css/dark-base.css",
