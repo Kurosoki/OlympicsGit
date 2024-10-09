@@ -21,24 +21,21 @@ namespace Olympics.Database.Services
             _localStorage = localStorage;
         }
 
-        private bool _isConnected = false;
-        private bool _isAdmin = false;
+        private static bool _isAdmin = false;
 
-        public void SetUserStatus(bool isConnected, bool isAdmin)
+        public void SetUserStatus(bool isAdmin)
         {
-            _isConnected = isConnected;
             _isAdmin = isAdmin;
         }
 
-        public (bool isConnected, bool isAdmin) GetUserStatus()
+        public bool GetUserStatus()
         {
-            return (_isConnected, _isAdmin); // Retourne l'état stocké
+            return _isAdmin; // Retourne l'état stocké
         }
 
         // Appel de cette méthode lors de la déconnexion
         public void ClearUserStatus()
         {
-            _isConnected = false;
             _isAdmin = false;
         }
 

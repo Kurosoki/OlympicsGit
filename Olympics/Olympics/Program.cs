@@ -45,6 +45,7 @@ builder.Services.AddScoped<SessionService>();
 builder.Services.AddScoped<PanierService>();
 builder.Services.AddScoped<PayementService>();
 builder.Services.AddScoped<OffreService>();
+builder.Services.AddScoped<SportTicketManager>();
 
 
 //Blazored LocalStorage

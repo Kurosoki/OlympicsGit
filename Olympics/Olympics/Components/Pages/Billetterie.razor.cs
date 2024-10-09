@@ -1,3 +1,4 @@
+using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.JSInterop;
@@ -36,75 +37,62 @@ namespace Olympics.Presentation.Components.Pages
         private PanierService PanierService { get; set; }
 
         [Inject]
-        private UserService UserService { get; set; }
-
-        [Inject]
         private OffreService OffreService { get; set; }
 
         [Inject]
         private SessionService SessionService { get; set; }
 
         [Inject]
-        private ILogger<Billetterie> _logger { get; set; }
+        private SportTicketManager SportTicketManager { get; set; }
 
-        [Inject]
-        private ApplicationDbContext Context { get; set; }
 
-        protected override async Task OnInitializedAsync()
+
+        private SportTicket newSportTicket = new SportTicket();
+        private List<SportTicket> sportTickets; // Utiliser SportTicket comme modèle de vue
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await CheckIfUserIsAdminAsync();
+            if (firstRender)
+            {
+                var offres = await OffreService.GetAllOffersAsync();
+
+                sportTickets = SportTicketManager.MapToSportTickets(offres);
+
+                // Forcer un nouveau rendu après l'initialisation des états
+                StateHasChanged();
+            }
         }
 
-        // Méthode de soumission du formulaire
-        private async Task CreateSportTicket()
-        {
-            await OffreService.SaveSportTicketAsync(newSportTicket);
-            newSportTicket = new SportTicket(); // Réinitialiser le modèle
-        }
-
-
-        private bool onlineUser = false;
         private bool isAdmin = false;
 
         private async Task CheckIfUserIsAdminAsync()
         {
-
-            var (isConnected, isAdminStatus) = SessionService.GetUserStatus();
+            bool isAdminStatus = SessionService.GetUserStatus();
 
             // Mettre à jour les variables membres
-            onlineUser = isConnected;
             isAdmin = isAdminStatus;
-
-            StateHasChanged(); 
         }
 
-        private SportTicket newSportTicket = new SportTicket();
 
-        List<SportTicket> sportTickets = new List<SportTicket>();
-
-
-        private async Task Image()
-        { 
-
-        }
-
-        private async Task LoadImage(InputFileChangeEventArgs e)
+        // Méthode de soumission du formulaire
+        private async Task CreateSportTicket()
         {
-            // Récupère le fichier téléchargé
-            var file = e.GetMultipleFiles(1).FirstOrDefault(); // Prend le premier fichier téléchargé
 
-            // Vérifiez que le fichier existe
-            if (file != null)
+            try
             {
-                // Lire le fichier et l'afficher
-                var buffer = new byte[file.Size];
-                await file.OpenReadStream().ReadAsync(buffer);
+                await OffreService.SaveSportTicketAsync(newSportTicket);
 
-                // Convertir le fichier en URL Base64
-                newSportTicket.ImageUrl = $"data:{file.ContentType};base64,{Convert.ToBase64String(buffer)}";
+                // Si aucune exception n'est levée, cela signifie que l'enregistrement a réussi
+                NotificationService.Notify(NotificationSeverity.Success, "Succès", "L'offre a été enregistrée avec succès.");
             }
-        }
+            catch (Exception ex)
+            {
+                NotificationService.Notify(NotificationSeverity.Error, "Erreur", $"Échec de l'enregistrement de l'offre : {ex.Message}");
+            }
 
+            newSportTicket = new SportTicket(); // Réinitialiser le modèle
+        }
 
 
         private void DecreaseQuantity(SportTicket sport, TicketTypeManager.TicketType ticketType)
@@ -213,7 +201,7 @@ namespace Olympics.Presentation.Components.Pages
                 PanierService.MettreAJourPanier(panier);
             }
 
-            NotificationService.Notify(NotificationSeverity.Info,"Ticket ajouté au panier avec succès.");
+            NotificationService.Notify(NotificationSeverity.Info, "Ticket ajouté au panier avec succès.");
         }
 
 

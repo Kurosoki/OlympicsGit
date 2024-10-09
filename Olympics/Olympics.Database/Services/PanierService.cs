@@ -95,21 +95,5 @@ namespace Olympics.Services
         }
 
 
-        //Supprimer un panier et ses tickets en bdd
-        //public async Task DeletePanierAsync(int idPanier)
-        //{
-        //    var panier = _context.Panier
-        //                         .Include(p => p.Tickets)
-        //                         .FirstOrDefault(p => p.IDPanier == idPanier);
-
-        //    if (panier != null)
-        //    {
-        //        _context.Panier.Remove(panier);
-        //        await _context.SaveChangesAsync();
-        //    }
-        //}
-
-
-
     }
 }

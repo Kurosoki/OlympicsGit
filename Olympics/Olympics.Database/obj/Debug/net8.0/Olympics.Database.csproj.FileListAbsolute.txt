@@ -35,11 +35,6 @@ G:\Examens\RecupOlympics\OlympicsGit-74ff6fd347b3e52418078a4a050f2f833ec7df8a\Ol
 G:\Examens\RecupOlympics\OlympicsGit-74ff6fd347b3e52418078a4a050f2f833ec7df8a\Olympics\Olympics.Database\obj\Debug\net8.0\refint\Olympics.Database.dll
 G:\Examens\RecupOlympics\OlympicsGit-74ff6fd347b3e52418078a4a050f2f833ec7df8a\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.pdb
 G:\Examens\RecupOlympics\OlympicsGit-74ff6fd347b3e52418078a4a050f2f833ec7df8a\Olympics\Olympics.Database\obj\Debug\net8.0\ref\Olympics.Database.dll
-G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.csproj.AssemblyReference.cache
-G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.GeneratedMSBuildEditorConfig.editorconfig
-G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.AssemblyInfoInputs.cache
-G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.AssemblyInfo.cs
-G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.csproj.CoreCompileInputs.cache
 G:\Examens\RecupOlympics\Olympics\Olympics.Database\bin\Debug\net8.0\AuthentificationServer.deps.json
 G:\Examens\RecupOlympics\Olympics\Olympics.Database\bin\Debug\net8.0\AuthentificationServer.runtimeconfig.json
 G:\Examens\RecupOlympics\Olympics\Olympics.Database\bin\Debug\net8.0\appsettings.Development.json
@@ -52,6 +47,11 @@ G:\Examens\RecupOlympics\Olympics\Olympics.Database\bin\Debug\net8.0\Authentific
 G:\Examens\RecupOlympics\Olympics\Olympics.Database\bin\Debug\net8.0\Olympics.Metier.dll
 G:\Examens\RecupOlympics\Olympics\Olympics.Database\bin\Debug\net8.0\AuthentificationServer.pdb
 G:\Examens\RecupOlympics\Olympics\Olympics.Database\bin\Debug\net8.0\Olympics.Metier.pdb
+G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.csproj.AssemblyReference.cache
+G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.GeneratedMSBuildEditorConfig.editorconfig
+G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.AssemblyInfoInputs.cache
+G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.AssemblyInfo.cs
+G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.csproj.CoreCompileInputs.cache
 G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.2493DE2B.Up2Date
 G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\Olympics.Database.dll
 G:\Examens\RecupOlympics\Olympics\Olympics.Database\obj\Debug\net8.0\refint\Olympics.Database.dll

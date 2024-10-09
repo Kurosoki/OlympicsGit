@@ -22,9 +22,8 @@
     <!-- Afficher uniquement si l'utilisateur est admin et connecté
 
      Formulaire pour ajouter ou modifier une offre -->
-    @if (onlineUser && isAdmin)
+    @if (isAdmin)
     {
-        <!-- Formulaire pour ajouter une nouvelle offre (visible uniquement pour l'admin) -->
         <EditForm Model="newSportTicket" OnValidSubmit="CreateSportTicket">
             <DataAnnotationsValidator />
             <ValidationSummary />
@@ -34,38 +33,36 @@
 
                 <div>
                     <label for="sportName">Nom du sport:</label>
-                    <input type="text" id="sportName" @bind="newSportTicket.SportName" placeholder="Nom du sport" />
+                    <InputText id="sportName" @bind-Value="newSportTicket.SportName" placeholder="Nom du sport" />
+                    <ValidationMessage For="@(() => newSportTicket.SportName)" />
                 </div>
 
                 <div>
                     <label for="description">Description de l'événement:</label>
-                    <input type="text" id="description" @bind="newSportTicket.Description" placeholder="Description de l'événement" />
+                    <InputText id="description" @bind-Value="newSportTicket.Description" placeholder="Description de l'événement" />
+                    <ValidationMessage For="@(() => newSportTicket.Description)" />
                 </div>
 
                 <div>
                     <label for="priceSolo">Prix Solo:</label>
-                    <input type="number" id="priceSolo" @bind="newSportTicket.PriceSolo" placeholder="Prix Solo" />
+                    <InputNumber id="priceSolo" @bind-Value="newSportTicket.PriceSolo" placeholder="Prix Solo" min="0"/>
+                    <ValidationMessage For="@(() => newSportTicket.PriceSolo)" />
                 </div>
 
                 <div>
                     <label for="priceDuo">Prix Duo:</label>
-                    <input type="number" id="priceDuo" @bind="newSportTicket.PriceDuo" placeholder="Prix Duo" />
+                    <InputNumber id="priceDuo" @bind-Value="newSportTicket.PriceDuo" placeholder="Prix Duo" min="0" />
+                    <ValidationMessage For="@(() => newSportTicket.PriceDuo)" />
                 </div>
 
                 <div>
                     <label for="priceFamily">Prix Famille:</label>
-                    <input type="number" id="priceFamily" @bind="newSportTicket.PriceFamily" placeholder="Prix Famille" />
+                    <InputNumber id="priceFamily" @bind-Value="newSportTicket.PriceFamily" placeholder="Prix Famille" min="0" />
+                    <ValidationMessage For="@(() => newSportTicket.PriceFamily)" />
                 </div>
 
-              @*   <!-- Champ pour charger l'image -->
                 <div>
-                    <label for="imageUpload">Charger une image:</label>
-                    <input type="file" id="imageUpload" accept="image/*" @onchange="LoadImage" />
-                </div> *@
-
-                <!-- Aperçu de l'image -->
-                <div>
-                    <img id="imagePreview" src="@newSportTicket.ImageUrl" alt="Aperçu de l'image" style="display: @(string.IsNullOrEmpty(newSportTicket.ImageUrl) ? "none" : "block"); width: 100px; height: 100px;" />
+                    <img id="imagePreview" src="/images/sports/cloche-gold.png" alt="Image par défaut" style="width: 100px; height: 100px;" />
                 </div>
 
                 <button type="submit">Créer l'offre</button>
@@ -74,6 +71,78 @@
     }
 
 
+
+@if (sportTickets != null && sportTickets.Any())
+{
+    @foreach (var sportTicket in sportTickets)
+    {
+        <!-- Carte pour chaque sport -->
+        <RadzenColumn Size="12" class="billetterie-card-column">
+            <div class="billetterie-card-sport">
+                <RadzenRow>
+                    <RadzenColumn Size="1">
+                            <img src="@(!string.IsNullOrEmpty(sportTicket.ImageUrl) ? sportTicket.ImageUrl : "/images/sports/cloche-gold.png")" alt="Image de l'offre" style="width: 150px; height: auto; object-fit: cover;" />
+                    </RadzenColumn>
+                    <RadzenColumn Size="9">
+                        <div class="billetterie-card-body">
+                            <RadzenText class="billetterie-card-title" Text="@sportTicket.SportName" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
+                            <RadzenText class="billetterie-card-description" Text="@sportTicket.Description" TagName="Radzen.Blazor.TagName.P"></RadzenText>
+                        </div>
+
+                        <!-- Section pour le billet Solo -->
+                        <div class="billeterie-card-container">
+                            <div class="billetterie-card-price">
+                                <p class="billetterie-card-price-label">Prix Solo: @sportTicket.PriceSolo €</p>
+                                <div class="billetterie-card-controls">
+                                    <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTicket, TicketTypeManager.TicketType.Solo)">-</button>
+                                    <span class="billetterie-card-quantity">@sportTicket.QuantitySolo</span>
+                                    <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTicket, TicketTypeManager.TicketType.Solo)">+</button>
+                                </div>
+                            </div>
+
+                            <!-- Section pour le billet Duo -->
+                            <div class="billetterie-card-price">
+                                <p class="billetterie-card-price-label">Prix Duo: @sportTicket.PriceDuo €</p>
+                                <div class="billetterie-card-controls">
+                                    <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTicket, TicketTypeManager.TicketType.Duo)">-</button>
+                                    <span class="billetterie-card-quantity">@sportTicket.QuantityDuo</span>
+                                    <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTicket, TicketTypeManager.TicketType.Duo)">+</button>
+                                </div>
+                            </div>
+
+                            <!-- Section pour le billet Famille -->
+                            <div class="billetterie-card-price">
+                                <p class="billetterie-card-price-label">Prix Famille: @sportTicket.PriceFamily €</p>
+                                <div class="billetterie-card-controls">
+                                    <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTicket, TicketTypeManager.TicketType.Family)">-</button>
+                                    <span class="billetterie-card-quantity">@sportTicket.QuantityFamily</span>
+                                    <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTicket, TicketTypeManager.TicketType.Family)">+</button>
+                                </div>
+                            </div>
+
+                            <!-- Bouton Ajouter au panier -->
+                            <div class="billetterie-card-panier-button">
+                                <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTicket)">
+                                    Ajouter au panier
+                                </button>
+                            </div>
+
+                            @* Bouton pour supprimer une offre (visible seulement pour l'administrateur) *@
+                            @* @if (onlineUser && isAdmin)
+                            {
+                                <div class="billetterie-card-panier-button">
+                                    <button class="billetterie-card-supp-button" @onclick="async () => await DeleteOffer(sportTicket.ID)">
+                                        Supprimer Offre
+                                    </button>
+                                </div>
+                            } *@
+                        </div>
+                    </RadzenColumn>
+                </RadzenRow>
+            </div>
+        </RadzenColumn>
+    }
+}
 
 @* 
     <!-- Première carte de sport -->

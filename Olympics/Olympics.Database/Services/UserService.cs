@@ -93,6 +93,7 @@ namespace Olympics.Database.Services
         {
             // Appeler la méthode pour nettoyer les sessions expirées avant de créer une nouvelle session
             SessionManager.CleanupExpiredSessions();
+            await _localStorage.ClearAsync();
 
             var utilisateur = await _context.Utilisateurs
                 .FirstOrDefaultAsync(u => u.EmailClient == loginUser.EmailClient);
@@ -197,7 +198,7 @@ namespace Olympics.Database.Services
                     _panierService.MettreAJourPanier(panierUtilisateur);
 
                     // Connexion réussie, stocker l'état utilisateur
-                    _sessionService.SetUserStatus (true, isAdmin);
+                    _sessionService.SetUserStatus (isAdmin);
 
                     return (true, isAdmin);
                 }
@@ -245,8 +246,7 @@ namespace Olympics.Database.Services
                 if (response.IsSuccessStatusCode)
                 {
                     // Suppression des données dans le localStorage
-                    await _localStorage.RemoveItemAsync(SecurityManager.EncryptAES("Token"));
-                    await _localStorage.RemoveItemAsync(SecurityManager.EncryptAES("ExpireDate"));
+                    await _localStorage.ClearAsync();
 
                     // Méthode pour nettoyer le panier en sessionStorage
                     await _panierService.ClearCartFromSessionAsync();

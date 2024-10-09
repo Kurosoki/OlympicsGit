@@ -39,9 +39,8 @@ namespace Olympics.Metier.Models
         [Column("prixfamily")]
         public decimal PriceFamily { get; set; }
 
-        [Required(ErrorMessage = "Image requis.")]
         [Column("imageurl")]
-        public string ImageUrl { get; set; }
+        public string ImageUrl { get; set; } 
 
     }
 
