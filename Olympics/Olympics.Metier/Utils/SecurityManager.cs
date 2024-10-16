@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Olympics.Metier.Utils
 {
-    public static class SecurityManager
+    public class SecurityManager
     {
 
         // Clé et IV AES générés au lancement de l'application
-        private static readonly byte[] aesKey;
-        private static readonly byte[] aesIV;
+        private readonly byte[] aesKey;
+        private readonly byte[] aesIV;
 
-        static SecurityManager()
+        public SecurityManager()
         {
             // Générer la clé et l'IV AES au démarrage de l'application
             using (Aes aes = Aes.Create())
@@ -24,7 +24,7 @@ namespace Olympics.Metier.Utils
             }
         }
 
-        public static string GenerateSalt(int size = 16)
+        public string GenerateSalt(int size = 16)
         {
             // Génère un salt aléatoire
             byte[] saltBytes = new byte[size];
@@ -36,7 +36,7 @@ namespace Olympics.Metier.Utils
         }
 
 
-        public static string HashPasswordSHA512(string password, string salt)
+        public string HashPasswordSHA512(string password, string salt)
         {   
             // Concaténer le mot de passe et le salt
             string saltedPassword = password + salt;
@@ -58,7 +58,7 @@ namespace Olympics.Metier.Utils
 
         }
 
-        public static bool VerifyPassword(string enteredPassword, string storedHash, string storedSalt)
+        public virtual bool VerifyPassword(string enteredPassword, string storedHash, string storedSalt)
         {
             // Hachez le mot de passe entré par l'utilisateur en utilisant le même salt
             string hashOfEnteredPassword = HashPasswordSHA512(enteredPassword, storedSalt);
@@ -68,7 +68,7 @@ namespace Olympics.Metier.Utils
         }
 
         // Méthode pour chiffrer une chaîne de caractères en utilisant AES et retourner une chaîne Base64
-        public static string EncryptAES(string plainText)
+        public string EncryptAES(string plainText)
         {
             using (Aes aes = Aes.Create())
             {
@@ -93,7 +93,7 @@ namespace Olympics.Metier.Utils
         }
 
         // Méthode pour déchiffrer une chaîne Base64 en utilisant AES
-        public static string DecryptAES(string cipherTextBase64)
+        public string DecryptAES(string cipherTextBase64)
         {
             byte[] cipherTextBytes = Convert.FromBase64String(cipherTextBase64);
 

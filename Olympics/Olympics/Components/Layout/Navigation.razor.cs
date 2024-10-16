@@ -9,6 +9,7 @@ using Radzen;
 using Radzen.Blazor;
 using Olympics.Database.Services;
 using Olympics.Services;
+using Olympics.Presentation.Components.Pages;
 
 namespace Olympics.Presentation.Components.Layout
 {
@@ -38,16 +39,23 @@ namespace Olympics.Presentation.Components.Layout
         [Inject]
         private SessionService SessionService { get; set; }
 
+        private bool isAdmin = false;
+        private bool isUserLoggedIn = false;
 
-        private bool isLoggedIn = false;
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
+        protected override async Task OnInitializedAsync()
         {
-            if (firstRender)
-            {   
-                isLoggedIn = await SessionService.ValidateUserSessionAsync();
-                StateHasChanged(); 
+            isUserLoggedIn = await SessionService.ValidateUserSessionAsync();
+
+            if (isUserLoggedIn)
+            {
+                CheckIfUserIsAdminAsync();
             }
+        }
+
+
+        private void CheckIfUserIsAdminAsync()
+        {
+            isAdmin = SessionService.GetUserStatus();
         }
 
         private async Task Logout()
@@ -58,9 +66,15 @@ namespace Olympics.Presentation.Components.Layout
                 await UserService.LogoutUserAsync(); 
             }
 
-            isLoggedIn = false; 
+            isUserLoggedIn = false; 
             NavigationManager.NavigateTo("/", forceLoad: true);
         }
+
+
+        //private async Task ScrollToTop()
+        //{
+        //    await JSRuntime.InvokeVoidAsync("scrollToElement", "topOfPageId"); 
+        //}
 
 
         private void NavigateToAccueil()
@@ -85,6 +99,10 @@ namespace Olympics.Presentation.Components.Layout
         }
 
 
+        private void NavigateTableauDeBord()
+        {
+            NavigationManager.NavigateTo("/tableau-de-bord");
+        }
 
     }
 }

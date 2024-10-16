@@ -132,19 +132,19 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
 /* Boutons de navigation */
 
 .btn-menu {
-    background-color: white; 
-    border: none; 
+    background-color: white;
+    border: none;
     color: black;
-    padding: 2% 2%; 
+    padding: 2% 2%;
     margin: 0.7%;
-    text-align: center; 
-    text-decoration: none; 
-    display: inline-block;  
-    border-radius: 2%; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 2%;
     font-size: 0.8rem;
     font-family: Prompt-medium;
     text-transform: uppercase;
-    
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4); /* Ombre sous le bouton */
 }
 
 .btn-menu:hover {
@@ -474,37 +474,40 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
     color: #39333E;
 }
 
-/* Card Styles */
-.billetterie-card-column {
+.billetterie-card-column-formulaire {
     margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.billetterie-card-column {
+    padding: 15px;
 }
 
 .billetterie-card-sport {
-    display: flex;
-    background-color: #fff;
-    border-radius: 0.3rem;
-    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    max-width: 80%; /* Limite la largeur maximale */
-    margin: 0 auto; /* Centre la carte dans son conteneur parent */
-    cursor: pointer;
+    transition: transform 0.2s;
+    background-color: white; 
 }
 
-.billetterie-card-sport:hover {
-   background-color: #D6D5E3;
-}
+/*.billetterie-card-sport:hover {
+    transform: scale(1.02);
+}*/
 
 .billetterie-card-image {
-    width: 150%;
+    width: 100%;
     height: auto;
-    object-fit: cover;   
+    border-bottom: 1px solid #ddd;
 }
 
 .billetterie-card-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-left: 3rem;
+    padding: 20px; /* Espacement interne pour le corps de la carte */
+    font-family: Prompt; 
 }
 
 .billetterie-card-title {
@@ -513,6 +516,7 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
     font-weight: 600;
     color: black;
     margin-top: 0.5rem;
+    margin-left: 20px;
 }
 
 .billetterie-card-description {
@@ -520,62 +524,70 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
     color: #39333E;
     line-height: 1.5;
     font-family: Prompt;
+    margin-left: 20px;
 }
 
-.billetterie-card-details {
-    font-family: Prompt-medium;
-    color: black;
-    font-size: 0.875rem;
-}
-
-/* Styles pour les prix et contrôles de quantité */
-
-.billeterie-card-container{
+.billetterie-card-sport {
     display: flex;
-    align-items: center; /* Alignement vertical des éléments */
-    justify-content: space-between; /* Espace entre les éléments */
-    margin-bottom: 1rem;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 80%;  
+    margin: 0 auto;
+    cursor: pointer;
+
+}
+
+
+.billeterie-card-container {
+    margin-bottom: 15px;
 }
 
 .billetterie-card-price {
-    font-family: Prompt-medium;
-    font-size: 0.900rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-left: 3rem;
-    margin-top: 0.2rem;
+    background-color: #f9f9f9; /* Fond léger pour la section prix */
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-family: Prompt;
+    margin-left: 40px;
 }
 
 .billetterie-card-price-label {
-    margin-bottom: 0.4rem;
+    font-weight: bold;
+    color: #444; 
+    font-family: Prompt-medium;
 }
 
-.billetterie-card-controls button {
-    background-color: black;
+.billetterie-card-controls {
+    display: flex;
+    align-items: center;
+}
+
+.billetterie-card-button {
+    background-color: black; 
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 0 5px;
     cursor: pointer;
-    text-transform: uppercase;
+    transition: background-color 0.2s;
+    font-family: Prompt; 
 }
 
-.billetterie-card-controls button:hover {
+.billetterie-card-button:hover {
     background-color: #012366;
 }
 
 .billetterie-card-quantity {
-    font-size: 1rem;
-    margin: 0 0.5rem;
-    font-family: Prompt-medium;
+    font-size: 1.2em;
+    margin: 0 10px;
 }
 
-.billetterie-card-panier-button{
-    display: flex;
-    align-items: center;
-    margin-left: auto; /* Aligne le bouton à droite */
-    margin-top: 2rem;
+.billetterie-card-panier-button {
+    text-align: center;
+    display: flex; 
 }
 
 .billetterie-card-add-button {
@@ -583,17 +595,52 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
     font-family: Prompt-medium;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
     border-radius: 0.3rem;
     cursor: pointer;
     text-transform: uppercase;
     width: 200px;
-    height: 40px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
 }
 
 .billetterie-card-add-button:hover {
     background-color: #012366;
 }
+
+
+.billetterie-card-modif-button,
+.billetterie-card-supp-button {
+    background-color: black;
+    font-family: Prompt-medium;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 200px;
+    height: 50px;
+}
+
+.billetterie-card-modif-button:hover,
+.billetterie-card-supp-button:hover {
+    background-color: #012366;
+}
+
+.billetterie-card-panier-buttons {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.billetterie-card-image {
+    width: 150%;
+    height: auto;
+    object-fit: cover;
+}
+
+
 
 /* Login */
 /* Styles pour centrer le formulaire de connexion */
@@ -605,7 +652,6 @@ Il s'agissait de le masquer tout en permettant le défilement de la page) OwO --
     min-height: 100vh; /* Prend toute la hauteur de la vue */
     background-color: black; /* Couleur de fond noire */
     overflow: hidden; /* Assure que rien ne dépasse de la fenêtre */
-
 }
 
 /* Formulaire de connexion */
@@ -1081,5 +1127,162 @@ h2 {
 }
 
 
+/* Formulaire d'offre */
+/* Conteneur de la page pour l'offre */
+.offer-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+/* Style du formulaire pour créer/modifier une offre */
+.style-form-offer {
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    z-index: 2;
+    font-family: Prompt;
+    font-size: 16px;
+}
+
+/* Centrage des éléments dans chaque ligne du formulaire */
+.style-form-offer-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Permet aux éléments de se replier si l'espace est limité */
+}
+
+/* Style pour les étiquettes (labels) */
+.style-form-offer label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Style pour les champs de saisie */
+.style-form-offer input,
+.style-form-offer select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Style pour les messages de validation */
+.style-form-offer .validation-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Style pour les boutons */
+.offer-button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.offer-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.offer-button:active {
+    background-color: #e91e63;
+}
+
+/* Conteneur pour l'image d'aperçu */
+.image-preview {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-preview img {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    border: 2px solid #ddd;
+}
 
 
+
+
+/* Conteneur principal du Tableau de bord */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Prompt', sans-serif;
+    background-color: #f7f7f7; /* Fond clair */
+    border-radius: 10px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+/* Titre du tableau de bord */
+.table-title-dashboard {
+    font-family: 'Paris2024', sans-serif; 
+    font-size: 1.8rem;
+    color: #012366;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Style de la table */
+.style-table-dashboard {
+    overflow-x: auto;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead th {
+     background-color: #012366;
+     color: white;
+     text-align: left;
+     padding: 12px 15px;
+     text-transform: uppercase;
+     font-family: 'Prompt', sans-serif;
+}
+
+.table tbody td {
+     padding: 12px 15px;
+     border-bottom: 1px solid #ddd;
+     font-family: 'Prompt', sans-serif;
+     color: #39333E;
+}
+
+.table tbody tr:nth-child(even) {
+     background-color: #f9f9f9; /* Alternance des couleurs */
+}
+
+/* Alignement du texte centré quand il n'y a pas de ventes */
+.table tbody td[colspan="3"] {
+     text-align: center;
+     font-style: italic;
+     color: #999;
+}

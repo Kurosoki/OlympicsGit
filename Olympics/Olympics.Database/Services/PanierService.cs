@@ -1,44 +1,68 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Blazored.SessionStorage;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.JSInterop;
 using Olympics.Database;
 using Olympics.Metier.Models;
+using System.Text.Json;
 
 namespace Olympics.Services
 {
     public class PanierService
     {
         private readonly ApplicationDbContext _context;
-        private readonly IJSRuntime _jsRuntime;
+        //private readonly IJSRuntime _jsRuntime;
+        private readonly ISessionStorageService _sessionStorageService;
 
-        public PanierService(ApplicationDbContext context, IJSRuntime jsRuntime)
+        public PanierService(ApplicationDbContext context, ISessionStorageService sessionStorageService)
         {
             _context = context;
-            _jsRuntime = jsRuntime;
+            //_jsRuntime = jsRuntime;
+            _sessionStorageService = sessionStorageService;
         }
 
         // Méthode pour récupérer les tickets dans le panier sessionStorage
+        //public async Task<List<cTicket>> GetCartFromSessionAsync()
+        //{
+        //    var cartJson = await _jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "cart");
+        //    if (string.IsNullOrEmpty(cartJson))
+        //    {
+        //        return new List<cTicket>();
+        //    }
+        //    return System.Text.Json.JsonSerializer.Deserialize<List<cTicket>>(cartJson);
+        //}
+
         public async Task<List<cTicket>> GetCartFromSessionAsync()
         {
-            var cartJson = await _jsRuntime.InvokeAsync<string>("sessionStorage.getItem", "cart");
+            var cartJson = await _sessionStorageService.GetItemAsync<string>("cart");
             if (string.IsNullOrEmpty(cartJson))
             {
                 return new List<cTicket>();
             }
-            return System.Text.Json.JsonSerializer.Deserialize<List<cTicket>>(cartJson);
+            return JsonSerializer.Deserialize<List<cTicket>>(cartJson);
         }
 
-        // Méthode pour sauvegarder les tickets dans le panier sessionStorage
+        //// Méthode pour sauvegarder les tickets dans le panier sessionStorage
+        //public async Task SetCartInSessionAsync(List<cTicket> cartTickets)
+        //{
+        //    var cartJson = System.Text.Json.JsonSerializer.Serialize(cartTickets);
+        //    await _jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "cart", cartJson);
+        //}
+
         public async Task SetCartInSessionAsync(List<cTicket> cartTickets)
         {
-            var cartJson = System.Text.Json.JsonSerializer.Serialize(cartTickets);
-            await _jsRuntime.InvokeVoidAsync("sessionStorage.setItem", "cart", cartJson);
+            var cartJson = JsonSerializer.Serialize(cartTickets);
+            await _sessionStorageService.SetItemAsync("cart", cartJson);
         }
 
-
         // Méthode pour effacer le panier stocké en sessionStorage
+        //public async Task ClearCartFromSessionAsync()
+        //{
+        //    await _jsRuntime.InvokeVoidAsync("sessionStorage.removeItem", "cart");
+        //}
+
         public async Task ClearCartFromSessionAsync()
         {
-            await _jsRuntime.InvokeVoidAsync("sessionStorage.removeItem", "cart");
+            await _sessionStorageService.RemoveItemAsync("cart");
         }
 
 

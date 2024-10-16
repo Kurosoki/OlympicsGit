@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "G:\\Examens\\RecupOlympics\\Olympics\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\recupolympics\\olympics\\olympics\\components\\pages\\billetterie.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\pages\\billetterie.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E603A637-EA07-4CEE-86F1-17D337D246C6}|OlympicsTest\\OlympicsTest.csproj|g:\\examens\\recupolympics\\olympics\\olympicstest\\panierservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E603A637-EA07-4CEE-86F1-17D337D246C6}|OlympicsTest\\OlympicsTest.csproj|solutionrelative:olympicstest\\panierservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{088B87B2-B29E-4826-8213-495124834E42}|Olympics.Metier\\Olympics.Metier.csproj|g:\\examens\\recupolympics\\olympics\\olympics.metier\\utils\\sportticketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{088B87B2-B29E-4826-8213-495124834E42}|Olympics.Metier\\Olympics.Metier.csproj|solutionrelative:olympics.metier\\utils\\sportticketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{088B87B2-B29E-4826-8213-495124834E42}|Olympics.Metier\\Olympics.Metier.csproj|g:\\examens\\recupolympics\\olympics\\olympics.metier\\models\\coffresbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{088B87B2-B29E-4826-8213-495124834E42}|Olympics.Metier\\Olympics.Metier.csproj|solutionrelative:olympics.metier\\models\\coffresbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|g:\\examens\\recupolympics\\olympics\\olympics\\components\\pages\\billetterie.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B67D19D-867F-48BF-9192-82878F72230F}|Olympics\\Olympics.Presentation.csproj|solutionrelative:olympics\\components\\pages\\billetterie.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|g:\\examens\\recupolympics\\olympics\\olympics.database\\services\\panierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5D9F74D-3C72-4C76-B4CF-511612FE0CB8}|Olympics.Database\\Olympics.Database.csproj|solutionrelative:olympics.database\\services\\panierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,54 +31,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SportTicketManager.cs",
-              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Metier\\Utils\\SportTicketManager.cs",
-              "RelativeDocumentMoniker": "Olympics.Metier\\Utils\\SportTicketManager.cs",
-              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Metier\\Utils\\SportTicketManager.cs",
-              "RelativeToolTip": "Olympics.Metier\\Utils\\SportTicketManager.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAA4wAAAAAAAAAAA",
+              "Title": "PanierService.cs",
+              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Database\\Services\\PanierService.cs",
+              "RelativeDocumentMoniker": "Olympics.Database\\Services\\PanierService.cs",
+              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Database\\Services\\PanierService.cs",
+              "RelativeToolTip": "Olympics.Database\\Services\\PanierService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T15:09:59.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "cOffresBase.cs",
-              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Metier\\Models\\cOffresBase.cs",
-              "RelativeDocumentMoniker": "Olympics.Metier\\Models\\cOffresBase.cs",
-              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics.Metier\\Models\\cOffresBase.cs",
-              "RelativeToolTip": "Olympics.Metier\\Models\\cOffresBase.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAowCoAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T15:09:51.405Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-16T12:32:09.82Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Billetterie.razor",
-              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Billetterie.razor",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Billetterie.razor",
-              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Billetterie.razor",
-              "RelativeToolTip": "Olympics\\Components\\Pages\\Billetterie.razor",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAiwFAAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-09T14:51:05.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Billetterie.razor.cs",
-              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Billetterie.razor.cs",
-              "RelativeDocumentMoniker": "Olympics\\Components\\Pages\\Billetterie.razor.cs",
-              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\Olympics\\Components\\Pages\\Billetterie.razor.cs",
-              "RelativeToolTip": "Olympics\\Components\\Pages\\Billetterie.razor.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAkwEAAAAAJAAAA",
+              "Title": "PanierServiceTest.cs",
+              "DocumentMoniker": "G:\\Examens\\RecupOlympics\\Olympics\\OlympicsTest\\PanierServiceTest.cs",
+              "RelativeDocumentMoniker": "OlympicsTest\\PanierServiceTest.cs",
+              "ToolTip": "G:\\Examens\\RecupOlympics\\Olympics\\OlympicsTest\\PanierServiceTest.cs",
+              "RelativeToolTip": "OlympicsTest\\PanierServiceTest.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAQwB8AAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-06T10:46:45.73Z",
+              "WhenOpened": "2024-10-16T11:58:39.209Z",
               "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             }
           ]
         }

@@ -1,0 +1,46 @@
+@page "/tableau-de-bord"
+
+<PageTitle>Tableau de bord</PageTitle>
+
+<!-- Le menu de navigation est inclus ici -->
+<Navigation />
+
+<div class="dashboard-container">
+    <RadzenRow>
+        <RadzenColumn Size="12">
+            <h3 class="table-title-dashboard">Ventes par Offre</h3>
+            <div class="style-table-dashboard">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nom de l'Offre</th>
+                            <th>Nombre de Tickets</th>
+                            <th>Ventes Totales (€)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ventesParOffre != null && ventesParOffre.Any())
+                        {
+                            foreach (var vente in ventesParOffre)
+                            {
+                                <tr>
+                                    <td>@vente.NameOffre</td>
+                                    <td>@vente.NombreTickets</td>
+                                    <td>@vente.VentesTotales.ToString("F2")</td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="3">Aucune vente à afficher.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </RadzenColumn>
+    </RadzenRow>
+</div>
+
+<Footer /> <!-- Le footer est inclus ici -->

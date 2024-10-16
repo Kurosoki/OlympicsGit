@@ -2,6 +2,8 @@
 using Olympics.Database;
 using Olympics.Metier.Models;
 using Olympics.Metier.Utils;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 public class OffreService
 {
@@ -14,26 +16,18 @@ public class OffreService
     }
 
     // Sauvegarde un billet sportif dans la base de données
-    public async Task SaveSportTicketAsync(SportTicket sportTicket)
+    public async Task SaveSportTicketAsync(SportTicket currentSportTicket)
     {
         try
-        {
-            if (string.IsNullOrWhiteSpace(sportTicket.SportName) ||
-                string.IsNullOrWhiteSpace(sportTicket.Description) ||
-                sportTicket.PriceSolo < 0 ||
-                sportTicket.PriceDuo < 0 ||
-                sportTicket.PriceFamily < 0)
-            {
-                throw new ArgumentException("Les données du sportTicket ne sont pas valides.");
-            }
-
+        {          
             var newOffer = new cOffresBase
             {
-                SportName = sportTicket.SportName,
-                Description = sportTicket.Description,
-                PriceSolo = sportTicket.PriceSolo,
-                PriceDuo = sportTicket.PriceDuo,
-                PriceFamily = sportTicket.PriceFamily
+                SportName = currentSportTicket.SportName,
+                Description = currentSportTicket.Description,
+                PriceSolo = currentSportTicket.PriceSolo,
+                PriceDuo = currentSportTicket.PriceDuo,
+                PriceFamily = currentSportTicket.PriceFamily,
+                ImageUrl = "images/sports/cloche-gold.png"
             };
 
             _context.Offres.Add(newOffer);
@@ -60,4 +54,53 @@ public class OffreService
     }
 
 
+    public async Task<cOffresBase> GetOfferByIdAsync(int idOffre)
+    {
+        return await _context.Offres.FirstOrDefaultAsync(o => o.IDOffre == idOffre);
+    }
+
+
+
+    public async Task UpdateOffreAsync(SportTicket currentSportTicket)
+    {
+        var offre = await _context.Offres.FirstOrDefaultAsync(o => o.IDOffre == currentSportTicket.IDOffre);
+
+        if (offre != null)
+        {
+            offre.SportName = currentSportTicket.SportName;
+            offre.Description = currentSportTicket.Description;
+            offre.PriceSolo = currentSportTicket.PriceSolo;
+            offre.PriceDuo = currentSportTicket.PriceDuo;
+            offre.PriceFamily = currentSportTicket.PriceFamily;
+
+            await _context.SaveChangesAsync();
+            Console.WriteLine("Offre modifiée avec succès.");
+        }
+        else
+        {
+            Console.WriteLine("Offre non trouvée.");
+        }
+    }
+
+
+
+    public async Task DeleteOffreAsync(int idoffre)
+    {
+        var offre = await _context.Offres.FirstOrDefaultAsync(o => o.IDOffre == idoffre);
+        if (offre != null)
+        {
+            _context.Offres.Remove(offre);
+            await _context.SaveChangesAsync();
+            Console.WriteLine("Offre supprimée avec succès.");
+        }
+        else
+        {
+            Console.WriteLine("Offre non trouvée.");
+        }
+    }
+
+
+
 }
+
+

@@ -10,6 +10,8 @@ namespace Olympics.Metier.Utils
 
     public class SportTicket
     {
+        public int IDOffre { get; set; }
+
         public string SportName { get; set; }
 
         public string Description { get; set; }
@@ -30,6 +32,7 @@ namespace Olympics.Metier.Utils
         {
             return offres.Select(offre => new SportTicket
             {
+                IDOffre = offre.IDOffre,
                 SportName = offre?.SportName ?? "Inconnu", // Valeur par défaut si null
                 Description = offre?.Description ?? "Pas de description", // Valeur par défaut si null
                 PriceSolo = offre?.PriceSolo ?? 0,

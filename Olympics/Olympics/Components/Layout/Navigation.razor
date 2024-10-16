@@ -2,8 +2,9 @@
 <div class="rz-barreNavigation">
     <RadzenRow JustifyContent="JustifyContent.Start" AlignItems="AlignItems.Center" Gap="0">
         <RadzenColumn Size="4">
-            <RadzenButton class="btn-menu btn-accueil" Click="@NavigateToAccueil">Accueil</RadzenButton>
-            <RadzenButton class="btn-menu" Click="@NavigateToBilletterie">Billetterie</RadzenButton>
+            <button class="btn-menu btn-accueil" @onclick="@NavigateToAccueil">Accueil</button>
+            <button class="btn-menu" @onclick="@NavigateToBilletterie">Billetterie</button>
+
 
         </RadzenColumn>
         <!-- Logo -->
@@ -14,15 +15,26 @@
         </RadzenColumn>
         <RadzenColumn Size="4">
             <RadzenStack AlignItems="AlignItems.Center" Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End">
-                <RadzenButton class="btn-menu" Click="@NavigateToPanier">Panier</RadzenButton>
-                @if (isLoggedIn)
+
+                @if (isAdmin)
                 {
-                    <button class="btn-menu btn-logout" @onclick="Logout">Déconnexion</button>
+                    <button class="btn-menu" @onclick="@NavigateTableauDeBord">Tableau De Bord</button>
+                }
+
+                <button class="btn-menu" @onclick="NavigateToPanier">Panier</button>
+
+
+                @if (isUserLoggedIn)
+                {
+                    <button class="btn-menu btn-logout" @onclick="Logout">Déconnexion</button>               
                 }
                 else
                 {
                     <button class="btn-menu btn-login" @onclick="NavigateToLogin">Connexion / Inscription</button>
                 }
+
+                @* <button class="btn-menu type="button" @onclick="ScrollToTop">Remonter</button> *@
+
             </RadzenStack>
         </RadzenColumn>
     </RadzenRow>

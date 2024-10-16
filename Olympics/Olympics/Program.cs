@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Olympics.Database;
 using Olympics.Database.Services;
+using Olympics.Metier.Models;
 using Olympics.Metier.Utils;
 using Olympics.Presentation.Components;
 using Olympics.Services;
@@ -45,7 +46,9 @@ builder.Services.AddScoped<SessionService>();
 builder.Services.AddScoped<PanierService>();
 builder.Services.AddScoped<PayementService>();
 builder.Services.AddScoped<OffreService>();
+builder.Services.AddScoped<ArchiveService>();
 builder.Services.AddScoped<SportTicketManager>();
+
 
 
 //Blazored LocalStorage

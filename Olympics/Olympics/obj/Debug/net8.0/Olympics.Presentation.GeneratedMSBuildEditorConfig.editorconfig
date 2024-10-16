@@ -62,16 +62,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/RGPD/CookieConsent.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSR1BEXENvb2tpZUNvbnNlbnQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/RGPD/LegalNotices.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSR1BEXExlZ2FsTm90aWNlcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/RGPD/PrivacyPolicy.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSR1BEXFByaXZhY3lQb2xpY3kucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[G:/Examens/RecupOlympics/Olympics/Olympics/Components/Pages/TableauDeBord.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUYWJsZWF1RGVCb3JkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [G:/Examens/RecupOlympics/Olympics/Olympics/Components/Routes.razor]

@@ -15,37 +15,33 @@ using System.Net.Http.Json;
 using System.Security.Cryptography;
 
 
+
+
 namespace Olympics.Database.Services
 {
     public class UserService
     {
         private readonly ApplicationDbContext _context;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly ILogger<UserService> _logger;
-        private readonly AuthenticationStateProvider _authenticationStateProvider;
-        private readonly IJSRuntime _jsRuntime;
         private readonly PanierService _panierService;
-        private readonly HttpClient _httpClient;
         private readonly IDataProtectionProvider _dataProtectionProvider;
         private readonly SessionService _sessionService;
-        private cUtilisateurBase _currentUser;
         private readonly ILocalStorageService _localStorage;
+        private readonly SecurityManager _securityManager;
 
 
-        public UserService(HttpClient httpClient, ApplicationDbContext context, IHttpContextAccessor httpContextAccessor,
-        ILogger<UserService> logger, AuthenticationStateProvider authenticationStateProvider, IJSRuntime jsRuntime,
-        PanierService panierService, IDataProtectionProvider dataProtectionProvider, SessionService sessionService, ILocalStorageService localStorage)
+
+
+        public UserService(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor, PanierService panierService, 
+            IDataProtectionProvider dataProtectionProvider,SessionService sessionService, ILocalStorageService localStorage, SecurityManager securityManager)
         {
-            _httpClient = httpClient;
             _context = context;
             _httpContextAccessor = httpContextAccessor;
-            _logger = logger;
-            _authenticationStateProvider = authenticationStateProvider;
-            _jsRuntime = jsRuntime;
             _panierService = panierService;
             _dataProtectionProvider = dataProtectionProvider;
             _sessionService = sessionService;
             _localStorage = localStorage;
+            _securityManager = securityManager;
         }
 
         public string GenerateUniqueKey()
@@ -72,10 +68,10 @@ namespace Olympics.Database.Services
             }
 
             // Générer un salt pour cet utilisateur
-            string salt = SecurityManager.GenerateSalt();
+            string salt = _securityManager.GenerateSalt();
 
             // Hashage du mot de passe
-            user.ShaMotDePasse = SecurityManager.HashPasswordSHA512(user.ShaMotDePasse, salt);
+            user.ShaMotDePasse = _securityManager.HashPasswordSHA512(user.ShaMotDePasse, salt);
 
             // Enregistrez le salt avec l'utilisateur pour la vérification future
             user.Salt = salt;
@@ -103,7 +99,7 @@ namespace Olympics.Database.Services
                 return (false, false);
             }
 
-            bool isPasswordValid = SecurityManager.VerifyPassword(loginUser.ShaMotDePasse, utilisateur.ShaMotDePasse, utilisateur.Salt);
+            bool isPasswordValid = _securityManager.VerifyPassword(loginUser.ShaMotDePasse, utilisateur.ShaMotDePasse, utilisateur.Salt);
 
             if (isPasswordValid)
             {
@@ -131,8 +127,8 @@ namespace Olympics.Database.Services
                     var encryptedToken = protector.Protect(token);
 
                     // Chiffrer le token et la date d'expiration avec AES
-                    await _localStorage.SetItemAsync(SecurityManager.EncryptAES("Token"), SecurityManager.EncryptAES(encryptedToken));
-                    await _localStorage.SetItemAsync(SecurityManager.EncryptAES("ExpireDate"), SecurityManager.EncryptAES(loginResponse.Expiration.ToString("o")));
+                    await _localStorage.SetItemAsync(_securityManager.EncryptAES("Token"), _securityManager.EncryptAES(encryptedToken));
+                    await _localStorage.SetItemAsync(_securityManager.EncryptAES("ExpireDate"), _securityManager.EncryptAES(loginResponse.Expiration.ToString("o")));
 
 
                     ////  ////  ////  IDENTIFIER LE ROLE DE L'UTILISATEUR  ////  ////  ////
@@ -200,6 +196,7 @@ namespace Olympics.Database.Services
                     // Connexion réussie, stocker l'état utilisateur
                     _sessionService.SetUserStatus (isAdmin);
 
+                    Console.WriteLine("USER CONNECTE");
                     return (true, isAdmin);
                 }
             }
@@ -211,8 +208,8 @@ namespace Olympics.Database.Services
         public async Task<bool> LogoutUserAsync()
         {
             // Récupérer le token d'authentification chiffré depuis le localStorage
-            string encryptedToken = await _localStorage.GetItemAsync<string>(SecurityManager.EncryptAES("Token"));
-            string encryptedExpirationDate = await _localStorage.GetItemAsync<string>(SecurityManager.EncryptAES("ExpireDate"));
+            string encryptedToken = await _localStorage.GetItemAsync<string>(_securityManager.EncryptAES("Token"));
+            string encryptedExpirationDate = await _localStorage.GetItemAsync<string>(_securityManager.EncryptAES("ExpireDate"));
 
             if (string.IsNullOrEmpty(encryptedToken) || string.IsNullOrEmpty(encryptedExpirationDate))
             {
@@ -222,8 +219,8 @@ namespace Olympics.Database.Services
             try
             {
                 //  Déchiffrer avec AES
-                var aesDecryptedToken = SecurityManager.DecryptAES(encryptedToken);
-                var aesDecryptedExpiration = SecurityManager.DecryptAES(encryptedExpirationDate);
+                var aesDecryptedToken = _securityManager.DecryptAES(encryptedToken);
+                var aesDecryptedExpiration = _securityManager.DecryptAES(encryptedExpirationDate);
 
                 // Déchiffrer avec Data Protection
                 var protector = _dataProtectionProvider.CreateProtector("AuthTokenProtector");

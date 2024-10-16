@@ -3,8 +3,6 @@
 @using Olympics.Services
 
 
-
-
 <PageTitle>Billetterie Officiel de Paris 2024 - Jeux Olympiques et Paralympiques</PageTitle>
 
 <!-- Le menu de navigation est inclus ici -->
@@ -24,658 +22,149 @@
      Formulaire pour ajouter ou modifier une offre -->
     @if (isAdmin)
     {
-        <EditForm Model="newSportTicket" OnValidSubmit="CreateSportTicket">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
+        <RadzenColumn Size="12" class="billetterie-card-column-formulaire">
+           
+                <EditForm Model="currentSportTicket" OnValidSubmit="HandleSubmit" class="style-form-offer">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
 
-            <fieldset>
-                <legend>Ajouter une offre de billet</legend>
+                    <fieldset>
+                        <legend>@(isEditMode ? "Modifier l'offre" : "Créer une nouvelle offre")</legend>
 
-                <div>
-                    <label for="sportName">Nom du sport:</label>
-                    <InputText id="sportName" @bind-Value="newSportTicket.SportName" placeholder="Nom du sport" />
-                    <ValidationMessage For="@(() => newSportTicket.SportName)" />
-                </div>
-
-                <div>
-                    <label for="description">Description de l'événement:</label>
-                    <InputText id="description" @bind-Value="newSportTicket.Description" placeholder="Description de l'événement" />
-                    <ValidationMessage For="@(() => newSportTicket.Description)" />
-                </div>
-
-                <div>
-                    <label for="priceSolo">Prix Solo:</label>
-                    <InputNumber id="priceSolo" @bind-Value="newSportTicket.PriceSolo" placeholder="Prix Solo" min="0"/>
-                    <ValidationMessage For="@(() => newSportTicket.PriceSolo)" />
-                </div>
-
-                <div>
-                    <label for="priceDuo">Prix Duo:</label>
-                    <InputNumber id="priceDuo" @bind-Value="newSportTicket.PriceDuo" placeholder="Prix Duo" min="0" />
-                    <ValidationMessage For="@(() => newSportTicket.PriceDuo)" />
-                </div>
-
-                <div>
-                    <label for="priceFamily">Prix Famille:</label>
-                    <InputNumber id="priceFamily" @bind-Value="newSportTicket.PriceFamily" placeholder="Prix Famille" min="0" />
-                    <ValidationMessage For="@(() => newSportTicket.PriceFamily)" />
-                </div>
-
-                <div>
-                    <img id="imagePreview" src="/images/sports/cloche-gold.png" alt="Image par défaut" style="width: 100px; height: 100px;" />
-                </div>
-
-                <button type="submit">Créer l'offre</button>
-            </fieldset>
-        </EditForm>
-    }
-
-
-
-@if (sportTickets != null && sportTickets.Any())
-{
-    @foreach (var sportTicket in sportTickets)
-    {
-        <!-- Carte pour chaque sport -->
-        <RadzenColumn Size="12" class="billetterie-card-column">
-            <div class="billetterie-card-sport">
-                <RadzenRow>
-                    <RadzenColumn Size="1">
-                            <img src="@(!string.IsNullOrEmpty(sportTicket.ImageUrl) ? sportTicket.ImageUrl : "/images/sports/cloche-gold.png")" alt="Image de l'offre" style="width: 150px; height: auto; object-fit: cover;" />
-                    </RadzenColumn>
-                    <RadzenColumn Size="9">
-                        <div class="billetterie-card-body">
-                            <RadzenText class="billetterie-card-title" Text="@sportTicket.SportName" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                            <RadzenText class="billetterie-card-description" Text="@sportTicket.Description" TagName="Radzen.Blazor.TagName.P"></RadzenText>
+                        <div class="style-form-offer-row">
+                            <label for="sportName">Nom du sport:</label>
+                            <InputText id="sportName" @bind-Value="currentSportTicket.SportName" placeholder="Nom du sport" />
+                            <ValidationMessage For="@(() => currentSportTicket.SportName)" class="validation-message" />
                         </div>
 
-                        <!-- Section pour le billet Solo -->
-                        <div class="billeterie-card-container">
-                            <div class="billetterie-card-price">
-                                <p class="billetterie-card-price-label">Prix Solo: @sportTicket.PriceSolo €</p>
-                                <div class="billetterie-card-controls">
-                                    <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTicket, TicketTypeManager.TicketType.Solo)">-</button>
-                                    <span class="billetterie-card-quantity">@sportTicket.QuantitySolo</span>
-                                    <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTicket, TicketTypeManager.TicketType.Solo)">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Section pour le billet Duo -->
-                            <div class="billetterie-card-price">
-                                <p class="billetterie-card-price-label">Prix Duo: @sportTicket.PriceDuo €</p>
-                                <div class="billetterie-card-controls">
-                                    <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTicket, TicketTypeManager.TicketType.Duo)">-</button>
-                                    <span class="billetterie-card-quantity">@sportTicket.QuantityDuo</span>
-                                    <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTicket, TicketTypeManager.TicketType.Duo)">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Section pour le billet Famille -->
-                            <div class="billetterie-card-price">
-                                <p class="billetterie-card-price-label">Prix Famille: @sportTicket.PriceFamily €</p>
-                                <div class="billetterie-card-controls">
-                                    <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTicket, TicketTypeManager.TicketType.Family)">-</button>
-                                    <span class="billetterie-card-quantity">@sportTicket.QuantityFamily</span>
-                                    <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTicket, TicketTypeManager.TicketType.Family)">+</button>
-                                </div>
-                            </div>
-
-                            <!-- Bouton Ajouter au panier -->
-                            <div class="billetterie-card-panier-button">
-                                <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTicket)">
-                                    Ajouter au panier
-                                </button>
-                            </div>
-
-                            @* Bouton pour supprimer une offre (visible seulement pour l'administrateur) *@
-                            @* @if (onlineUser && isAdmin)
-                            {
-                                <div class="billetterie-card-panier-button">
-                                    <button class="billetterie-card-supp-button" @onclick="async () => await DeleteOffer(sportTicket.ID)">
-                                        Supprimer Offre
-                                    </button>
-                                </div>
-                            } *@
+                        <div class="style-form-offer-row">
+                            <label for="description">Description de l'événement:</label>
+                            <InputText id="description" @bind-Value="currentSportTicket.Description" placeholder="Description de l'événement" />
+                            <ValidationMessage For="@(() => currentSportTicket.Description)" class="validation-message" />
                         </div>
-                    </RadzenColumn>
-                </RadzenRow>
-            </div>
+
+                        <div class="style-form-offer-row">
+                            <label for="priceSolo">Prix Solo:</label>
+                            <InputNumber id="priceSolo" @bind-Value="currentSportTicket.PriceSolo" placeholder="Prix Solo" min="0" />
+                            <ValidationMessage For="@(() => currentSportTicket.PriceSolo)" class="validation-message" />
+                        </div>
+
+                        <div class="style-form-offer-row">
+                            <label for="priceDuo">Prix Duo:</label>
+                            <InputNumber id="priceDuo" @bind-Value="currentSportTicket.PriceDuo" placeholder="Prix Duo" min="0" />
+                            <ValidationMessage For="@(() => currentSportTicket.PriceDuo)" class="validation-message" />
+                        </div>
+
+                        <div class="style-form-offer-row">
+                            <label for="priceFamily">Prix Famille:</label>
+                            <InputNumber id="priceFamily" @bind-Value="currentSportTicket.PriceFamily" placeholder="Prix Famille" min="0" />
+                            <ValidationMessage For="@(() => currentSportTicket.PriceFamily)" class="validation-message" />
+                        </div>
+
+                        <div class="image-preview">
+                            <img id="imagePreview" src="/images/sports/cloche-gold.png" alt="Image par défaut" />
+                        </div>
+
+                        <button type="submit" class="offer-button">@(isEditMode ? "Modifier l'offre" : "Créer l'offre")</button>
+
+                        @if (isEditMode)
+                        {
+                            <!-- Bouton pour revenir en mode création -->
+                            <button type="button" class="offer-button" @onclick="CreateNewOffer">Créer une nouvelle offre</button>
+                        }
+                    </fieldset>
+                </EditForm>
+        
         </RadzenColumn>
     }
-}
 
-@* 
-    <!-- Première carte de sport -->
-    <RadzenColumn Size="12" class="billetterie-card-column">
-        <div class="billetterie-card-sport">
-            <RadzenRow>
-                <RadzenColumn Size="1">
-                    <RadzenImage class="billetterie-card-image" Path="images/sports/pictoathletics.png" AlternateText="Athlétisme"></RadzenImage>
-                </RadzenColumn>
-                <RadzenColumn Size="9">
-                    <div class="billetterie-card-body">
-                        <RadzenText class="billetterie-card-title" Text="Athlétisme" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                        <RadzenText class="billetterie-card-description" Text="ATH01 H/F - Tour préliminaire, 1er Tour, qualifications" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                        <RadzenText class="billetterie-card-details" Text="ven. 02.08.2024 |  10:00 - 13:00  |  Saint-Denis  |   Stade de France" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                    </div>
 
-                    <!-- Section pour le billet soslo -->
-                    <div class="billeterie-card-container">
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Solo:  @sportTickets[0].PriceSolo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[0],  TicketTypeManager.TicketType.Solo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[0].QuantitySolo </span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[0],  TicketTypeManager.TicketType.Solo)">+</button>
+    @if (sportTickets != null && sportTickets.Any())
+    {
+        @foreach (var sportTicket in sportTickets)
+        {
+            <!-- Carte pour chaque sport -->
+            <RadzenColumn Size="12" class="billetterie-card-column">
+                <div class="billetterie-card-sport">
+                    <RadzenRow>
+                        <RadzenColumn Size="1">
+                            <RadzenImage class="billetterie-card-image" Path="@(!string.IsNullOrEmpty(sportTicket.ImageUrl) ? sportTicket.ImageUrl : "/images/sports/cloche-gold.png")" AlternateText="Image de l'offre" />
+                        </RadzenColumn>
+
+                        <RadzenColumn Size="9">
+                            <div class="billetterie-card-body">
+                                <RadzenText class="billetterie-card-title" Text="@sportTicket.SportName" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
+                                <RadzenText class="billetterie-card-description" Text="@sportTicket.Description" TagName="Radzen.Blazor.TagName.P"></RadzenText>
                             </div>
-                        </div>
 
-                        <!-- Section pour le billet duo -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Duo: @sportTickets[0].PriceDuo  €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[0],  TicketTypeManager.TicketType.Duo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[0].QuantityDuo</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[0],  TicketTypeManager.TicketType.Duo)">+</button>
+                            <!-- Section pour le billet Solo -->
+                            <div class="billeterie-card-container @(isAdmin ? "admin" : "")">
+                                <div class="billetterie-card-price @(isAdmin ? "admin" : "")">
+                                    <p class="billetterie-card-price-label">Prix Solo: @sportTicket.PriceSolo €</p>
+                                    <div class="billetterie-card-controls">
+                                        <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTicket, TicketTypeManager.TicketType.Solo)">-</button>
+                                        <span class="billetterie-card-quantity">@sportTicket.QuantitySolo</span>
+                                        <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTicket, TicketTypeManager.TicketType.Solo)">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Section pour le billet Duo -->
+                                <div class="billetterie-card-price @(isAdmin ? "admin" : "")">
+                                    <p class="billetterie-card-price-label">Prix Duo: @sportTicket.PriceDuo €</p>
+                                    <div class="billetterie-card-controls">
+                                        <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTicket, TicketTypeManager.TicketType.Duo)">-</button>
+                                        <span class="billetterie-card-quantity">@sportTicket.QuantityDuo</span>
+                                        <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTicket, TicketTypeManager.TicketType.Duo)">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Section pour le billet Famille -->
+                                <div class="billetterie-card-price @(isAdmin ? "admin" : "")">
+                                    <p class="billetterie-card-price-label">Prix Famille: @sportTicket.PriceFamily €</p>
+                                    <div class="billetterie-card-controls">
+                                        <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTicket, TicketTypeManager.TicketType.Family)">-</button>
+                                        <span class="billetterie-card-quantity">@sportTicket.QuantityFamily</span>
+                                        <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTicket, TicketTypeManager.TicketType.Family)">+</button>
+                                    </div>
+                                </div>
+
+                                <!-- Bouton Ajouter au panier -->
+                                <div class="billetterie-card-panier-buttons">
+                                <div class="billetterie-card-panier-button">
+                                    <button class="billetterie-card-add-button @(isAdmin ? "admin" : "")"
+                                            @onclick="() => AddTicketToPanier(sportTicket)">
+                                        Ajouter au panier
+                                    </button>
+                                </div>
+
+
+                                @if (isAdmin)
+                                {
+                                
+                                    <!--  Bouton pour modifier une offre -->
+                                    <div class="billetterie-card-panier-button admin">
+                                        <button class="billetterie-card-modif-button" @onclick="() => EditOffer(sportTicket)">
+                                            Modifier l'offre
+                                        </button>
+                                    </div>
+
+
+                                    <!--  Bouton pour supprimer une offre -->
+                                    <div class="billetterie-card-panier-button admin">
+                                        <button class="billetterie-card-supp-button" @onclick="async () => await DeleteBilletOffre(sportTicket.IDOffre)">
+                                            Supprimer l'offre
+                                        </button>
+                                    </div>
+                                   
+                                }
+                                </div>
                             </div>
-                        </div>
+                        </RadzenColumn>
+                    </RadzenRow>
+                </div>
+            </RadzenColumn>
+        }
+    }
 
-                        <!-- Section pour le billet famille -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Famille: @sportTickets[0].PriceFamily €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[0],  TicketTypeManager.TicketType.Family)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[0].QuantityFamily</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[0],  TicketTypeManager.TicketType.Family)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Bouton Ajouter au panier -->
-                        <div class="billetterie-card-panier-button">
-                            <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTickets[0])">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-
-                 @*    <!-- Bouton pour supprimer une offre -->
-                    @if (isAdmin)
-                    {
-                        <div class="billetterie-card-panier-button">
-                        <button class="billetterie-card-supp-button" @onclick="async () => await DeleteOffer(offer.ID)">
-                                Supprimer Offre
-                            </button>
-                        </div>
-                    } *@
-               @*  </RadzenColumn>
-            </RadzenRow>
-        </div>
-    </RadzenColumn>
-
-    <!-- Deuxième carte de sport -->
-    <RadzenColumn Size="12" class="billetterie-card-column">
-        <div class="billetterie-card-sport">
-            <RadzenRow>
-                <RadzenColumn Size="1">
-                    <RadzenImage class="billetterie-card-image" Path="images/sports/pictoarchery.png" AlternateText="Tir à L'Arc"></RadzenImage>
-                </RadzenColumn>
-                <RadzenColumn Size="9">
-                    <div class="billetterie-card-body">
-                        <RadzenText class="billetterie-card-title" Text="Tir à L'Arc" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                        <RadzenText class="billetterie-card-description" Text="ATH01 H/F - Tour préliminaire, 1er Tour, qualifications" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                        <RadzenText class="billetterie-card-details" Text="ven. 02.08.2024 |  10:00 - 13:00  |  Saint-Denis  |   Stade de France" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                    </div>
-
-                    <!-- Section pour le billet solo -->
-                    <div class="billeterie-card-container">
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Solo: @sportTickets[1].PriceSolo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[1],  TicketTypeManager.TicketType.Solo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[1].QuantitySolo </span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[1],  TicketTypeManager.TicketType.Solo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet duo -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Duo: @sportTickets[1].PriceDuo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[1],  TicketTypeManager.TicketType.Duo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[1].QuantityDuo</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[1],  TicketTypeManager.TicketType.Duo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet famille -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Famille: @sportTickets[1].PriceFamily €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[1],  TicketTypeManager.TicketType.Family)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[1].QuantityFamily</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[1],  TicketTypeManager.TicketType.Family)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Bouton Ajouter au panier -->
-                        <div class="billetterie-card-panier-button">
-                            <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTickets[1])">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </RadzenColumn>
-            </RadzenRow>
-        </div>
-    </RadzenColumn>
-
-    <!-- Troisième carte de sport -->
-    <RadzenColumn Size="12" class="billetterie-card-column">
-        <div class="billetterie-card-sport">
-            <RadzenRow>
-                <RadzenColumn Size="1">
-                    <RadzenImage class="billetterie-card-image" Path="images/sports/pictojudo.png" AlternateText="Judo"></RadzenImage>
-                </RadzenColumn>
-                <RadzenColumn Size="9">
-                    <div class="billetterie-card-body">
-                        <RadzenText class="billetterie-card-title" Text="Judo" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                        <RadzenText class="billetterie-card-description" Text="ATH01 H/F - Tour préliminaire, 1er Tour, qualifications" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                        <RadzenText class="billetterie-card-details" Text="ven. 02.08.2024 |  10:00 - 13:00  |  Saint-Denis  |   Stade de France" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                    </div>
-
-                    <!-- Section pour le billet solo -->
-                    <div class="billeterie-card-container">
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Solo: @sportTickets[2].PriceSolo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[2],  TicketTypeManager.TicketType.Solo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[2].QuantitySolo </span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[2],  TicketTypeManager.TicketType.Solo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet duo -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Duo: @sportTickets[2].PriceDuo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[2],  TicketTypeManager.TicketType.Duo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[2].QuantityDuo</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[2],  TicketTypeManager.TicketType.Duo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet famille -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Famille: @sportTickets[2].PriceFamily €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[2],  TicketTypeManager.TicketType.Family)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[2].QuantityFamily</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[2],  TicketTypeManager.TicketType.Family)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Bouton Ajouter au panier -->
-                        <div class="billetterie-card-panier-button">
-                            <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTickets[2])">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </RadzenColumn>
-            </RadzenRow>
-        </div>
-    </RadzenColumn>
-
-
-
-    <!-- Troisième carte de sport -->
-    <RadzenColumn Size="12" class="billetterie-card-column">
-        <div class="billetterie-card-sport">
-            <RadzenRow>
-                <RadzenColumn Size="1">
-                    <RadzenImage class="billetterie-card-image" Path="images/sports/pictorythmicgymnastic.png" AlternateText="Gymnastique Artistique"></RadzenImage>
-                </RadzenColumn>
-                <RadzenColumn Size="9">
-                    <div class="billetterie-card-body">
-                        <RadzenText class="billetterie-card-title" Text="Gymnastique Artistique" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                        <RadzenText class="billetterie-card-description" Text="ATH01 H/F - Tour préliminaire, 1er Tour, qualifications" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                        <RadzenText class="billetterie-card-details" Text="ven. 02.08.2024 |  10:00 - 13:00  |  Saint-Denis  |   Stade de France" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                    </div>
-
-                    <!-- Section pour le billet solo -->
-                    <div class="billeterie-card-container">
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Solo: @sportTickets[3].PriceSolo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[3],  TicketTypeManager.TicketType.Solo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[3].QuantitySolo </span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[3],  TicketTypeManager.TicketType.Solo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet duo -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Duo: @sportTickets[3].PriceDuo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[3],  TicketTypeManager.TicketType.Duo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[3].QuantityDuo</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[3],  TicketTypeManager.TicketType.Duo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet famille -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Famille: @sportTickets[3].PriceFamily €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[3],  TicketTypeManager.TicketType.Family)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[3].QuantityFamily</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[3],  TicketTypeManager.TicketType.Family)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Bouton Ajouter au panier -->
-                        <div class="billetterie-card-panier-button">
-                            <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTickets[3])">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </RadzenColumn>
-            </RadzenRow>
-        </div>
-    </RadzenColumn>
-
-
-    <!-- Troisième carte de sport -->
-    <RadzenColumn Size="12" class="billetterie-card-column">
-        <div class="billetterie-card-sport">
-            <RadzenRow>
-                <RadzenColumn Size="1">
-                    <RadzenImage class="billetterie-card-image" Path="images/sports/pictoswimming.png" AlternateText="Natation"></RadzenImage>
-                </RadzenColumn>
-                <RadzenColumn Size="9">
-                    <div class="billetterie-card-body">
-                        <RadzenText class="billetterie-card-title" Text="Natation" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                        <RadzenText class="billetterie-card-description" Text="ATH01 H/F - Tour préliminaire, 1er Tour, qualifications" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                        <RadzenText class="billetterie-card-details" Text="ven. 02.08.2024 |  10:00 - 13:00  |  Saint-Denis  |   Stade de France" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                    </div>
-
-                    <!-- Section pour le billet solo -->
-                    <div class="billeterie-card-container">
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Solo: @sportTickets[4].PriceSolo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[4],  TicketTypeManager.TicketType.Solo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[4].QuantitySolo </span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[4],  TicketTypeManager.TicketType.Solo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet duo -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Duo: @sportTickets[4].PriceDuo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[4],  TicketTypeManager.TicketType.Duo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[4].QuantityDuo</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[4],  TicketTypeManager.TicketType.Duo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet famille -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Famille: @sportTickets[4].PriceFamily €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[4],  TicketTypeManager.TicketType.Family)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[4].QuantityFamily</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[4],  TicketTypeManager.TicketType.Family)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Bouton Ajouter au panier -->
-                        <div class="billetterie-card-panier-button">
-                            <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTickets[4])">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </RadzenColumn>
-            </RadzenRow>
-        </div>
-    </RadzenColumn>
-
-
-
-    <!-- Troisième carte de sport -->
-    <RadzenColumn Size="12" class="billetterie-card-column">
-        <div class="billetterie-card-sport">
-            <RadzenRow>
-                <RadzenColumn Size="1">
-                    <RadzenImage class="billetterie-card-image" Path="images/sports/pictoequestriandressage.png" AlternateText="Sports Équestres"></RadzenImage>
-                </RadzenColumn>
-                <RadzenColumn Size="9">
-                    <div class="billetterie-card-body">
-                        <RadzenText class="billetterie-card-title" Text="Sports Équestres" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                        <RadzenText class="billetterie-card-description" Text="ATH01 H/F - Tour préliminaire, 1er Tour, qualifications" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                        <RadzenText class="billetterie-card-details" Text="ven. 02.08.2024 |  10:00 - 13:00  |  Saint-Denis  |   Stade de France" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                    </div>
-
-                    <!-- Section pour le billet solo -->
-                    <div class="billeterie-card-container">
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Solo: @sportTickets[5].PriceSolo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[5],  TicketTypeManager.TicketType.Solo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[5].QuantitySolo </span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[5],  TicketTypeManager.TicketType.Solo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet duo -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Duo: @sportTickets[5].PriceDuo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[5],  TicketTypeManager.TicketType.Duo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[5].QuantityDuo</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[5],  TicketTypeManager.TicketType.Duo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet famille -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Famille: @sportTickets[5].PriceFamily €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[5],  TicketTypeManager.TicketType.Family)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[5].QuantityFamily</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[5],  TicketTypeManager.TicketType.Family)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Bouton Ajouter au panier -->
-                        <div class="billetterie-card-panier-button">
-                            <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTickets[5])">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </RadzenColumn>
-            </RadzenRow>
-        </div>
-    </RadzenColumn>
-
-
-
-    <!-- Troisième carte de sport -->
-    <RadzenColumn Size="12" class="billetterie-card-column">
-        <div class="billetterie-card-sport">
-            <RadzenRow>
-                <RadzenColumn Size="1">
-                    <RadzenImage class="billetterie-card-image" Path="images/sports/pictofencing.png" AlternateText="Escrime"></RadzenImage>
-                </RadzenColumn>
-                <RadzenColumn Size="9">
-                    <div class="billetterie-card-body">
-                        <RadzenText class="billetterie-card-title" Text="Escrime" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                        <RadzenText class="billetterie-card-description" Text="ATH01 H/F - Tour préliminaire, 1er Tour, qualifications" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                        <RadzenText class="billetterie-card-details" Text="ven. 02.08.2024 |  10:00 - 13:00  |  Saint-Denis  |   Stade de France" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                    </div>
-
-                    <!-- Section pour le billet solo -->
-                    <div class="billeterie-card-container">
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Solo: @sportTickets[6].PriceSolo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[6],  TicketTypeManager.TicketType.Solo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[6].QuantitySolo </span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[6],  TicketTypeManager.TicketType.Solo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet duo -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Duo: @sportTickets[6].PriceDuo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[6],  TicketTypeManager.TicketType.Duo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[6].QuantityDuo</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[6],  TicketTypeManager.TicketType.Duo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet famille -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Famille: @sportTickets[6].PriceFamily €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[6],  TicketTypeManager.TicketType.Family)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[6].QuantityFamily</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[6],  TicketTypeManager.TicketType.Family)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Bouton Ajouter au panier -->
-                        <div class="billetterie-card-panier-button">
-                            <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTickets[6])">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </RadzenColumn>
-            </RadzenRow>
-        </div>
-    </RadzenColumn>
-
-
-    <!-- Troisième carte de sport -->
-    <RadzenColumn Size="12" class="billetterie-card-column">
-        <div class="billetterie-card-sport">
-            <RadzenRow>
-                <RadzenColumn Size="1">
-                    <RadzenImage class="billetterie-card-image" Path="images/sports/pictoarchery.png" AlternateText="Tir"></RadzenImage>
-                </RadzenColumn>
-                <RadzenColumn Size="9">
-                    <div class="billetterie-card-body">
-                        <RadzenText class="billetterie-card-title" Text="Tir" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                        <RadzenText class="billetterie-card-description" Text="ATH01 H/F - Tour préliminaire, 1er Tour, qualifications" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                        <RadzenText class="billetterie-card-details" Text="ven. 02.08.2024 |  10:00 - 13:00  |  Saint-Denis  |   Stade de France" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                    </div>
-
-                    <!-- Section pour le billet solo -->
-                    <div class="billeterie-card-container">
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Solo: @sportTickets[7].PriceSolo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[7],  TicketTypeManager.TicketType.Solo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[7].QuantitySolo </span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[7],  TicketTypeManager.TicketType.Solo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet duo -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Duo: @sportTickets[7].PriceDuo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[7],  TicketTypeManager.TicketType.Duo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[7].QuantityDuo</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[7],  TicketTypeManager.TicketType.Duo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet famille -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Famille: @sportTickets[7].PriceFamily €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[7],  TicketTypeManager.TicketType.Family)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[7].QuantityFamily</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[7],  TicketTypeManager.TicketType.Family)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Bouton Ajouter au panier -->
-                        <div class="billetterie-card-panier-button">
-                            <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTickets[7])">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </RadzenColumn>
-            </RadzenRow>
-        </div>
-    </RadzenColumn>
-
-
-    <!-- Troisième carte de sport -->
-    <RadzenColumn Size="12" class="billetterie-card-column">
-        <div class="billetterie-card-sport">
-            <RadzenRow>
-                <RadzenColumn Size="1">
-                    <RadzenImage class="billetterie-card-image" Path="images/sports/pictobeachvolley.png" AlternateText="Volleyball de plage"></RadzenImage>
-                </RadzenColumn>
-                <RadzenColumn Size="9">
-                    <div class="billetterie-card-body">
-                        <RadzenText class="billetterie-card-title" Text="Volleyball de plage" TextStyle="Radzen.Blazor.TextStyle.DisplayH6" TagName="Radzen.Blazor.TagName.H3"></RadzenText>
-                        <RadzenText class="billetterie-card-description" Text="ATH01 H/F - Tour préliminaire, 1er Tour, qualifications" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                        <RadzenText class="billetterie-card-details" Text="ven. 02.08.2024 |  10:00 - 13:00  |  Saint-Denis  |   Stade de France" TagName="Radzen.Blazor.TagName.P"></RadzenText>
-                    </div>
-
-                    <!-- Section pour le billet solo -->
-                    <div class="billeterie-card-container">
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Solo: @sportTickets[8].PriceSolo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[8],  TicketTypeManager.TicketType.Solo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[8].QuantitySolo </span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[8],  TicketTypeManager.TicketType.Solo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet duo -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Duo: @sportTickets[8].PriceDuo €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[8],  TicketTypeManager.TicketType.Duo)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[8].QuantityDuo</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[8],  TicketTypeManager.TicketType.Duo)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Section pour le billet famille -->
-                        <div class="billetterie-card-price">
-                            <p class="billetterie-card-price-label">Prix Famille: @sportTickets[8].PriceFamily €</p>
-                            <div class="billetterie-card-controls">
-                                <button class="billetterie-card-button" @onclick="() => DecreaseQuantity(sportTickets[8],  TicketTypeManager.TicketType.Family)">-</button>
-                                <span class="billetterie-card-quantity">@sportTickets[8].QuantityFamily</span>
-                                <button class="billetterie-card-button" @onclick="() => IncreaseQuantity(sportTickets[8],  TicketTypeManager.TicketType.Family)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Bouton Ajouter au panier -->
-                        <div class="billetterie-card-panier-button">
-                            <button class="billetterie-card-add-button" @onclick="async () => await AddTicketToPanier(sportTickets[8])">
-                                Ajouter au panier
-                            </button>
-                        </div>
-                    </div>
-                </RadzenColumn>
-            </RadzenRow>
-        </div>
-    </RadzenColumn>*@
-</RadzenRow>  
-
+</RadzenRow>
 <Footer /> <!-- Le footer est inclus ici -->

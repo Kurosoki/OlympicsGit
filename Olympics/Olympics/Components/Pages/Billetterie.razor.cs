@@ -1,6 +1,7 @@
 using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.JSInterop;
 using Olympics.Database;
 using Olympics.Database.Services;
@@ -46,53 +47,183 @@ namespace Olympics.Presentation.Components.Pages
         private SportTicketManager SportTicketManager { get; set; }
 
 
-
-        private SportTicket newSportTicket = new SportTicket();
+        private SportTicket currentSportTicket = new SportTicket();
         private List<SportTicket> sportTickets; // Utiliser SportTicket comme modèle de vue
+        private bool isUserLoggedIn = false;
 
-        protected override async Task OnAfterRenderAsync(bool firstRender)
+
+        protected override async Task OnInitializedAsync()
         {
-            await CheckIfUserIsAdminAsync();
-            if (firstRender)
+            await LoadSportTickets();
+
+            isUserLoggedIn = await SessionService.ValidateUserSessionAsync();
+
+            if (isUserLoggedIn)
             {
-                var offres = await OffreService.GetAllOffersAsync();
-
-                sportTickets = SportTicketManager.MapToSportTickets(offres);
-
-                // Forcer un nouveau rendu après l'initialisation des états
-                StateHasChanged();
+                CheckIfUserIsAdminAsync();
             }
         }
 
-        private bool isAdmin = false;
 
-        private async Task CheckIfUserIsAdminAsync()
+        private async Task LoadSportTickets()
         {
-            bool isAdminStatus = SessionService.GetUserStatus();
+            sportTickets = SportTicketManager.MapToSportTickets(await OffreService.GetAllOffersAsync());
+        }
 
-            // Mettre à jour les variables membres
-            isAdmin = isAdminStatus;
+        private bool isAdmin = false;
+        bool isEditMode = false; // false = création, true = modification
+
+        private void CheckIfUserIsAdminAsync()
+        {
+            isAdmin = SessionService.GetUserStatus();
         }
 
 
-        // Méthode de soumission du formulaire
-        private async Task CreateSportTicket()
+        // Méthode pour basculer en mode modification
+        private async void EditOffer(SportTicket sportTicket)
         {
+            currentSportTicket = sportTicket;
+            isEditMode = true;
+            BeginEdit(sportTicket);
+        }
+
+
+        // Méthode pour basculer en mode création
+        private void CreateNewOffer()
+        {
+            currentSportTicket = new SportTicket();  // Réinitialise le modèle
+            isEditMode = false;
+            StateHasChanged();
+        }
+
+        // Méthode de gestion des soumissions
+        private async Task HandleSubmit()
+        {
+            if (isEditMode)
+            {
+                // Appeler la méthode de modification
+                await UpdateBilletOffre(currentSportTicket);
+            }
+            else
+            {
+                // Appeler la méthode de création
+                await CreateBilletOffre();
+            }
+        }
+
+        // Création d'une nouvelle offre
+        private async Task CreateBilletOffre()
+        {
+            // S'assurer que les champs obligatoires sont remplis
+            if (string.IsNullOrWhiteSpace(currentSportTicket.SportName) ||
+                string.IsNullOrWhiteSpace(currentSportTicket.Description) ||
+                currentSportTicket.PriceSolo <= 0 ||
+                currentSportTicket.PriceDuo <= 0 ||
+                currentSportTicket.PriceFamily <= 0)
+            {
+                NotificationService.Notify(NotificationSeverity.Error, "Erreur", "Veuillez remplir tous les champs obligatoires avec des valeurs valides.");
+                return;
+            }
 
             try
             {
-                await OffreService.SaveSportTicketAsync(newSportTicket);
-
-                // Si aucune exception n'est levée, cela signifie que l'enregistrement a réussi
+                // Enregistrement de l'offre si les champs sont valides
+                await OffreService.SaveSportTicketAsync(currentSportTicket);
                 NotificationService.Notify(NotificationSeverity.Success, "Succès", "L'offre a été enregistrée avec succès.");
+
+                await LoadSportTickets(); // Recharge les tickets
             }
             catch (Exception ex)
             {
                 NotificationService.Notify(NotificationSeverity.Error, "Erreur", $"Échec de l'enregistrement de l'offre : {ex.Message}");
             }
 
-            newSportTicket = new SportTicket(); // Réinitialiser le modèle
+            // Réinitialise le modèle après l'enregistrement ou l'échec
+            currentSportTicket = new SportTicket();
         }
+
+
+        // Mise à jour d'une offre existante
+        private async Task UpdateBilletOffre(SportTicket currentSportTicket)
+        {
+            try
+            {
+                // Comparer les valeurs de l'objet original avec l'objet actuel
+                if (!HasChanges(currentSportTicket, originalSportTicket))
+                {
+                    NotificationService.Notify(NotificationSeverity.Warning, "Aucune modification", "Aucune modification n'a été détectée.");
+                    return;
+                }
+
+                await OffreService.UpdateOffreAsync(currentSportTicket);
+                NotificationService.Notify(NotificationSeverity.Success, "Succès", "L'offre a été mise à jour avec succès.");
+
+                // Réinitialiser ou synchroniser avec le nouvel état
+                originalSportTicket = new SportTicket
+                {
+                    Description = currentSportTicket.Description,
+                    PriceSolo = currentSportTicket.PriceSolo,
+                    PriceDuo = currentSportTicket.PriceDuo,
+                    PriceFamily = currentSportTicket.PriceFamily,
+                    SportName = currentSportTicket.SportName
+                };
+              
+                await LoadSportTickets();
+
+                CreateNewOffer();
+            }
+            catch (Exception ex)
+            {
+                NotificationService.Notify(NotificationSeverity.Error, "Erreur", $"Échec de la mise à jour de l'offre : {ex.Message}");
+            }
+        }
+
+        // Méthode pour comparer les valeurs initiales et modifiées
+        private bool HasChanges(SportTicket current, SportTicket original)
+        {
+            return current.Description != original.Description ||
+                   current.PriceSolo != original.PriceSolo ||
+                   current.PriceDuo != original.PriceDuo ||
+                   current.PriceFamily != original.PriceFamily ||
+                   current.SportName != original.SportName;
+        }
+
+        private SportTicket originalSportTicket;
+
+        private void BeginEdit(SportTicket ticket)
+        {
+            // Créer une copie du ticket original avant les modifications
+            originalSportTicket = new SportTicket
+            {
+                Description = ticket.Description,
+                ImageUrl = ticket.ImageUrl,
+                PriceSolo = ticket.PriceSolo,
+                PriceDuo = ticket.PriceDuo,
+                PriceFamily = ticket.PriceFamily,
+                SportName = ticket.SportName
+            };
+
+            currentSportTicket = ticket;
+            isEditMode = true;
+        }
+
+
+        // Suppression d'une offre
+        private async Task DeleteBilletOffre(int idoffre)
+        {
+            try
+            {
+                await OffreService.DeleteOffreAsync(idoffre);
+                NotificationService.Notify(NotificationSeverity.Success, "Succès", "L'offre a été supprimée avec succès.");
+
+                await LoadSportTickets();
+            }
+            catch (Exception ex)
+            {
+                NotificationService.Notify(NotificationSeverity.Error, "Erreur", $"Échec de la suppression de l'offre : {ex.Message}");
+            }
+        }
+
 
 
         private void DecreaseQuantity(SportTicket sport, TicketTypeManager.TicketType ticketType)

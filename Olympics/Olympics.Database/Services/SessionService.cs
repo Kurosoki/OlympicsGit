@@ -13,12 +13,15 @@ namespace Olympics.Database.Services
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IDataProtectionProvider _dataProtectionProvider;
         private readonly ILocalStorageService _localStorage;
+        private readonly SecurityManager _securityManager;
 
-        public SessionService(IHttpContextAccessor httpContextAccessor, IDataProtectionProvider dataProtectionProvider, ILocalStorageService localStorage)
+        public SessionService(IHttpContextAccessor httpContextAccessor, IDataProtectionProvider dataProtectionProvider, ILocalStorageService localStorage,
+        SecurityManager securityManager)
         {
             _httpContextAccessor = httpContextAccessor;
             _dataProtectionProvider = dataProtectionProvider;
             _localStorage = localStorage;
+            _securityManager = securityManager;
         }
 
         private static bool _isAdmin = false;
@@ -45,15 +48,15 @@ namespace Olympics.Database.Services
             try
             {
                 // Récupérer le token d'authentification chiffré depuis le localStorage
-                string sEncryptedToken = await _localStorage.GetItemAsync<string>(SecurityManager.EncryptAES("Token"));
-                string sExpirationDate = await _localStorage.GetItemAsync<string>(SecurityManager.EncryptAES("ExpireDate"));
+                string sEncryptedToken = await _localStorage.GetItemAsync<string>(_securityManager.EncryptAES("Token"));
+                string sExpirationDate = await _localStorage.GetItemAsync<string>(_securityManager.EncryptAES("ExpireDate"));
 
                 if (string.IsNullOrEmpty(sEncryptedToken) || string.IsNullOrEmpty(sExpirationDate))
                 {
                     return false;  // Si le token est absent, la session n'est pas valide
                 }
 
-                DateTime expirationDate = Convert.ToDateTime(SecurityManager.DecryptAES(sExpirationDate));
+                DateTime expirationDate = Convert.ToDateTime(_securityManager.DecryptAES(sExpirationDate));
 
                 // Vérification de l'expiration du token
                 if (expirationDate < DateTime.UtcNow)
@@ -68,7 +71,7 @@ namespace Olympics.Database.Services
                 }
 
                 // Déchiffrer le token avec AES
-                var decryptedToken = SecurityManager.DecryptAES(sEncryptedToken);
+                var decryptedToken = _securityManager.DecryptAES(sEncryptedToken);
 
                 // Déchiffrer le token pour pouvoir l'envoyer à l'API de validation
                 var protector = _dataProtectionProvider.CreateProtector("AuthTokenProtector");
@@ -115,7 +118,7 @@ namespace Olympics.Database.Services
             try
             {
                 // Déchiffrer le token
-                var decryptedToken = SecurityManager.DecryptAES(encryptedToken);
+                var decryptedToken = _securityManager.DecryptAES(encryptedToken);
                 var protector = _dataProtectionProvider.CreateProtector("AuthTokenProtector");
                 var token = protector.Unprotect(decryptedToken);
 
@@ -146,8 +149,8 @@ namespace Olympics.Database.Services
                     var newExpiration = renewResponse.NewExpiration;
 
                     // Mettre à jour le local storage avec le nouveau token chiffré et la nouvelle date d'expiration
-                    await _localStorage.SetItemAsync(SecurityManager.EncryptAES("Token"), SecurityManager.EncryptAES(protectedNewToken));
-                    await _localStorage.SetItemAsync(SecurityManager.EncryptAES("ExpireDate"), SecurityManager.EncryptAES(newExpiration.ToString("o")));
+                    await _localStorage.SetItemAsync(_securityManager.EncryptAES("Token"), _securityManager.EncryptAES(protectedNewToken));
+                    await _localStorage.SetItemAsync(_securityManager.EncryptAES("ExpireDate"), _securityManager.EncryptAES(newExpiration.ToString("o")));
 
                     return true;
                 }

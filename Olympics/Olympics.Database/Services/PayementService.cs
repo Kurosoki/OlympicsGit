@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.EntityFrameworkCore;
 using Olympics.Metier.Models;
 using Olympics.Services;
 using System.Drawing;
@@ -16,18 +17,18 @@ namespace Olympics.Database.Services
         private readonly UserService _userService;
         private readonly NavigationManager _navigationManager;
         private readonly PanierService _panierService;
+        private readonly ApplicationDbContext _context;
 
-        public PayementService(UserService userService, NavigationManager navigationManager, PanierService panierService)
+        public PayementService(UserService userService, NavigationManager navigationManager, PanierService panierService, ApplicationDbContext context)
         {
             _userService = userService;
             _navigationManager = navigationManager;
             _panierService = panierService;
+            _context = context;
         }
 
         public async Task<cPayementBase> MockPayementAsync(cUtilisateurBase utilisateur, cPanierBase panier, decimal montant)
         {
-            // Simule un délai pour le traitement du paiement
-            await Task.Delay(1000);
 
             // Vérifier si l'utilisateur a une clé valide
             if (utilisateur == null || string.IsNullOrEmpty(utilisateur.Key))
@@ -51,19 +52,57 @@ namespace Olympics.Database.Services
                 IDPanier = panier.IDPanier, // Lier le paiement au panier correspondant
                 DateAchat = DateTime.Now,
                 Montant = montant,
+                QrCodeUrl = qrCodeBase64,
             };
 
+            // Enregistrer les informations de paiement dans la base de données
+            await SavePaymentAsync(paiementResult);
+
             // Encoder les valeurs avant de les passer dans l'URL
-            string encodedDateAchat = HttpUtility.UrlEncode(paiementResult.DateAchat.ToString("yyyy-MM-dd HH:mm:ss"));
+            string encodedDateAchat = HttpUtility.UrlEncode(paiementResult.DateAchat.ToString("dd-MM-yyyyy HH:mm:ss"));
             string encodedMontant = HttpUtility.UrlEncode(paiementResult.Montant.ToString("F2")); // Format standard avec 2 décimales
 
             // Rediriger vers la page de confirmation avec les valeurs encodées
             _navigationManager.NavigateTo($"/confirmation?qrCodeBase64={HttpUtility.UrlEncode(qrCodeBase64)}&dateAchat={encodedDateAchat}&montant={encodedMontant}");
 
+            // Archiver le panier avant de le vider
+            await ArchiverPanierAsync(panier);
+
             // Vider le panier après le paiement réussi
             await _panierService.RemoveTicketsFromPanierAsync(panier.IDPanier);
 
+            // Simule un délai pour le traitement du paiement
+            await Task.Delay(1000);
+
             return paiementResult;
+        }
+
+        // Méthode pour enregistrer un paiement en BDD
+        public async Task SavePaymentAsync(cPayementBase paiementResult)
+        {
+            _context.Payement.Add(paiementResult);
+            await _context.SaveChangesAsync();
+        }
+
+
+        // Méthode pour archiver un panier et ses tickets
+        public async Task ArchiverPanierAsync(cPanierBase panier)
+        {
+            var panierArchive = new cPanierArchive
+            {
+                IDClient = panier.IDClient,
+                DateAchat = DateTime.Now,
+                TicketsArchive = panier.Tickets.Select(t => new cTicketArchive
+                {
+                    SportName = t.SportName,
+                    TicketType = t.TicketType,
+                    Quantity = t.Quantity,
+                    Price = t.Price
+                }).ToList()
+            };
+
+            _context.PanierArchive.Add(panierArchive);
+            await _context.SaveChangesAsync();
         }
 
         public Bitmap GenerateQRCodeBitmap(string finalKey)
