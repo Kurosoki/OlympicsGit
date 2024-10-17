@@ -1,0 +1,11 @@
+version: 1
+services:
+  - type: web
+    name: Olympics
+    env: aspnetcore
+    plan: free
+    buildCommand: dotnet publish -c Release -o out
+    startCommand: dotnet out/Olympics2024.dll
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
